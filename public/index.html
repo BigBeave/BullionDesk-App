@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="BullionDesk">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+
+<title>Bullion Desk — Live Metals</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-gradient: linear-gradient(135deg, #FBF5B7 0%, #D4AF37 50%, #AA771C 100%);
+    --gold-light: #FBF5B7;
+    --gold-dim: #9B7B29;
+    
+    --silver: #C0C0C0;
+    --silver-gradient: linear-gradient(135deg, #FFFFFF 0%, #C0C0C0 50%, #808080 100%);
+    --silver-light: #EAEAEA;
+    --silver-dim: #707070;
+    
+    --bg: #050505;
+    --panel: rgba(20, 20, 20, 0.7);
+    --panel-hover: rgba(30, 30, 30, 0.9);
+    --border: rgba(212, 175, 55, 0.12);
+    --border-focus: rgba(212, 175, 55, 0.4);
+    --text: #F0EDE5;
+    --muted: #8E877C;
+    --up: #00E676;
+    --down: #FF5252;
+    --safe-top: env(safe-area-inset-top, 0px);
+    --safe-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: calc(var(--safe-top) + 15px);
+    padding-bottom: calc(var(--safe-bottom) + 20px);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 50% 10%, rgba(212, 175, 55, 0.06) 0%, transparent 70%),
+      linear-gradient(rgba(212, 175, 55, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 175, 55, 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 40px 40px, 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+
+  .brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .brand span {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--muted);
+    -webkit-text-fill-color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .status-box {
+    text-align: right;
+  }
+
+  .live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--muted);
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 4px 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 6px var(--gold);
+  }
+
+  .pulse-active {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(0.9); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 10px var(--up); }
+    100% { transform: scale(0.9); opacity: 0.6; }
+  }
+
+  .last-update {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 5px;
+  }
+
+  .spot-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 32px;
+  }
+
+  .spot-card {
+    background: var(--panel);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .spot-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 12px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
+
+  .spot-card.gold::after { border: 1px solid rgba(212, 175, 55, 0.3); }
+  .spot-card.silver::after { border: 1px solid rgba(255, 255, 255, 0.2); }
+
+  .spot-card:active::after { opacity: 1; }
+
+  .metal-symbol {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+
+  .spot-card.gold .metal-symbol { color: #FBF5B7; }
+  .spot-card.silver .metal-symbol { color: #FFFFFF; }
+
+  .metal-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .metal-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+  .spot-card.gold .metal-name { color: var(--gold-light); }
+  .spot-card.silver .metal-name { color: var(--silver-light); }
+
+  .metal-ticker {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .price-val {
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .spot-card.gold .price-val { color: var(--gold-light); text-shadow: 0 0 15px rgba(212,175,55,0.15); }
+  .spot-card.silver .price-val { color: var(--silver-light); text-shadow: 0 0 15px rgba(255,255,255,0.1); }
+
+  .price-change {
+    font-size: 13px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .price-change.up { color: var(--up); background: rgba(0, 230, 118, 0.08); }
+  .price-change.down { color: var(--down); background: rgba(255, 82, 82, 0.08); }
+
+  .unit-breakdown {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .unit-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .unit-label {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .unit-val {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .section-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .tab-switcher {
+    display: flex;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 3px;
+  }
+
+  .tab-btn {
+    padding: 6px 16px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .tab-btn.active {
+    background: var(--gold-gradient);
+    color: #000;
+    box-shadow: 0 2px 8px rgba(212,175,55,0.3);
+  }
+
+  .list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cat-header {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    padding: 15px 5px 5px;
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+    margin-top: 10px;
+  }
+
+  .item-card {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+  }
+
+  .item-card:active {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .item-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #F0EDE5;
+    letter-spacing: 0.02em;
+  }
+
+  .item-details {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.02em;
+    display: flex;
+    gap: 8px;
+  }
+
+  .item-melt {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .melt-label {
+    font-size: 8px;
+    font-weight: 600;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .melt-value {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .gold-text { color: var(--gold-light); }
+  .silver-text { color: var(--silver-light); }
+
+  .error-banner {
+    background: rgba(255, 82, 82, 0.1);
+    border: 1px solid rgba(255, 82, 82, 0.3);
+    color: var(--down);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    display: none;
+  }
+
+  .footer-nav {
+    margin-top: 40px;
+    padding: 20px 5px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .source-txt {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .refresh-trigger {
+    background: transparent;
+    border: 1px solid var(--gold-dim);
+    color: var(--gold-light);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .refresh-trigger:active {
+    background: rgba(212,175,55,0.1);
+    transform: scale(0.97);
+  }
+
+  .hidden { display: none !important; }
+
+  #initial-loader {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+
+  .loader-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+  }
+
+  .spinner {
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(212,175,55,0.1);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+</style>
+</head>
+<body>
+
+<div id="initial-loader">
+  <div class="loader-brand">BULLION DESK</div>
+  <div class="spinner"></div>
+</div>
+
+<div class="container">
+  
+  <header>
+    <div class="brand">
+      <span>Bullion Desk</span>
+      PRECIOUS METALS
+    </div>
+    <div class="status-box">
+      <div class="live-badge">
+        <div class="pulse-dot" id="statusDot"></div>
+        <span id="statusLabel">OFFLINE</span>
+      </div>
+      <div class="last-update" id="lastUpdate">—</div>
+    </div>
+  </header>
+
+  <div id="errorBox" class="error-banner"></div>
+
+  <div class="spot-stack">
+    <div class="spot-card gold">
+      <div class="metal-symbol">Au</div>
+      <div class="metal-meta">
+        <span class="metal-name">Gold Spot</span>
+        <span class="metal-ticker">GC=F · Troy Oz</span>
+      </div>
+      <div class="price-row">
+        <div class="price-val" id="goldPrice">$——.—</div>
+        <div class="price-change" id="goldChange">—</div>
+      </div>
+      <div class="unit-breakdown">
+        <div class="unit-box">
+          <span class="unit-label">Per Gram</span>
+          <span class="unit-val gold-text" id="goldGram">$——.—</span>
+        </div>
+        <div class="unit-box">
+          <span class="unit-label">Per Kilo</span>
+          <span class="unit-val gold-text" id="goldKg">$——,———</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="spot-card silver">
+      <div class="metal-symbol">Ag</div>
+      <div class="metal-meta">
+        <span class="metal-name">Silver Spot</span>
+        <span class="metal-ticker">SI=F · Troy Oz</span>
+      </div>
+      <div class="price-row">
+        <div class="price-val" id="silverPrice">$——.—</div>
+        <div class="price-change" id="silverChange">—</div>
+      </div>
+      <div class="unit-breakdown">
+        <div class="unit-box">
+          <span class="unit-label">Per Gram</span>
+          <span class="unit-val silver-text" id="silverGram">$——.—</span>
+        </div>
+        <div class="unit-box">
+          <span class="unit-label">Per Kilo</span>
+          <span class="unit-val silver-text" id="silverKg">$——,———</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-bar">
+    <h2 class="section-title">Melt Valuations</h2>
+    <div class="tab-switcher">
+      <button class="tab-btn active" onclick="switchTab('gold')">Gold</button>
+      <button class="tab-btn" onclick="switchTab('silver')">Silver</button>
+    </div>
+  </div>
+
+  <div id="metalsList" class="list-container">
+  </div>
+
+  <div class="footer-nav">
+    <button class="refresh-trigger" onclick="loadLivePrices()">↻ Refresh Feed</button>
+    <div class="source-txt">Real-time futures feed direct via Node Gateway.<br>Values calculate pure metal weight only.</div>
+  </div>
+
+</div>
+
+<script>
+const GOLD_ITEMS = [
+  { cat: 'Popular Coins' },
+  { name: 'American Gold Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9167 },
+  { name: 'American Gold Eagle', detail: '1/2 oz — US Mint', oz: 0.5000, fine: 0.9167 },
+  { name: 'American Gold Eagle', detail: '1/4 oz — US Mint', oz: 0.2500, fine: 0.9167 },
+  { name: 'American Gold Eagle', detail: '1/10 oz — US Mint', oz: 0.1000, fine: 0.9167 },
+  { name: 'American Gold Buffalo', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9999 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/2 oz', oz: 0.5000, fine: 0.9999 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/4 oz', oz: 0.2500, fine: 0.9999 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/10 oz', oz: 0.1000, fine: 0.9999 },
+  { name: 'South African Krugerrand', detail: '1 oz', oz: 1.0000, fine: 0.9167 },
+  { name: 'Austrian Gold Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999 },
+  { name: 'British Gold Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9999 },
+  { name: 'Australian Gold Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999 },
+  { name: 'Chinese Gold Panda', detail: '30g', oz: 0.9645, fine: 0.9999 },
+  { cat: 'US Pre-1933 Gold' },
+  { name: 'Double Eagle $20', detail: 'Liberty / St. Gaudens', oz: 0.9675, fine: 0.9000 },
+  { name: 'Eagle $10', detail: 'Liberty Head', oz: 0.4838, fine: 0.9000 },
+  { name: 'Half Eagle $5', detail: 'Indian / Liberty', oz: 0.2419, fine: 0.9000 },
+  { name: 'Quarter Eagle $2.50', detail: 'Indian / Liberty', oz: 0.1209, fine: 0.9000 },
+  { name: 'Gold Dollar', detail: 'Type 1, 2, 3', oz: 0.04837, fine: 0.9000 },
+  { cat: 'Gold Bars' },
+  { name: '1 Gram Gold Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999 },
+  { name: '2.5 Gram Gold Bar', detail: 'Various Mints', oz: 0.08038, fine: 0.9999 },
+  { name: '5 Gram Gold Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999 },
+  { name: '10 Gram Gold Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999 },
+  { name: '20 Gram Gold Bar', detail: 'Various Mints', oz: 0.64301, fine: 0.9999 },
+  { name: '1 oz Gold Bar', detail: 'PAMP / Valcambi', oz: 1.0000, fine: 0.9999 },
+  { name: '50 Gram Gold Bar', detail: 'Various Mints', oz: 1.60754, fine: 0.9999 },
+  { name: '100 Gram Gold Bar', detail: 'Various Mints', oz: 3.21507, fine: 0.9999 },
+  { name: '5 oz Gold Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999 },
+  { name: '10 oz Gold Bar', detail: 'Various Mints', oz: 10.0000, fine: 0.9999 }
+];
+
+const SILVER_ITEMS = [
+  { cat: 'Popular Coins' },
+  { name: 'American Silver Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9993 },
+  { name: 'Canadian Silver Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999 },
+  { name: 'Austrian Silver Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999 },
+  { name: 'British Silver Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9990 },
+  { name: 'Australian Silver Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999 },
+  { name: 'Mexican Silver Libertad', detail: '1 oz — Banco de México', oz: 1.0000, fine: 0.9990 },
+  { name: 'Chinese Silver Panda', detail: '30g', oz: 0.9645, fine: 0.9990 },
+  { cat: 'US 90% Junk Silver' },
+  { name: 'Morgan / Peace Dollar', detail: '1878–1935', oz: 0.77344, fine: 0.9000 },
+  { name: 'Kennedy Half (90%)', detail: '1964', oz: 0.36169, fine: 0.9000 },
+  { name: 'Franklin Half Dollar', detail: '1948–1963', oz: 0.36169, fine: 0.9000 },
+  { name: 'Walking Liberty Half', detail: '1916–1947', oz: 0.36169, fine: 0.9000 },
+  { name: 'Barber Half Dollar', detail: '1892–1915', oz: 0.36169, fine: 0.9000 },
+  { name: 'Washington Quarter', detail: '1932–1964', oz: 0.18084, fine: 0.9000 },
+  { name: 'Roosevelt / Mercury Dime', detail: 'Pre-1965', oz: 0.07234, fine: 0.9000 },
+  { name: 'Kennedy Half (40%)', detail: '1965–1970', oz: 0.14792, fine: 0.4000 },
+  { name: 'Eisenhower Dollar (40%)', detail: '1971–1978 S', oz: 0.31610, fine: 0.4000 },
+  { name: 'Silver War Nickel', detail: '1942–1945', oz: 0.05626, fine: 0.3500 },
+  { cat: 'Silver Bars' },
+  { name: '1 Gram Silver Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999 },
+  { name: '5 Gram Silver Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999 },
+  { name: '10 Gram Silver Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999 },
+  { name: '1 oz Silver Bar', detail: '31.1g', oz: 1.0000, fine: 0.9999 },
+  { name: '2 oz Silver Bar', detail: 'Various Mints', oz: 2.0000, fine: 0.9999 },
+  { name: '5 oz Silver Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999 },
+  { name: '10 oz Silver Bar', detail: '311g — Various Mints', oz: 10.0000, fine: 0.9999 },
+  { name: '100 oz Silver Bar', detail: 'Various Mints', oz: 100.000, fine: 0.9999 },
+  { name: '1000 oz Silver Bar', detail: 'COMEX Good Delivery', oz: 1000.00, fine: 0.9990 }
+];
+
+let activeMetal = 'gold';
+let goldSpot = 0;
+let silverSpot = 0;
+
+// Using relative endpoint since they share the same Express host!
+const apiEndpoint = '/metals';
+
+async function loadLivePrices() {
+  const statusEl = document.getElementById('statusLabel');
+  const dotEl = document.getElementById('statusDot');
+  
+  statusEl.textContent = 'SYNCING...';
+  dotEl.style.background = '#D4AF37';
+  dotEl.classList.add('pulse-active');
+  hideError();
+
+  try {
+    // Clean native fetch
+    const resp = await fetch(apiEndpoint);
+    if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
+    
+    const payload = await resp.json();
+    const data = payload.data;
+    
+    goldSpot = data.gold.price;
+    silverSpot = data.silver.price;
+    
+    updateSpotUI('gold', data.gold);
+    updateSpotUI('silver', data.silver);
+    
+    statusEl.textContent = 'LIVE · YAHOO';
+    dotEl.style.background = '#00E676';
+    document.getElementById('lastUpdate').textContent = 'Updated ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    
+    renderList();
+    
+    setTimeout(() => {
+      const loader = document.getElementById('initial-loader');
+      if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.classList.add('hidden'), 500);
+      }
+    }, 400);
+
+  } catch (err) {
+    console.error(err);
+    showError('Prices momentarily unreachable. Tap Refresh to retry.');
+    statusEl.textContent = 'SYNC ERROR';
+    dotEl.style.background = '#FF5252';
+    
+    const loader = document.getElementById('initial-loader');
+    if (loader) {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.classList.add('hidden'), 500);
+    }
+  } finally {
+    dotEl.classList.remove('pulse-active');
+  }
+}
+
+function formatMoney(val, decimals = 2) {
+  return '$' + val.toFixed(decimals).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function updateSpotUI(metal, spotObj) {
+  const isGold = metal === 'gold';
+  const priceEl = document.getElementById(`${metal}Price`);
+  const changeEl = document.getElementById(`${metal}Change`);
+  const gramEl = document.getElementById(`${metal}Gram`);
+  const kgEl = document.getElementById(`${metal}Kg`);
+  
+  priceEl.textContent = formatMoney(spotObj.price, 2);
+  
+  const sign = spotObj.change >= 0 ? '+' : '';
+  changeEl.textContent = `${sign}${spotObj.change.toFixed(2)} (${sign}${spotObj.changePercent.toFixed(2)}%)`;
+  changeEl.className = `price-change ${spotObj.change >= 0 ? 'up' : 'down'}`;
+  
+  const perGram = spotObj.price / 31.1034768;
+  const perKg = spotObj.price * 32.1507466;
+  
+  gramEl.textContent = formatMoney(perGram, isGold ? 2 : 4);
+  kgEl.textContent = formatMoney(perKg, isGold ? 0 : 2);
+}
+
+function renderList() {
+  const listEl = document.getElementById('metalsList');
+  const items = activeMetal === 'gold' ? GOLD_ITEMS : SILVER_ITEMS;
+  const spot = activeMetal === 'gold' ? goldSpot : silverSpot;
+  const textCls = activeMetal === 'gold' ? 'gold-text' : 'silver-text';
+  
+  if (spot <= 0) {
+    listEl.innerHTML = '<div style="text-align:center; color:var(--muted); padding:40px;">Awaiting live feeds...</div>';
+    return;
+  }
+
+  let html = '';
+  items.forEach(item => {
+    if (item.cat) {
+      html += `<div class="cat-header">${item.cat}</div>`;
+      return;
+    }
+    
+    const melt = spot * item.oz * item.fine;
+    
+    html += `
+      <div class="item-card">
+        <div class="item-info">
+          <div class="item-name">${item.name}</div>
+          <div class="item-details">
+            <span>${item.detail}</span>
+            <span>•</span>
+            <span>${(item.fine*100).toFixed(1)}% Fine</span>
+          </div>
+        </div>
+        <div class="item-melt">
+          <span class="melt-label">Melt Value</span>
+          <span class="melt-value ${textCls}">${formatMoney(melt, melt < 2 ? 4 : 2)}</span>
+        </div>
+      </div>
+    `;
+  });
+  
+  listEl.innerHTML = html;
+}
+
+function switchTab(metal) {
+  activeMetal = metal;
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    b.classList.toggle('active', b.textContent.toLowerCase() === metal);
+  });
+  renderList();
+}
+
+function showError(msg) {
+  const box = document.getElementById('errorBox');
+  box.textContent = '⚠️ ' + msg;
+  box.style.display = 'block';
+}
+
+function hideError() {
+  document.getElementById('errorBox').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadLivePrices();
+  setInterval(loadLivePrices, 5 * 60 * 1000);
+});
+</script>
+</body>
+</html>

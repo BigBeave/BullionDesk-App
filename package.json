@@ -1,0 +1,19 @@
+{
+  "name": "bulliondesk-app",
+  "version": "1.0.0",
+  "description": "All-in-one live precious metals spot price tracker for iOS.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^6.7.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Brandon Beavers",
+  "license": "ISC"
+}
