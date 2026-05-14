@@ -2,7 +2,7 @@
   "name": "Bullion Desk — Precious Metals",
   "short_name": "BullionDesk",
   "description": "Real-time gold & silver spot prices and coin melt values.",
-  "start_url": "/",
+  "start_url": "index.html",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#050505",

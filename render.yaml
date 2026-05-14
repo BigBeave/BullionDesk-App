@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: bullion-desk
-    env: node
-    plan: free
-    buildCommand: npm install
-    startCommand: npm start
-    autoDeploy: true
-    healthCheckPath: /health

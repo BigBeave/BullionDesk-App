@@ -511,7 +511,7 @@
       <div class="metal-symbol">Au</div>
       <div class="metal-meta">
         <span class="metal-name">Gold Spot</span>
-        <span class="metal-ticker">GC=F · Troy Oz</span>
+        <span class="metal-ticker">PAXG · Troy Oz</span>
       </div>
       <div class="price-row">
         <div class="price-val" id="goldPrice">$——.—</div>
@@ -533,7 +533,7 @@
       <div class="metal-symbol">Ag</div>
       <div class="metal-meta">
         <span class="metal-name">Silver Spot</span>
-        <span class="metal-ticker">SI=F · Troy Oz</span>
+        <span class="metal-ticker">KAG · Troy Oz</span>
       </div>
       <div class="price-row">
         <div class="price-val" id="silverPrice">$——.—</div>
@@ -565,7 +565,7 @@
 
   <div class="footer-nav">
     <button class="refresh-trigger" onclick="loadLivePrices()">↻ Refresh Feed</button>
-    <div class="source-txt">Real-time futures feed direct via Node Gateway.<br>Values calculate pure metal weight only.</div>
+    <div class="source-txt">Real-time physical backing feed via allocated digital vault trust.<br>Values calculate pure metal weight only.</div>
   </div>
 
 </div>
@@ -642,8 +642,8 @@ let activeMetal = 'gold';
 let goldSpot = 0;
 let silverSpot = 0;
 
-// Using relative endpoint since they share the same Express host!
-const apiEndpoint = '/metals';
+// Fully Serverless direct fetch to CoinGecko (100% Free, CORS-compliant)
+const apiEndpoint = 'https://api.coingecko.com/api/v3/simple/price?ids=pax-gold,kinesis-silver&vs_currencies=usd&include_24hr_change=true';
 
 async function loadLivePrices() {
   const statusEl = document.getElementById('statusLabel');
@@ -655,12 +655,32 @@ async function loadLivePrices() {
   hideError();
 
   try {
-    // Clean native fetch
-    const resp = await fetch(apiEndpoint);
-    if (!resp.ok) throw new Error(`Server error: ${resp.status}`);
+    const resp = await fetch(apiEndpoint, {
+      headers: { 'Accept': 'application/json' }
+    });
+    if (!resp.ok) throw new Error(`Upstream error: ${resp.status}`);
     
-    const payload = await resp.json();
-    const data = payload.data;
+    const raw = await resp.json();
+    
+    // Extract and format matching standard payload
+    const goldPrice = raw['pax-gold'].usd;
+    const goldPct = raw['pax-gold'].usd_24h_change || 0;
+    
+    const silverPrice = raw['kinesis-silver'].usd;
+    const silverPct = raw['kinesis-silver'].usd_24h_change || 0;
+    
+    const data = {
+      gold: {
+        price: goldPrice,
+        change: (goldPrice * goldPct) / 100,
+        changePercent: goldPct
+      },
+      silver: {
+        price: silverPrice,
+        change: (silverPrice * silverPct) / 100,
+        changePercent: silverPct
+      }
+    };
     
     goldSpot = data.gold.price;
     silverSpot = data.silver.price;
@@ -668,7 +688,7 @@ async function loadLivePrices() {
     updateSpotUI('gold', data.gold);
     updateSpotUI('silver', data.silver);
     
-    statusEl.textContent = 'LIVE · YAHOO';
+    statusEl.textContent = 'LIVE · VAULT';
     dotEl.style.background = '#00E676';
     document.getElementById('lastUpdate').textContent = 'Updated ' + new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     
