@@ -385,6 +385,27 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  .ratio-advice {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--border);
+    color: var(--text);
+  }
+  
+  .ratio-card.signal-silver .ratio-advice {
+    border-left-color: var(--silver-light);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .ratio-card.signal-gold .ratio-advice {
+    border-left-color: var(--gold-light);
+    background: rgba(212, 175, 55, 0.04);
+  }
+
   .ratio-footer {
     font-size: 10px;
     color: var(--muted);
@@ -695,6 +716,12 @@
           <div class="ratio-badge" id="gsrBadge">WAITING FOR DATA</div>
         </div>
       </div>
+      
+      <!-- Simpler Advice Indicator -->
+      <div class="ratio-advice" id="gsrAdvice">
+        👉 Awaiting live market feeds...
+      </div>
+      
       <div class="ratio-footer" id="gsrFooter">
         Awaiting live precious metal feeds to calculate investment signal.
       </div>
@@ -983,31 +1010,101 @@ function updateRatioUI(gsr) {
   const card = document.getElementById('ratioCard');
   const valEl = document.getElementById('gsrValue');
   const badgeEl = document.getElementById('gsrBadge');
+  const adviceEl = document.getElementById('gsrAdvice');
   const footerEl = document.getElementById('gsrFooter');
   
   if (!gsr || isNaN(gsr) || gsr <= 0) {
     valEl.textContent = '——.—';
     badgeEl.textContent = 'AWAITING FEEDS';
     card.className = 'ratio-card signal-neutral';
+    adviceEl.innerHTML = '👉 Awaiting live market feeds...';
     footerEl.textContent = 'Awaiting live precious metal feeds to calculate investment signal.';
     return;
   }
   
   valEl.textContent = gsr.toFixed(2);
   
+  let signalClass = 'signal-neutral';
+  let badgeText = 'NEUTRAL / HOLD';
+  let adviceText = '';
+  let footerHTML = '';
+  
   if (gsr >= 80) {
-    card.className = 'ratio-card signal-silver';
-    badgeEl.textContent = 'BUY SILVER';
-    footerEl.innerHTML = `⚠️ <strong>Silver Undervalued (Ratio: ${gsr.toFixed(1)}:1)</strong><br>It takes over 80 oz of silver to buy 1 oz of gold. Historically, silver is extremely cheap relative to gold. Focus capital on accumulating silver.`;
-  } else if (gsr <= 55) {
-    card.className = 'ratio-card signal-gold';
-    badgeEl.textContent = 'BUY GOLD';
-    footerEl.innerHTML = `⚠️ <strong>Gold Undervalued (Ratio: ${gsr.toFixed(1)}:1)</strong><br>It takes less than 55 oz of silver to buy 1 oz of gold. Silver has outperformed; consider swapping silver for gold to lock in gains.`;
+    signalClass = 'signal-silver';
+    badgeText = 'STRONG BUY SILVER';
+    adviceText = `👉 <strong>GSR is ${gsr.toFixed(2)}</strong>: Sell Gold ➔ Buy Silver (Ratio heavily favors Silver)`;
+    footerHTML = `
+      <div style="margin-bottom: 8px;">
+        <strong>📝 WHAT THIS SIGNAL MEANS:</strong><br>
+        It currently takes a massive <strong>${gsr.toFixed(1)} ounces of silver</strong> to buy just 1 ounce of gold. This means physical silver is extremely undervalued and cheap compared to gold. In plain terms: <em>Silver is on super-sale relative to gold.</em>
+      </div>
+      <div>
+        <strong>📈 HOW WE DETERMINED THIS ADVICE (HISTORICAL LOGIC):</strong><br>
+        Over the last 100 years, the natural economic average ratio sits between <strong>55:1 and 60:1</strong>. When the ratio stretches above <strong>80:1</strong>, it is at a historical extreme. Smart stackers capitalize on this by channeling 100% of their capital into Silver, or even swapping their Gold for Silver, knowing that when the ratio eventually contracts back to its historical average, the silver will appreciate much faster than gold.
+      </div>
+    `;
+  } else if (gsr >= 70 && gsr < 80) {
+    signalClass = 'signal-silver';
+    badgeText = 'BUY SILVER';
+    adviceText = `👉 <strong>GSR is ${gsr.toFixed(2)}</strong>: Buy Silver & Hold Gold (Ratio favors Silver)`;
+    footerHTML = `
+      <div style="margin-bottom: 8px;">
+        <strong>📝 WHAT THIS SIGNAL MEANS:</strong><br>
+        It takes <strong>${gsr.toFixed(1)} ounces of silver</strong> to buy 1 ounce of gold. Silver is trading significantly cheaper than its historical average of ~55-60. Buying silver is highly favored over gold at this level.
+      </div>
+      <div>
+        <strong>📈 HOW WE DETERMINED THIS ADVICE (HISTORICAL LOGIC):</strong><br>
+        Because the ratio is above 70, silver has a larger margin of safety and higher upside potential than gold. We recommend buying generic silver rounds or bars to accumulate maximum physical ounces while holding your existing gold.
+      </div>
+    `;
+  } else if (gsr <= 45) {
+    signalClass = 'signal-gold';
+    badgeText = 'STRONG BUY GOLD';
+    adviceText = `👉 <strong>GSR is ${gsr.toFixed(2)}</strong>: Sell Silver ➔ Buy Gold (Ratio heavily favors Gold)`;
+    footerHTML = `
+      <div style="margin-bottom: 8px;">
+        <strong>📝 WHAT THIS SIGNAL MEANS:</strong><br>
+        It takes only <strong>${gsr.toFixed(1)} ounces of silver</strong> to buy 1 ounce of gold. Gold is extremely cheap relative to silver. This means silver is highly valued and gold is significantly undervalued.
+      </div>
+      <div>
+        <strong>📈 HOW WE DETERMINED THIS ADVICE (HISTORICAL LOGIC):</strong><br>
+        When the ratio drops below <strong>45:1</strong> (or 50:1), silver has completed a major bull run. Smart stackers trade their accumulated silver ounces for gold at local shops. By doing this, you turn every 45 oz of silver into 1 oz of gold. If you originally swapped gold for silver at 80:1, you just nearly doubled your gold holdings for free!
+      </div>
+    `;
+  } else if (gsr > 45 && gsr <= 55) {
+    signalClass = 'signal-gold';
+    badgeText = 'BUY GOLD';
+    adviceText = `👉 <strong>GSR is ${gsr.toFixed(2)}</strong>: Buy Gold & Hold Silver (Ratio favors Gold)`;
+    footerHTML = `
+      <div style="margin-bottom: 8px;">
+        <strong>📝 WHAT THIS SIGNAL MEANS:</strong><br>
+        It takes <strong>${gsr.toFixed(1)} ounces of silver</strong> to buy 1 ounce of gold. Gold is trading cheaper than its historical average. Buying gold is favored over silver at this level.
+      </div>
+      <div>
+        <strong>📈 HOW WE DETERMINED THIS ADVICE (HISTORICAL LOGIC):</strong><br>
+        Because the ratio is below 55, gold is entering a strong buying zone. We recommend channeling your regular monthly budget into 1 oz gold bars or sovereign gold coins while holding your existing silver.
+      </div>
+    `;
   } else {
-    card.className = 'ratio-card signal-neutral';
-    badgeEl.textContent = 'NEUTRAL / HOLD';
-    footerEl.innerHTML = `📊 <strong>Ratio Neutral (Consolidation: ${gsr.toFixed(1)}:1)</strong><br>The ratio is within its historical equilibrium band (55 - 80). Continue standard dollar-cost averaging (DCA) into both metals.`;
+    signalClass = 'signal-neutral';
+    badgeText = 'NEUTRAL / HOLD';
+    adviceText = `👉 <strong>GSR is ${gsr.toFixed(2)}</strong>: Accumulate Both / DCA (Ratio is Neutral)`;
+    footerHTML = `
+      <div style="margin-bottom: 8px;">
+        <strong>📝 WHAT THIS SIGNAL MEANS:</strong><br>
+        At <strong>${gsr.toFixed(1)} ounces of silver</strong> to 1 ounce of gold, the ratio is trading in its core historical consolidation band of 55 to 70. Neither metal is extremely undervalued relative to the other.
+      </div>
+      <div>
+        <strong>📈 HOW WE DETERMINED THIS ADVICE (HISTORICAL LOGIC):</strong><br>
+        This is the "equilibrium" zone of precious metals. There is no strategic advantage to swapping one metal for another or over-weighting your portfolio. The smartest play is to continue standard <strong>Dollar-Cost Averaging (DCA)</strong>, split evenly between gold and silver to steadily grow your stack.
+      </div>
+    `;
   }
+  
+  card.className = `ratio-card ${signalClass}`;
+  badgeEl.textContent = badgeText;
+  adviceEl.innerHTML = adviceText;
+  footerEl.innerHTML = footerHTML;
 }
 
 function renderList() {
