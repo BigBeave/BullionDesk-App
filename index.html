@@ -477,19 +477,70 @@
   .item-card {
     background: var(--panel);
     border: 1px solid rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-    padding: 14px 16px;
+    border-radius: 12px;
+    padding: 12px 14px;
     display: flex;
-    justify-content: space-between;
+    gap: 12px;
     align-items: center;
-    transition: background 0.2s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   }
 
   .item-card:active {
     background: rgba(255, 255, 255, 0.05);
+    transform: scale(0.98);
   }
 
-  .item-info {
+  .coin-img-container {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+    position: relative;
+  }
+
+  .coin-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .coin-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .coin-fallback.gold-fallback {
+    background: radial-gradient(circle at 35% 35%, #FBF5B7 0%, #D4AF37 60%, #AA771C 100%);
+    color: #4A3308;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(0,0,0,0.4), inset 1px 1px 2px rgba(255,255,255,0.4);
+  }
+
+  .coin-fallback.silver-fallback {
+    background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #C0C0C0 60%, #808080 100%);
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(0,0,0,0.4), inset 1px 1px 2px rgba(255,255,255,0.4);
+  }
+
+  .item-main-details {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -510,10 +561,12 @@
     gap: 8px;
   }
 
-  .item-melt {
+  .item-pricing-container {
     text-align: right;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    min-width: 90px;
   }
 
   .melt-label {
@@ -525,9 +578,16 @@
   }
 
   .melt-value {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.01em;
+  }
+
+  .est-retail-val {
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    margin-top: 1px;
   }
 
   .gold-text { color: var(--gold-light); }
@@ -644,36 +704,7 @@
   <div id="errorBox" class="error-banner"></div>
 
   <div class="spot-stack">
-    <div class="spot-card gold">
-      <div class="metal-symbol">Au</div>
-      <div class="metal-meta">
-        <span class="metal-name">Gold Spot</span>
-        <span class="metal-ticker">PAXG · Troy Oz</span>
-      </div>
-      <div class="price-row">
-        <div class="price-val" id="goldPrice">$——.—</div>
-        <div class="price-change" id="goldChange">—</div>
-      </div>
-      <div class="unit-breakdown">
-        <div class="unit-box">
-          <span class="unit-label">Per Gram</span>
-          <span class="unit-val gold-text" id="goldGram">$——.—</span>
-        </div>
-        <div class="unit-box">
-          <span class="unit-label">0.25 oz Spot</span>
-          <span class="unit-val gold-text" id="goldQuarter">$——.—</span>
-        </div>
-        <div class="unit-box">
-          <span class="unit-label">0.75 oz Spot</span>
-          <span class="unit-val gold-text" id="goldThreeQuarter">$——.—</span>
-        </div>
-        <div class="unit-box">
-          <span class="unit-label">Per Kilo</span>
-          <span class="unit-val gold-text" id="goldKg">$——,———</span>
-        </div>
-      </div>
-    </div>
-
+    <!-- Silver Spot Card first -->
     <div class="spot-card silver">
       <div class="metal-symbol">Ag</div>
       <div class="metal-meta">
@@ -704,6 +735,37 @@
       </div>
     </div>
 
+    <!-- Gold Spot Card second -->
+    <div class="spot-card gold">
+      <div class="metal-symbol">Au</div>
+      <div class="metal-meta">
+        <span class="metal-name">Gold Spot</span>
+        <span class="metal-ticker">PAXG · Troy Oz</span>
+      </div>
+      <div class="price-row">
+        <div class="price-val" id="goldPrice">$——.—</div>
+        <div class="price-change" id="goldChange">—</div>
+      </div>
+      <div class="unit-breakdown">
+        <div class="unit-box">
+          <span class="unit-label">Per Gram</span>
+          <span class="unit-val gold-text" id="goldGram">$——.—</span>
+        </div>
+        <div class="unit-box">
+          <span class="unit-label">0.25 oz Spot</span>
+          <span class="unit-val gold-text" id="goldQuarter">$——.—</span>
+        </div>
+        <div class="unit-box">
+          <span class="unit-label">0.75 oz Spot</span>
+          <span class="unit-val gold-text" id="goldThreeQuarter">$——.—</span>
+        </div>
+        <div class="unit-box">
+          <span class="unit-label">Per Kilo</span>
+          <span class="unit-val gold-text" id="goldKg">$——,———</span>
+        </div>
+      </div>
+    </div>
+
     <!-- Gold-to-Silver Ratio Card -->
     <div class="ratio-card signal-neutral" id="ratioCard">
       <div class="ratio-header">
@@ -729,10 +791,9 @@
   </div>
 
   <div class="section-bar">
-    <h2 class="section-title">Melt Valuations</h2>
-    <div class="tab-switcher">
-      <button class="tab-btn active" onclick="switchTab('gold')">Gold</button>
-      <button class="tab-btn" onclick="switchTab('silver')">Silver</button>
+    <h2 class="section-title">Melt & Retail Valuations</h2>
+    <div class="source-txt" style="text-align: right; font-size: 9px; line-height: 1.2;">
+      Calculated Live via CoinGecko spot feed.<br>Est. Retail includes typical online/eBay premiums.
     </div>
   </div>
 
@@ -749,149 +810,150 @@
 <script>
 const GOLD_ITEMS = [
   { cat: 'Spot Weight Increments' },
-  { name: '1/10 oz Spot Increment', detail: '0.10 troy oz spot value', oz: 0.1000, fine: 1.0000 },
-  { name: '1/4 oz Spot Increment (0.25)', detail: '0.25 troy oz spot value', oz: 0.2500, fine: 1.0000 },
-  { name: '1/2 oz Spot Increment', detail: '0.50 troy oz spot value', oz: 0.5000, fine: 1.0000 },
-  { name: '3/4 oz Spot Increment (0.75)', detail: '0.75 troy oz spot value', oz: 0.7500, fine: 1.0000 },
-  { name: '1 oz Spot Increment', detail: '1.00 troy oz spot value', oz: 1.0000, fine: 1.0000 },
+  { name: '1/10 oz Spot Increment', detail: '0.10 troy oz spot value', oz: 0.1000, fine: 1.0000, years: '', premium: 0.10 },
+  { name: '1/4 oz Spot Increment (0.25)', detail: '0.25 troy oz spot value', oz: 0.2500, fine: 1.0000, years: '', premium: 0.08 },
+  { name: '1/2 oz Spot Increment', detail: '0.50 troy oz spot value', oz: 0.5000, fine: 1.0000, years: '', premium: 0.06 },
+  { name: '3/4 oz Spot Increment (0.75)', detail: '0.75 troy oz spot value', oz: 0.7500, fine: 1.0000, years: '', premium: 0.05 },
+  { name: '1 oz Spot Increment', detail: '1.00 troy oz spot value', oz: 1.0000, fine: 1.0000, years: '', premium: 0.03 },
 
   { cat: 'Popular Coins' },
-  { name: 'American Gold Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9167 },
-  { name: 'American Gold Eagle', detail: '1/2 oz — US Mint', oz: 0.5000, fine: 0.9167 },
-  { name: 'American Gold Eagle', detail: '1/4 oz — US Mint', oz: 0.2500, fine: 0.9167 },
-  { name: 'American Gold Eagle', detail: '1/10 oz — US Mint', oz: 0.1000, fine: 0.9167 },
-  { name: 'American Gold Buffalo', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9999 },
-  { name: 'Canadian Gold Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999 },
-  { name: 'Canadian Gold Maple Leaf', detail: '1/2 oz', oz: 0.5000, fine: 0.9999 },
-  { name: 'Canadian Gold Maple Leaf', detail: '1/4 oz', oz: 0.2500, fine: 0.9999 },
-  { name: 'Canadian Gold Maple Leaf', detail: '1/10 oz', oz: 0.1000, fine: 0.9999 },
-  { name: 'South African Krugerrand', detail: '1 oz', oz: 1.0000, fine: 0.9167 },
-  { name: 'Austrian Gold Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999 },
-  { name: 'British Gold Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9999 },
-  { name: 'Australian Gold Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999 },
+  { name: 'American Gold Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9167, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Liberty_%2450_Obverse.png', premium: 0.06 },
+  { name: 'American Gold Eagle', detail: '1/2 oz — US Mint', oz: 0.5000, fine: 0.9167, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Liberty_%2450_Obverse.png', premium: 0.08 },
+  { name: 'American Gold Eagle', detail: '1/4 oz — US Mint', oz: 0.2500, fine: 0.9167, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Liberty_%2450_Obverse.png', premium: 0.10 },
+  { name: 'American Gold Eagle', detail: '1/10 oz — US Mint', oz: 0.1000, fine: 0.9167, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Liberty_%2450_Obverse.png', premium: 0.12 },
+  { name: 'American Gold Buffalo', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9999, years: '2006–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/ec/2006_American_Buffalo_Proof_Obverse.jpg', premium: 0.06 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999, years: '1979–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Gold_Maple_Leaf_obverse.png', premium: 0.04 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/2 oz', oz: 0.5000, fine: 0.9999, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Gold_Maple_Leaf_obverse.png', premium: 0.06 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/4 oz', oz: 0.2500, fine: 0.9999, years: '1982–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Gold_Maple_Leaf_obverse.png', premium: 0.08 },
+  { name: 'Canadian Gold Maple Leaf', detail: '1/10 oz', oz: 0.1000, fine: 0.9999, years: '1982–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Gold_Maple_Leaf_obverse.png', premium: 0.10 },
+  { name: 'South African Krugerrand', detail: '1 oz', oz: 1.0000, fine: 0.9167, years: '1967–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/1975_1_oz_krugerrand_obverse.jpg', premium: 0.04 },
+  { name: 'Austrian Gold Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999, years: '1989–Pres', img: '', premium: 0.04 },
+  { name: 'British Gold Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9999, years: '1987–Pres', img: '', premium: 0.04 },
+  { name: 'Australian Gold Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999, years: '1986–Pres', img: '', premium: 0.04 },
   
   { cat: 'Chinese Gold Pandas' },
-  { name: 'Chinese Gold Panda (Vintage)', detail: '1 oz — China Mint', oz: 1.0000, fine: 0.9990 },
-  { name: 'Chinese Gold Panda (Vintage)', detail: '1/2 oz — China Mint', oz: 0.5000, fine: 0.9990 },
-  { name: 'Chinese Gold Panda (Vintage)', detail: '1/4 oz — China Mint', oz: 0.2500, fine: 0.9990 },
-  { name: 'Chinese Gold Panda (Vintage)', detail: '1/10 oz — China Mint', oz: 0.1000, fine: 0.9990 },
-  { name: 'Chinese Gold Panda', detail: '30g — China Mint', oz: 0.9645, fine: 0.9990 },
-  { name: 'Chinese Gold Panda', detail: '15g — China Mint', oz: 0.4823, fine: 0.9990 },
-  { name: 'Chinese Gold Panda', detail: '8g — China Mint', oz: 0.2572, fine: 0.9990 },
-  { name: 'Chinese Gold Panda', detail: '3g — China Mint', oz: 0.0965, fine: 0.9990 },
-  { name: 'Chinese Gold Panda', detail: '1g — China Mint', oz: 0.0322, fine: 0.9990 },
+  { name: 'Chinese Gold Panda (Vintage)', detail: '1 oz — China Mint', oz: 1.0000, fine: 0.9990, years: '1982–2015', img: '', premium: 0.12 },
+  { name: 'Chinese Gold Panda (Vintage)', detail: '1/2 oz — China Mint', oz: 0.5000, fine: 0.9990, years: '1982–2015', img: '', premium: 0.14 },
+  { name: 'Chinese Gold Panda (Vintage)', detail: '1/4 oz — China Mint', oz: 0.2500, fine: 0.9990, years: '1982–2015', img: '', premium: 0.16 },
+  { name: 'Chinese Gold Panda (Vintage)', detail: '1/10 oz — China Mint', oz: 0.1000, fine: 0.9990, years: '1982–2015', img: '', premium: 0.18 },
+  { name: 'Chinese Gold Panda', detail: '30g — China Mint', oz: 0.9645, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.10 },
+  { name: 'Chinese Gold Panda', detail: '15g — China Mint', oz: 0.4823, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.12 },
+  { name: 'Chinese Gold Panda', detail: '8g — China Mint', oz: 0.2572, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.14 },
+  { name: 'Chinese Gold Panda', detail: '3g — China Mint', oz: 0.0965, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.16 },
+  { name: 'Chinese Gold Panda', detail: '1g — China Mint', oz: 0.0322, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.25 },
 
   { cat: 'US Pre-1933 Gold' },
-  { name: 'Double Eagle $20', detail: 'Liberty / St. Gaudens', oz: 0.9675, fine: 0.9000 },
-  { name: 'Eagle $10', detail: 'Liberty Head', oz: 0.4838, fine: 0.9000 },
-  { name: 'Half Eagle $5', detail: 'Indian / Liberty', oz: 0.2419, fine: 0.9000 },
-  { name: 'Quarter Eagle $2.50', detail: 'Indian / Liberty', oz: 0.1209, fine: 0.9000 },
-  { name: 'Gold Dollar', detail: 'Type 1, 2, 3', oz: 0.04837, fine: 0.9000 },
+  { name: 'Double Eagle $20', detail: 'Liberty / St. Gaudens', oz: 0.9675, fine: 0.9000, years: '1849–1933', img: 'https://upload.wikimedia.org/wikipedia/commons/a/af/1908_Double_Eagle_Saint_Gaudens_Obverse.jpg', premium: 0.20 },
+  { name: 'Eagle $10', detail: 'Liberty Head', oz: 0.4838, fine: 0.9000, years: '1838–1933', img: '', premium: 0.22 },
+  { name: 'Half Eagle $5', detail: 'Indian / Liberty', oz: 0.2419, fine: 0.9000, years: '1795–1929', img: '', premium: 0.25 },
+  { name: 'Quarter Eagle $2.50', detail: 'Indian / Liberty', oz: 0.1209, fine: 0.9000, years: '1796–1929', img: '', premium: 0.28 },
+  { name: 'Gold Dollar', detail: 'Type 1, 2, 3', oz: 0.04837, fine: 0.9000, years: '1849–1889', img: '', premium: 0.35 },
 
   { cat: 'Geiger Edelmetalle Gold' },
-  { name: 'Geiger Original Square Gold Bar', detail: '1 oz — Security Foil', oz: 1.0000, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '20 Grams', oz: 0.6430, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '10 Grams', oz: 0.3215, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '5 Grams', oz: 0.1608, fine: 0.9999 },
-  { name: 'Geiger Original Square Gold Bar', detail: '1 Gram', oz: 0.0322, fine: 0.9999 },
+  { name: 'Geiger Original Square Gold Bar', detail: '1 oz — Security Foil', oz: 1.0000, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: 'Geiger Original Square Gold Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9999, years: '', img: '', premium: 0.06 },
+  { name: 'Geiger Original Square Gold Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9999, years: '', img: '', premium: 0.07 },
+  { name: 'Geiger Original Square Gold Bar', detail: '20 Grams', oz: 0.6430, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: 'Geiger Original Square Gold Bar', detail: '10 Grams', oz: 0.3215, fine: 0.9999, years: '', img: '', premium: 0.09 },
+  { name: 'Geiger Original Square Gold Bar', detail: '5 Grams', oz: 0.1608, fine: 0.9999, years: '', img: '', premium: 0.10 },
+  { name: 'Geiger Original Square Gold Bar', detail: '1 Gram', oz: 0.0322, fine: 0.9999, years: '', img: '', premium: 0.20 },
 
   { cat: 'PAMP Suisse Gold Bars' },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '10 oz — Assay Card', oz: 10.0000, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '5 oz', oz: 5.0000, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '1 oz', oz: 1.0000, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '20 Grams', oz: 0.6430, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '10 Grams', oz: 0.3215, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '5 Grams', oz: 0.1608, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '2.5 Grams', oz: 0.0804, fine: 0.9999 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '1 Gram', oz: 0.0322, fine: 0.9999 },
-  { name: 'PAMP Suisse Multigram Bar', detail: '25 x 1 Gram (Pure Weight)', oz: 0.8038, fine: 0.9999 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '10 oz — Assay Card', oz: 10.0000, fine: 0.9999, years: '', img: '', premium: 0.05 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '5 oz', oz: 5.0000, fine: 0.9999, years: '', img: '', premium: 0.05 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '1 oz', oz: 1.0000, fine: 0.9999, years: '', img: '', premium: 0.06 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9999, years: '', img: '', premium: 0.06 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '20 Grams', oz: 0.6430, fine: 0.9999, years: '', img: '', premium: 0.07 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '10 Grams', oz: 0.3215, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '5 Grams', oz: 0.1608, fine: 0.9999, years: '', img: '', premium: 0.09 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '2.5 Grams', oz: 0.0804, fine: 0.9999, years: '', img: '', premium: 0.12 },
+  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '1 Gram', oz: 0.0322, fine: 0.9999, years: '', img: '', premium: 0.20 },
+  { name: 'PAMP Suisse Multigram Bar', detail: '25 x 1 Gram (Pure Weight)', oz: 0.8038, fine: 0.9999, years: '', img: '', premium: 0.15 },
 
   { cat: 'Goldback Bills (24k Foil)' },
-  { name: '50 Goldbacks Bill', detail: '1/20 oz (0.05 oz) Pure Gold', oz: 0.0500, fine: 1.0000 },
-  { name: '25 Goldbacks Bill', detail: '1/40 oz (0.025 oz) Pure Gold', oz: 0.0250, fine: 1.0000 },
-  { name: '10 Goldbacks Bill', detail: '1/100 oz (0.01 oz) Pure Gold', oz: 0.0100, fine: 1.0000 },
-  { name: '5 Goldbacks Bill', detail: '1/200 oz (0.005 oz) Pure Gold', oz: 0.0050, fine: 1.0000 },
-  { name: '1 Goldback Bill', detail: '1/1000 oz (0.001 oz) Pure Gold', oz: 0.0010, fine: 1.0000 },
+  { name: '50 Goldbacks Bill', detail: '1/20 oz (0.05 oz) Pure Gold', oz: 0.0500, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.80 },
+  { name: '25 Goldbacks Bill', detail: '1/40 oz (0.025 oz) Pure Gold', oz: 0.0250, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.80 },
+  { name: '10 Goldbacks Bill', detail: '1/100 oz (0.01 oz) Pure Gold', oz: 0.0100, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.85 },
+  { name: '5 Goldbacks Bill', detail: '1/200 oz (0.005 oz) Pure Gold', oz: 0.0050, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.90 },
+  { name: '1 Goldback Bill', detail: '1/1000 oz (0.001 oz) Pure Gold', oz: 0.0010, fine: 1.0000, years: '2019–Pres', img: '', premium: 1.00 },
 
   { cat: 'Standard Gold Bars' },
-  { name: '1 Gram Gold Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999 },
-  { name: '2.5 Gram Gold Bar', detail: 'Various Mints', oz: 0.08038, fine: 0.9999 },
-  { name: '5 Gram Gold Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999 },
-  { name: '10 Gram Gold Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999 },
-  { name: '20 Gram Gold Bar', detail: 'Various Mints', oz: 0.64301, fine: 0.9999 },
-  { name: '1 oz Gold Bar', detail: 'Generic / Valcambi', oz: 1.0000, fine: 0.9999 },
-  { name: '50 Gram Gold Bar', detail: 'Various Mints', oz: 1.60754, fine: 0.9999 },
-  { name: '100 Gram Gold Bar', detail: 'Various Mints', oz: 3.21507, fine: 0.9999 },
-  { name: '5 oz Gold Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999 },
-  { name: '10 oz Gold Bar', detail: 'Various Mints', oz: 10.0000, fine: 0.9999 }
+  { name: '1 Gram Gold Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999, years: '', img: '', premium: 0.15 },
+  { name: '2.5 Gram Gold Bar', detail: 'Various Mints', oz: 0.08038, fine: 0.9999, years: '', img: '', premium: 0.10 },
+  { name: '5 Gram Gold Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: '10 Gram Gold Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999, years: '', img: '', premium: 0.06 },
+  { name: '20 Gram Gold Bar', detail: 'Various Mints', oz: 0.64301, fine: 0.9999, years: '', img: '', premium: 0.05 },
+  { name: '1 oz Gold Bar', detail: 'Generic / Valcambi', oz: 1.0000, fine: 0.9999, years: '', img: '', premium: 0.03 },
+  { name: '50 Gram Gold Bar', detail: 'Various Mints', oz: 1.60754, fine: 0.9999, years: '', img: '', premium: 0.04 },
+  { name: '100 Gram Gold Bar', detail: 'Various Mints', oz: 3.21507, fine: 0.9999, years: '', img: '', premium: 0.03 },
+  { name: '5 oz Gold Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999, years: '', img: '', premium: 0.03 },
+  { name: '10 oz Gold Bar', detail: 'Various Mints', oz: 10.0000, fine: 0.9999, years: '', img: '', premium: 0.025 }
 ];
 
 const SILVER_ITEMS = [
   { cat: 'Spot Weight Increments' },
-  { name: '1/10 oz Spot Increment', detail: '0.10 troy oz spot value', oz: 0.1000, fine: 1.0000 },
-  { name: '1/4 oz Spot Increment (0.25)', detail: '0.25 troy oz spot value', oz: 0.2500, fine: 1.0000 },
-  { name: '1/2 oz Spot Increment', detail: '0.50 troy oz spot value', oz: 0.5000, fine: 1.0000 },
-  { name: '3/4 oz Spot Increment (0.75)', detail: '0.75 troy oz spot value', oz: 0.7500, fine: 1.0000 },
-  { name: '1 oz Spot Increment', detail: '1.00 troy oz spot value', oz: 1.0000, fine: 1.0000 },
+  { name: '1/10 oz Spot Increment', detail: '0.10 troy oz spot value', oz: 0.1000, fine: 1.0000, years: '', premium: 0.15 },
+  { name: '1/4 oz Spot Increment (0.25)', detail: '0.25 troy oz spot value', oz: 0.2500, fine: 1.0000, years: '', premium: 0.12 },
+  { name: '1/2 oz Spot Increment', detail: '0.50 troy oz spot value', oz: 0.5000, fine: 1.0000, years: '', premium: 0.10 },
+  { name: '3/4 oz Spot Increment (0.75)', detail: '0.75 troy oz spot value', oz: 0.7500, fine: 1.0000, years: '', premium: 0.08 },
+  { name: '1 oz Spot Increment', detail: '1.00 troy oz spot value', oz: 1.0000, fine: 1.0000, years: '', premium: 0.05 },
 
   { cat: 'Popular Coins' },
-  { name: 'American Silver Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9993 },
-  { name: 'Canadian Silver Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999 },
-  { name: 'Austrian Silver Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999 },
-  { name: 'British Silver Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9990 },
-  { name: 'Australian Silver Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999 },
-  { name: 'Mexican Silver Libertad', detail: '1 oz — Banco de México', oz: 1.0000, fine: 0.9990 },
+  { name: 'American Silver Eagle', detail: '1 oz — US Mint', oz: 1.0000, fine: 0.9993, years: '1986–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/2022-american-eagle-silver-one-ounce-bullion-coin-obverse.png', premium: 0.22 },
+  { name: 'Canadian Silver Maple Leaf', detail: '1 oz — RCM', oz: 1.0000, fine: 0.9999, years: '1988–Pres', img: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Canadian_Silver_Maple_Leaf_coin_1_oz_reverse.jpg', premium: 0.10 },
+  { name: 'Austrian Silver Philharmonic', detail: '1 oz', oz: 1.0000, fine: 0.9999, years: '2008–Pres', img: '', premium: 0.10 },
+  { name: 'British Silver Britannia', detail: '1 oz — Royal Mint', oz: 1.0000, fine: 0.9990, years: '1997–Pres', img: '', premium: 0.08 },
+  { name: 'Australian Silver Kangaroo', detail: '1 oz — Perth Mint', oz: 1.0000, fine: 0.9999, years: '2016–Pres', img: '', premium: 0.08 },
+  { name: 'Mexican Silver Libertad', detail: '1 oz — Banco de México', oz: 1.0000, fine: 0.9990, years: '1982–Pres', img: '', premium: 0.35 },
   
   { cat: 'Chinese Silver Pandas' },
-  { name: 'Chinese Silver Panda (Vintage)', detail: '1 oz — China Mint', oz: 1.0000, fine: 0.9990 },
-  { name: 'Chinese Silver Panda', detail: '30g — China Mint', oz: 0.9645, fine: 0.9990 },
-  { name: 'Chinese Silver Panda (Large)', detail: '150g — China Mint', oz: 4.8226, fine: 0.9990 },
-  { name: 'Chinese Silver Panda (Kilo)', detail: '1 kg — China Mint', oz: 32.1507, fine: 0.9990 },
+  { name: 'Chinese Silver Panda (Vintage)', detail: '1 oz — China Mint', oz: 1.0000, fine: 0.9990, years: '1983–2015', img: '', premium: 0.25 },
+  { name: 'Chinese Silver Panda', detail: '30g — China Mint', oz: 0.9645, fine: 0.9990, years: '2016–Pres', img: '', premium: 0.20 },
+  { name: 'Chinese Silver Panda (Large)', detail: '150g — China Mint', oz: 4.8226, fine: 0.9990, years: '1989–Pres', img: '', premium: 0.20 },
+  { name: 'Chinese Silver Panda (Kilo)', detail: '1 kg — China Mint', oz: 32.1507, fine: 0.9990, years: '1998–Pres', img: '', premium: 0.15 },
 
   { cat: 'US 90% Junk Silver' },
-  { name: 'Morgan / Peace Dollar', detail: '1878–1935', oz: 0.77344, fine: 0.9000 },
-  { name: 'Kennedy Half (90%)', detail: '1964', oz: 0.36169, fine: 0.9000 },
-  { name: 'Franklin Half Dollar', detail: '1948–1963', oz: 0.36169, fine: 0.9000 },
-  { name: 'Walking Liberty Half', detail: '1916–1947', oz: 0.36169, fine: 0.9000 },
-  { name: 'Barber Half Dollar', detail: '1892–1915', oz: 0.36169, fine: 0.9000 },
-  { name: 'Washington Quarter', detail: '1932–1964', oz: 0.18084, fine: 0.9000 },
-  { name: 'Roosevelt / Mercury Dime', detail: 'Pre-1965', oz: 0.07234, fine: 0.9000 },
-  { name: 'Kennedy Half (40%)', detail: '1965–1970', oz: 0.14792, fine: 0.4000 },
-  { name: 'Eisenhower Dollar (40%)', detail: '1971–1978 S', oz: 0.31610, fine: 0.4000 },
-  { name: 'Silver War Nickel', detail: '1942–1945', oz: 0.05626, fine: 0.3500 },
+  { name: 'Morgan Dollar', detail: '90% Silver Dollar', oz: 0.77344, fine: 0.9000, years: '1878–1921', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/1878_Morgan_Dollar_Obverse.png', premium: 0.45 },
+  { name: 'Peace Dollar', detail: '90% Silver Dollar', oz: 0.77344, fine: 0.9000, years: '1921–1935', img: 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Peace_dollar_obverse.jpg', premium: 0.35 },
+  { name: 'Kennedy Half (90%)', detail: '1964 — US Mint', oz: 0.36169, fine: 0.9000, years: '1964', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Kennedy_Half_Dollar_Obverse.jpg', premium: 0.20 },
+  { name: 'Franklin Half Dollar', detail: '1948–1963 — US Mint', oz: 0.36169, fine: 0.9000, years: '1948–1963', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/1948_Franklin_Half_Dollar_Obverse.jpg', premium: 0.22 },
+  { name: 'Walking Liberty Half', detail: '1916–1947 — US Mint', oz: 0.36169, fine: 0.9000, years: '1916–1947', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/1916_Walking_Liberty_Half_Dollar_Obverse.jpg', premium: 0.25 },
+  { name: 'Barber Half Dollar', detail: '1892–1915 — US Mint', oz: 0.36169, fine: 0.9000, years: '1892–1915', img: '', premium: 0.30 },
+  { name: 'Washington Quarter', detail: '1932–1964 — US Mint', oz: 0.18084, fine: 0.9000, years: '1932–1964', img: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/1994-P_Washington_quarter_obverse.jpg', premium: 0.18 },
+  { name: 'Roosevelt Dime', detail: '1946–1964 — US Mint', oz: 0.07234, fine: 0.9000, years: '1946–1964', img: 'https://upload.wikimedia.org/wikipedia/commons/b/b5/Roosevelt_dime_obverse.jpg', premium: 0.15 },
+  { name: 'Mercury Dime', detail: 'Winged Liberty Head', oz: 0.07234, fine: 0.9000, years: '1916–1945', img: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/1936_Mercury_dime.jpg', premium: 0.20 },
+  { name: 'Kennedy Half (40%)', detail: 'Silver Clad Half', oz: 0.14792, fine: 0.4000, years: '1965–1970', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Kennedy_Half_Dollar_Obverse.jpg', premium: 0.12 },
+  { name: 'Eisenhower Dollar (40%)', detail: 'Silver Clad Dollar', oz: 0.31610, fine: 0.4000, years: '1971–1978', img: '', premium: 0.15 },
+  { name: 'Silver War Nickel', detail: '35% Silver Nickel', oz: 0.05626, fine: 0.3500, years: '1942–1945', img: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/1938_Jefferson_Nickel_Obverse.png', premium: 0.15 },
 
   { cat: 'Geiger Edelmetalle Silver' },
-  { name: 'Geiger Original Square Silver Bar', detail: '100 oz — Security Foil', oz: 100.0000, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '1 kg — Security Foil', oz: 32.1507, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '500 Grams', oz: 16.0754, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '10 oz', oz: 10.0000, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '250 Grams', oz: 8.0377, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9990 },
-  { name: 'Geiger Original Square Silver Bar', detail: '1 oz', oz: 1.0000, fine: 0.9990 },
+  { name: 'Geiger Original Square Silver Bar', detail: '100 oz — Security Foil', oz: 100.0000, fine: 0.9990, years: '', img: '', premium: 0.12 },
+  { name: 'Geiger Original Square Silver Bar', detail: '1 kg — Security Foil', oz: 32.1507, fine: 0.9990, years: '', img: '', premium: 0.12 },
+  { name: 'Geiger Original Square Silver Bar', detail: '500 Grams', oz: 16.0754, fine: 0.9990, years: '', img: '', premium: 0.14 },
+  { name: 'Geiger Original Square Silver Bar', detail: '10 oz', oz: 10.0000, fine: 0.9990, years: '', img: '', premium: 0.15 },
+  { name: 'Geiger Original Square Silver Bar', detail: '250 Grams', oz: 8.0377, fine: 0.9990, years: '', img: '', premium: 0.16 },
+  { name: 'Geiger Original Square Silver Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9990, years: '', img: '', premium: 0.18 },
+  { name: 'Geiger Original Square Silver Bar', detail: '50 Grams', oz: 1.6075, fine: 0.9990, years: '', img: '', premium: 0.20 },
+  { name: 'Geiger Original Square Silver Bar', detail: '1 oz', oz: 1.0000, fine: 0.9990, years: '', img: '', premium: 0.25 },
 
   { cat: 'PAMP Suisse Silver Bars' },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 kg — Assay Certificate', oz: 32.1507, fine: 0.9990 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '10 oz', oz: 10.0000, fine: 0.9990 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9990 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 oz', oz: 1.0000, fine: 0.9990 },
+  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 kg — Assay Certificate', oz: 32.1507, fine: 0.9990, years: '', img: '', premium: 0.10 },
+  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '10 oz', oz: 10.0000, fine: 0.9990, years: '', img: '', premium: 0.12 },
+  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9990, years: '', img: '', premium: 0.14 },
+  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 oz', oz: 1.0000, fine: 0.9990, years: '', img: '', premium: 0.18 },
 
   { cat: 'Standard Silver Bars' },
-  { name: '1 Gram Silver Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999 },
-  { name: '5 Gram Silver Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999 },
-  { name: '10 Gram Silver Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999 },
-  { name: '1 oz Silver Bar', detail: '31.1g — Generic', oz: 1.0000, fine: 0.9999 },
-  { name: '2 oz Silver Bar', detail: 'Various Mints', oz: 2.0000, fine: 0.9999 },
-  { name: '5 oz Silver Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999 },
-  { name: '10 oz Silver Bar', detail: '311g — Various Mints', oz: 10.0000, fine: 0.9999 },
-  { name: '100 oz Silver Bar', detail: 'Various Mints', oz: 100.000, fine: 0.9999 },
-  { name: '1000 oz Silver Bar', detail: 'COMEX Good Delivery', oz: 1000.00, fine: 0.9990 }
+  { name: '1 Gram Silver Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999, years: '', img: '', premium: 0.35 },
+  { name: '5 Gram Silver Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999, years: '', img: '', premium: 0.25 },
+  { name: '10 Gram Silver Bar', detail: 'Various Mints', oz: 0.32151, fine: 0.9999, years: '', img: '', premium: 0.20 },
+  { name: '1 oz Silver Bar', detail: '31.1g — Generic', oz: 1.0000, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: '2 oz Silver Bar', detail: 'Various Mints', oz: 2.0000, fine: 0.9999, years: '', img: '', premium: 0.08 },
+  { name: '5 oz Silver Bar', detail: 'Various Mints', oz: 5.0000, fine: 0.9999, years: '', img: '', premium: 0.07 },
+  { name: '10 oz Silver Bar', detail: '311g — Various Mints', oz: 10.0000, fine: 0.9999, years: '', img: '', premium: 0.06 },
+  { name: '100 oz Silver Bar', detail: 'Various Mints', oz: 100.000, fine: 0.9999, years: '', img: '', premium: 0.05 },
+  { name: '1000 oz Silver Bar', detail: 'COMEX Good Delivery', oz: 1000.00, fine: 0.9990, years: '', img: '', premium: 0.03 }
 ];
 
-let activeMetal = 'gold';
 let goldSpot = 0;
 let silverSpot = 0;
 
@@ -1109,51 +1171,109 @@ function updateRatioUI(gsr) {
 
 function renderList() {
   const listEl = document.getElementById('metalsList');
-  const items = activeMetal === 'gold' ? GOLD_ITEMS : SILVER_ITEMS;
-  const spot = activeMetal === 'gold' ? goldSpot : silverSpot;
-  const textCls = activeMetal === 'gold' ? 'gold-text' : 'silver-text';
   
-  if (spot <= 0) {
+  if (goldSpot <= 0 || silverSpot <= 0) {
     listEl.innerHTML = '<div style="text-align:center; color:var(--muted); padding:40px;">Awaiting live feeds...</div>';
     return;
   }
 
   let html = '';
-  items.forEach(item => {
+  
+  // Section 1: Silver Coins & Bullion
+  html += `<div class="cat-header" style="color: var(--silver-light); border-bottom-color: rgba(255,255,255,0.1); font-size: 14px; margin-top: 20px; padding-bottom: 8px;">🥈 SILVER COINS & BULLION</div>`;
+  
+  SILVER_ITEMS.forEach(item => {
     if (item.cat) {
-      html += `<div class="cat-header">${item.cat}</div>`;
+      html += `<div class="cat-header" style="color: var(--muted); border-bottom-color: rgba(255,255,255,0.05); margin-top: 15px; font-size: 10px;">${item.cat}</div>`;
       return;
     }
     
-    const melt = spot * item.oz * item.fine;
+    const melt = silverSpot * item.oz * item.fine;
+    const premiumRate = item.premium || 0.05;
+    const estRetail = melt * (1 + premiumRate);
     
+    // Get image or fallback
+    let imgHTML = '';
+    if (item.img) {
+      imgHTML = `<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
+    }
+    const fallbackLetter = item.name.split(' ').map(w => w[0]).join('').substring(0, 3);
+    const fallbackHTML = `<div class="coin-fallback silver-fallback" style="${item.img ? 'display:none;' : ''}">${fallbackLetter}</div>`;
+    
+    const yearsText = item.years ? `Circ: ${item.years}` : 'Bullion';
+    const weightText = `${item.oz.toFixed(item.oz < 0.1 ? 4 : 2)} oz · ${(item.fine * 100).toFixed(1)}%`;
+
     html += `
       <div class="item-card">
-        <div class="item-info">
+        <div class="coin-img-container">
+          ${imgHTML}
+          ${fallbackHTML}
+        </div>
+        <div class="item-main-details">
           <div class="item-name">${item.name}</div>
           <div class="item-details">
-            <span>${item.detail}</span>
+            <span>${yearsText}</span>
             <span>•</span>
-            <span>${(item.fine*100).toFixed(1)}% Fine</span>
+            <span>${weightText}</span>
           </div>
         </div>
-        <div class="item-melt">
+        <div class="item-pricing-container">
           <span class="melt-label">Melt Value</span>
-          <span class="melt-value ${textCls}">${formatMoney(melt, melt < 2 ? 4 : 2)}</span>
+          <span class="melt-value silver-text">${formatMoney(melt, melt < 2 ? 4 : 2)}</span>
+          <span class="est-retail-val" title="Estimated eBay / online retail price with typical market premium">Est: ${formatMoney(estRetail, estRetail < 2 ? 4 : 2)}</span>
+        </div>
+      </div>
+    `;
+  });
+
+  // Section 2: Gold Coins & Bullion
+  html += `<div class="cat-header" style="color: var(--gold-light); border-bottom-color: rgba(212,175,55,0.2); font-size: 14px; margin-top: 40px; padding-bottom: 8px;">🥇 GOLD COINS & BULLION</div>`;
+  
+  GOLD_ITEMS.forEach(item => {
+    if (item.cat) {
+      html += `<div class="cat-header" style="color: var(--gold-dim); border-bottom-color: rgba(212,175,55,0.08); margin-top: 15px; font-size: 10px;">${item.cat}</div>`;
+      return;
+    }
+    
+    const melt = goldSpot * item.oz * item.fine;
+    const premiumRate = item.premium || 0.03;
+    const estRetail = melt * (1 + premiumRate);
+    
+    // Get image or fallback
+    let imgHTML = '';
+    if (item.img) {
+      imgHTML = `<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
+    }
+    const fallbackLetter = item.name.split(' ').map(w => w[0]).join('').substring(0, 3);
+    const fallbackHTML = `<div class="coin-fallback gold-fallback" style="${item.img ? 'display:none;' : ''}">${fallbackLetter}</div>`;
+    
+    const yearsText = item.years ? `Circ: ${item.years}` : 'Bullion';
+    const weightText = `${item.oz.toFixed(item.oz < 0.1 ? 4 : 2)} oz · ${(item.fine * 100).toFixed(1)}%`;
+
+    html += `
+      <div class="item-card">
+        <div class="coin-img-container">
+          ${imgHTML}
+          ${fallbackHTML}
+        </div>
+        <div class="item-main-details">
+          <div class="item-name">${item.name}</div>
+          <div class="item-details">
+            <span>${yearsText}</span>
+            <span>•</span>
+            <span>${weightText}</span>
+          </div>
+        </div>
+        <div class="item-pricing-container">
+          <span class="melt-label">Melt Value</span>
+          <span class="melt-value gold-text">${formatMoney(melt, melt < 2 ? 4 : 2)}</span>
+          <span class="est-retail-val" title="Estimated eBay / online retail price with typical market premium">Est: ${formatMoney(estRetail, estRetail < 2 ? 4 : 2)}</span>
         </div>
       </div>
     `;
   });
   
   listEl.innerHTML = html;
-}
-
-function switchTab(metal) {
-  activeMetal = metal;
-  document.querySelectorAll('.tab-btn').forEach(b => {
-    b.classList.toggle('active', b.textContent.toLowerCase() === metal);
-  });
-  renderList();
 }
 
 function showError(msg) {
