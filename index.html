@@ -873,6 +873,66 @@
     transform: scale(0.97);
   }
 
+  .news-panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 15px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .news-item {
+    display: block;
+    text-decoration: none;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+    transition: all 0.2s ease;
+  }
+
+  .news-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .news-item:active {
+    transform: scale(0.99);
+    opacity: 0.8;
+  }
+
+  .news-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: var(--muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .news-source {
+    color: var(--gold-light);
+  }
+
   .hidden { display: none !important; }
 
   #initial-loader {
@@ -1069,6 +1129,19 @@
   </div>
 
   <div id="metalsList" class="list-container">
+  </div>
+
+  <div class="section-bar" style="margin-top: 40px;">
+    <h2 class="section-title">📰 Metals & Rare Earths News</h2>
+    <div class="source-txt" style="text-align: right; font-size: 9px; line-height: 1.2;">
+      Live coverage of silver, copper,<br>rare earth resources, and miners.
+    </div>
+  </div>
+
+  <div class="news-panel" id="newsPanel">
+    <div style="text-align:center; padding: 20px; color: var(--muted); font-size: 13px;">
+      Connecting to news feeds...
+    </div>
   </div>
 
   <div class="footer-nav">
@@ -1345,6 +1418,7 @@ async function loadLivePrices() {
     
     renderList();
     recalculateStack();
+    loadNews();
     
     setTimeout(() => {
       const loader = document.getElementById('initial-loader');
@@ -1731,12 +1805,70 @@ function hideError() {
   document.getElementById('errorBox').style.display = 'none';
 }
 
+async function loadNews() {
+  const panel = document.getElementById('newsPanel');
+  if (!panel) return;
+  
+  try {
+    const feedUrl = 'https://news.google.com/rss/search?q=silver+precious+metals+rare+earth+mining&hl=en-US&gl=US&ceid=US:en';
+    const api = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+    
+    const resp = await fetch(api);
+    if (!resp.ok) throw new Error('Failed to load news');
+    const data = await resp.json();
+    
+    if (data.status !== 'ok' || !data.items || data.items.length === 0) {
+      panel.innerHTML = '<div style="text-align:center; padding:20px; color:var(--muted); font-size:13px;">No news articles found.</div>';
+      return;
+    }
+    
+    let html = '';
+    // Show top 6 news items
+    data.items.slice(0, 6).forEach(item => {
+      let title = item.title;
+      let source = 'Market News';
+      const parts = title.split(' - ');
+      if (parts.length > 1) {
+        source = parts.pop();
+        title = parts.join(' - ');
+      }
+      
+      let timeText = '';
+      if (item.pubDate) {
+        try {
+          const date = new Date(item.pubDate);
+          timeText = date.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ' · ' + date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        } catch (e) {
+          timeText = item.pubDate;
+        }
+      }
+      
+      html += `
+        <a href="${item.link}" target="_blank" class="news-item" rel="noopener noreferrer">
+          <div class="news-title">${title}</div>
+          <div class="news-meta">
+            <span class="news-source">${source}</span>
+            <span>${timeText}</span>
+          </div>
+        </a>
+      `;
+    });
+    
+    panel.innerHTML = html;
+  } catch (err) {
+    console.error(err);
+    panel.innerHTML = '<div style="text-align:center; padding:20px; color:var(--down); font-size:13px;">Failed to sync live news. Tap Refresh to retry.</div>';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initializeItemKeys();
   loadQuantities();
   loadCustomPrice();
   loadLivePrices();
+  loadNews();
   setInterval(loadLivePrices, 5 * 60 * 1000);
+  setInterval(loadNews, 10 * 60 * 1000);
 });
 </script>
 </body>
