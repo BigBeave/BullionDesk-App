@@ -9,6 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="BullionDesk">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
+<script src="keys.js"></script>
 
 <title>Bullion Desk — Live Metals</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
@@ -36,6 +37,9 @@
     --down: #FF5252;
     --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
+    --rare: #9EE493;
+    --rare-light: #C7F9CC;
+    --rare-dim: #3B7A57;
   }
 
   * { 
@@ -532,6 +536,39 @@
     color: #333333;
     text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(0,0,0,0.4), inset 1px 1px 2px rgba(255,255,255,0.4);
+  }
+
+  .stock-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), inset -1px -1px 2px rgba(0,0,0,0.4), inset 1px 1px 2px rgba(255,255,255,0.4);
+  }
+
+  .stock-badge.gold-stock {
+    background: radial-gradient(circle at 35% 35%, #FBF5B7 0%, #D4AF37 60%, #AA771C 100%);
+    color: #4A3308;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+  }
+
+  .stock-badge.silver-stock {
+    background: radial-gradient(circle at 35% 35%, #FFFFFF 0%, #C0C0C0 60%, #808080 100%);
+    color: #333333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+  }
+
+  .stock-badge.rare-stock {
+    background: radial-gradient(circle at 35% 35%, #9EE493 0%, #3B7A57 60%, #1A3E26 100%);
+    color: #C7F9CC;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
   }
 
   .item-main-details {
@@ -1126,6 +1163,19 @@
   </div>
 
   <div class="section-bar" style="margin-top: 40px;">
+    <h2 class="section-title">📈 Mining & Resource Stocks</h2>
+    <div class="source-txt" style="text-align: right; font-size: 9px; line-height: 1.2;">
+      Live stock quotes via Alpaca API.<br>Includes gold, silver, and rare earths.
+    </div>
+  </div>
+
+  <div id="stocksList" class="list-container">
+    <div style="text-align:center; padding: 20px; color: var(--muted); font-size: 13px;">
+      Connecting to market feed...
+    </div>
+  </div>
+
+  <div class="section-bar" style="margin-top: 40px;">
     <h2 class="section-title">📰 Metals & Rare Earths News</h2>
     <div class="source-txt" style="text-align: right; font-size: 9px; line-height: 1.2;">
       Live coverage of silver, copper,<br>rare earth resources, and miners.
@@ -1238,6 +1288,25 @@ const SILVER_ITEMS = [
   { name: '10 oz Silver Bar', detail: '311g — Various Mints', oz: 10.0000, fine: 0.9999, years: '', img: '', premium: 0.06, face: 0 },
   { name: '100 oz Silver Bar', detail: 'Various Mints', oz: 100.000, fine: 0.9999, years: '', img: '', premium: 0.05, face: 0 },
   { name: '1000 oz Silver Bar', detail: 'COMEX Good Delivery', oz: 1000.00, fine: 0.9990, years: '', img: '', premium: 0.03, face: 0 }
+];
+
+const STOCKS = [
+  { symbol: 'NEM', name: 'Newmont Corp.', cat: 'Gold' },
+  { symbol: 'GOLD', name: 'Barrick Gold Corp.', cat: 'Gold' },
+  { symbol: 'FNV', name: 'Franco-Nevada Corp.', cat: 'Gold' },
+  { symbol: 'GDX', name: 'VanEck Gold Miners ETF', cat: 'Gold' },
+  
+  { symbol: 'WPM', name: 'Wheaton Precious Metals', cat: 'Silver' },
+  { symbol: 'PAAS', name: 'Pan American Silver', cat: 'Silver' },
+  { symbol: 'AG', name: 'First Majestic Silver', cat: 'Silver' },
+  { symbol: 'HL', name: 'Hecla Mining Company', cat: 'Silver' },
+  { symbol: 'SIL', name: 'Global X Silver Miners ETF', cat: 'Silver' },
+  
+  { symbol: 'MP', name: 'MP Materials Corp.', cat: 'Rare Earth' },
+  { symbol: 'UUUU', name: 'Energy Fuels Inc.', cat: 'Rare Earth' },
+  { symbol: 'LAC', name: 'Lithium Americas Corp.', cat: 'Rare Earth' },
+  { symbol: 'ALTM', name: 'Arcadium Lithium plc', cat: 'Rare Earth' },
+  { symbol: 'REMX', name: 'VanEck Strategic Metals ETF', cat: 'Rare Earth' }
 ];
 
 let goldSpot = 0;
@@ -1366,6 +1435,7 @@ async function loadLivePrices() {
     
     renderList();
     recalculateStack();
+    loadStockPrices();
     loadNews();
     
     setTimeout(() => {
@@ -1741,6 +1811,89 @@ function renderList() {
   });
   
   listEl.innerHTML = html;
+}
+
+async function loadStockPrices() {
+  const stocksListEl = document.getElementById('stocksList');
+  if (!stocksListEl) return;
+
+  const alKey = localStorage.getItem('al_key') || 'PK46VGCP7RUJWTV46I7TSIQ5PN';
+  const alSec = localStorage.getItem('al_sec') || 'GiTpsDSj9WR21uoh1dNJGvBZPqhGBqz1XjKgft5w95YD';
+
+  try {
+    const symbols = STOCKS.map(s => s.symbol).join(',');
+    const resp = await fetch(`https://data.alpaca.markets/v2/stocks/snapshots?symbols=${symbols}`, {
+      headers: {
+        'APCA-API-KEY-ID': alKey,
+        'APCA-API-SECRET-KEY': alSec
+      }
+    });
+
+    if (!resp.ok) throw new Error('Alpaca stock feed unreachable');
+    const data = await resp.json();
+
+    let html = '';
+    
+    // Group stocks by category for visual clarity
+    const categories = ['Gold', 'Silver', 'Rare Earth'];
+    
+    categories.forEach(cat => {
+      const catColorClass = cat === 'Gold' ? 'gold-text' : (cat === 'Silver' ? 'silver-text' : 'rare-text');
+      const borderCol = cat === 'Gold' ? 'rgba(212,175,55,0.2)' : (cat === 'Silver' ? 'rgba(255,255,255,0.2)' : 'rgba(158,228,147,0.2)');
+      const label = cat === 'Rare Earth' ? 'REES & CRITICAL METALS' : `${cat.toUpperCase()} MINERS & ETFS`;
+      
+      html += `<div class="cat-header" style="color: var(--${cat.toLowerCase() === 'rare earth' ? 'rare' : cat.toLowerCase()}-light); border-bottom-color: ${borderCol}; margin-top: 15px; font-size: 10px;">📈 ${label}</div>`;
+      
+      const catStocks = STOCKS.filter(s => s.cat === cat);
+      catStocks.forEach(stock => {
+        const symbol = stock.symbol;
+        const stockData = data[symbol];
+        
+        let priceText = '$——.—';
+        let changeHTML = '<span class="price-change">—</span>';
+        
+        if (stockData && stockData.latestTrade && stockData.prevDailyBar) {
+          const price = stockData.latestTrade.p;
+          const prevClose = stockData.prevDailyBar.c;
+          const change = price - prevClose;
+          const pct = (change / prevClose) * 100;
+          
+          priceText = formatMoney(price, 2);
+          const sign = change >= 0 ? '+' : '';
+          const upDownClass = change >= 0 ? 'up' : 'down';
+          changeHTML = `<span class="price-change ${upDownClass}">${sign}${change.toFixed(2)} (${sign}${pct.toFixed(2)}%)</span>`;
+        }
+        
+        const badgeClass = cat === 'Gold' ? 'gold-stock' : (cat === 'Silver' ? 'silver-stock' : 'rare-stock');
+        const badgeText = cat === 'Gold' ? 'Au' : (cat === 'Silver' ? 'Ag' : 'RE');
+        
+        html += `
+          <div class="item-card">
+            <div class="stock-badge ${badgeClass}">${badgeText}</div>
+            <div class="item-main-details">
+              <div class="item-name">${stock.name} <span style="font-size: 12px; color: var(--muted); font-weight: 500;">${symbol}</span></div>
+              <div class="item-details">
+                <span class="${catColorClass}">${cat} Sector</span>
+              </div>
+            </div>
+            <div class="item-pricing-container">
+              <span class="melt-value" style="font-size: 18px; font-weight: 700;">${priceText}</span>
+              ${changeHTML}
+            </div>
+          </div>
+        `;
+      });
+    });
+    
+    stocksListEl.innerHTML = html;
+  } catch (err) {
+    console.error('Error fetching stock prices:', err);
+    stocksListEl.innerHTML = `
+      <div style="text-align:center; padding: 20px; color: var(--down); font-size: 13px;">
+        ⚠️ Failed to load live stock quotes. Retrying...
+      </div>
+    `;
+  }
 }
 
 function showError(msg) {
