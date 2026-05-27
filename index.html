@@ -1367,29 +1367,44 @@ async function loadLivePrices() {
   hideError();
 
   try {
-    const resp = await fetch(apiEndpoint, {
-      headers: { 'Accept': 'application/json' }
-    });
-    if (!resp.ok) throw new Error(`Upstream error: ${resp.status}`);
+    // 1. Fetch real-time institutional spot prices (CORS-enabled, direct spot feed)
+    const [goldApiResp, silverApiResp] = await Promise.all([
+      fetch('https://api.gold-api.com/price/XAU'),
+      fetch('https://api.gold-api.com/price/XAG')
+    ]);
+    if (!goldApiResp.ok || !silverApiResp.ok) throw new Error('Institutional spot feed unreachable');
     
-    const raw = await resp.json();
+    const goldApiRaw = await goldApiResp.json();
+    const silverApiRaw = await silverApiResp.json();
     
-    // Extract and format matching standard payload
-    const goldPrice = raw['pax-gold'].usd;
-    const goldPct = raw['pax-gold'].usd_24h_change || 0;
-    
-    const silverPrice = raw['kinesis-silver'].usd;
-    const silverPct = raw['kinesis-silver'].usd_24h_change || 0;
+    const goldSpotVal = goldApiRaw.price;
+    const silverSpotVal = silverApiRaw.price;
+
+    // 2. Fetch CoinGecko's feed for 24h change percentages (Graceful fallback if rate-limited)
+    let goldPct = 0;
+    let silverPct = 0;
+    try {
+      const cgResp = await fetch(apiEndpoint, {
+        headers: { 'Accept': 'application/json' }
+      });
+      if (cgResp.ok) {
+        const raw = await cgResp.json();
+        goldPct = raw['pax-gold'].usd_24h_change || 0;
+        silverPct = raw['kinesis-silver'].usd_24h_change || 0;
+      }
+    } catch (cgErr) {
+      console.warn('CoinGecko change feed unavailable:', cgErr);
+    }
     
     const data = {
       gold: {
-        price: goldPrice,
-        change: (goldPrice * goldPct) / 100,
+        price: goldSpotVal,
+        change: (goldSpotVal * goldPct) / 100,
         changePercent: goldPct
       },
       silver: {
-        price: silverPrice,
-        change: (silverPrice * silverPct) / 100,
+        price: silverSpotVal,
+        change: (silverSpotVal * silverPct) / 100,
         changePercent: silverPct
       }
     };
