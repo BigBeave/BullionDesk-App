@@ -625,6 +625,125 @@
   .gold-text { color: var(--gold-light); }
   .silver-text { color: var(--silver-light); }
 
+  /* Purity & Hallmarks Reference Table Styling */
+  .purity-section {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  .purity-section.gold-purity {
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .purity-section.silver-purity {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .purity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .purity-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .purity-subtitle {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .purity-table-head {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 0.9fr 1fr;
+    gap: 8px;
+    padding: 0 8px 6px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .purity-row {
+    display: grid;
+    grid-template-columns: 1.5fr 0.7fr 0.9fr 1fr;
+    gap: 8px;
+    align-items: center;
+    padding: 9px 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    transition: background 0.15s ease;
+  }
+
+  .purity-row:last-child {
+    border-bottom: none;
+    padding-bottom: 2px;
+  }
+
+  .purity-grade-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .purity-grade-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .purity-stamps {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  .purity-stamp-pill {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--text);
+    margin-right: 3px;
+    margin-top: 2px;
+  }
+
+  .gold-purity .purity-stamp-pill {
+    background: rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.25);
+    color: var(--gold-light);
+  }
+
+  .purity-pct {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .purity-val {
+    font-size: 14px;
+    font-weight: 700;
+    text-align: right;
+  }
+
   /* Calculator Panel Styling */
   .calculator-panel {
     background: linear-gradient(135deg, rgba(20, 20, 20, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
@@ -1213,19 +1332,6 @@ const GOLD_ITEMS = [
   { name: 'Quarter Eagle $2.50', detail: 'Indian / Liberty', oz: 0.1344, fine: 0.9000, years: '1796–1929', img: '', premium: 0.28, face: 2.50, asw: 0.12094 },
   { name: 'Gold Dollar', detail: 'Type 1, 2, 3', oz: 0.05376, fine: 0.9000, years: '1849–1889', img: '', premium: 0.35, face: 1.00, asw: 0.04837 },
 
-  { cat: 'PAMP Suisse Gold Bars' },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '10 Grams', oz: 0.3215, fine: 0.9999, years: '', img: '', premium: 0.08, face: 0, asw: 0.3215 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '5 Grams', oz: 0.1608, fine: 0.9999, years: '', img: '', premium: 0.09, face: 0, asw: 0.1608 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '2.5 Grams', oz: 0.0804, fine: 0.9999, years: '', img: '', premium: 0.12, face: 0, asw: 0.0804 },
-  { name: 'PAMP Suisse Fortuna Gold Bar', detail: '1 Gram', oz: 0.0322, fine: 0.9999, years: '', img: '', premium: 0.20, face: 0, asw: 0.0322 },
-
-  { cat: 'Goldback Bills (24k Foil)' },
-  { name: '50 Goldbacks Bill', detail: '1/20 oz (0.05 oz) Pure Gold', oz: 0.0500, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.80, face: 50, asw: 0.0500 },
-  { name: '25 Goldbacks Bill', detail: '1/40 oz (0.025 oz) Pure Gold', oz: 0.0250, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.80, face: 25, asw: 0.0250 },
-  { name: '10 Goldbacks Bill', detail: '1/100 oz (0.01 oz) Pure Gold', oz: 0.0100, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.85, face: 10, asw: 0.0100 },
-  { name: '5 Goldbacks Bill', detail: '1/200 oz (0.005 oz) Pure Gold', oz: 0.0050, fine: 1.0000, years: '2019–Pres', img: '', premium: 0.90, face: 5, asw: 0.0050 },
-  { name: '1 Goldback Bill', detail: '1/1000 oz (0.001 oz) Pure Gold', oz: 0.0010, fine: 1.0000, years: '2019–Pres', img: '', premium: 1.00, face: 1, asw: 0.0010 },
-
   { cat: 'Standard Gold Bars' },
   { name: '1 Gram Gold Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999, years: '', img: '', premium: 0.15, face: 0, asw: 0.03215 },
   { name: '2.5 Gram Gold Bar', detail: 'Various Mints', oz: 0.08038, fine: 0.9999, years: '', img: '', premium: 0.10, face: 0, asw: 0.08038 },
@@ -1272,12 +1378,6 @@ const SILVER_ITEMS = [
   { name: 'Canadian Silver Half Dollar', detail: '80% Silver Half Dollar', oz: 0.3750, fine: 0.8000, years: '1910–1967', img: 'https://www.coinflation.com/canhalfdollar.jpg', premium: 0.15, face: 0.50, asw: 0.3000 },
   { name: 'Canadian Silver Dollar', detail: '80% Silver Dollar', oz: 0.7500, fine: 0.8000, years: '1935–1967', img: 'https://www.coinflation.com/candollar.jpg', premium: 0.20, face: 1.00, asw: 0.6000 },
  
-  { cat: 'PAMP Suisse Silver Bars' },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 kg — Assay Certificate', oz: 32.1507, fine: 0.9990, years: '', img: '', premium: 0.10, face: 0, asw: 32.1507 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '10 oz', oz: 10.0000, fine: 0.9990, years: '', img: '', premium: 0.12, face: 0, asw: 10.0000 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '100 Grams', oz: 3.2151, fine: 0.9990, years: '', img: '', premium: 0.14, face: 0, asw: 3.2151 },
-  { name: 'PAMP Suisse Fortuna Silver Bar', detail: '1 oz', oz: 1.0000, fine: 0.9990, years: '', img: '', premium: 0.18, face: 0, asw: 1.0000 },
- 
   { cat: 'Standard Silver Bars' },
   { name: '1 Gram Silver Bar', detail: 'Various Mints', oz: 0.03215, fine: 0.9999, years: '', img: '', premium: 0.35, face: 0, asw: 0.03215 },
   { name: '5 Gram Silver Bar', detail: 'Various Mints', oz: 0.16075, fine: 0.9999, years: '', img: '', premium: 0.25, face: 0, asw: 0.16075 },
@@ -1288,6 +1388,24 @@ const SILVER_ITEMS = [
   { name: '10 oz Silver Bar', detail: '311g — Various Mints', oz: 10.0000, fine: 0.9999, years: '', img: '', premium: 0.06, face: 0, asw: 10.0000 },
   { name: '100 oz Silver Bar', detail: 'Various Mints', oz: 100.000, fine: 0.9999, years: '', img: '', premium: 0.05, face: 0, asw: 100.0000 },
   { name: '1000 oz Silver Bar', detail: 'COMEX Good Delivery', oz: 1000.00, fine: 0.9990, years: '', img: '', premium: 0.03, face: 0, asw: 1000.0000 }
+];
+
+const GOLD_PURITIES = [
+  { grade: '24K Fine Gold', fine: 0.999, pct: '99.9%', stamps: ['999', '9999', '24K', '24KT'] },
+  { grade: '22K Coin Gold', fine: 0.9167, pct: '91.7%', stamps: ['916', '917', '22K', '22KT'] },
+  { grade: '18K Gold', fine: 0.750, pct: '75.0%', stamps: ['750', '18K', '18KT', '18C'] },
+  { grade: '14K Gold', fine: 0.5833, pct: '58.3%', stamps: ['585', '583', '14K', '14KT'] },
+  { grade: '10K Gold', fine: 0.4167, pct: '41.7%', stamps: ['417', '416', '10K', '10KT'] },
+  { grade: '9K Gold', fine: 0.375, pct: '37.5%', stamps: ['375', '9K', '9KT', '9CT'] }
+];
+
+const SILVER_PURITIES = [
+  { grade: 'Fine Silver (.999)', fine: 0.999, pct: '99.9%', stamps: ['999', '.999', 'FINE', 'FS'] },
+  { grade: 'Britannia Silver', fine: 0.958, pct: '95.8%', stamps: ['958', '.958', 'BRIT'] },
+  { grade: 'Sterling Silver', fine: 0.925, pct: '92.5%', stamps: ['925', '.925', 'STERLING', 'STER'] },
+  { grade: 'Coin Silver (90%)', fine: 0.900, pct: '90.0%', stamps: ['900', '.900', 'COIN'] },
+  { grade: 'Continental (835)', fine: 0.835, pct: '83.5%', stamps: ['835', '.835', '830'] },
+  { grade: 'European / Canadian (80%)', fine: 0.800, pct: '80.0%', stamps: ['800', '.800'] }
 ];
 
 const STOCKS = [
@@ -1754,6 +1872,39 @@ function renderList() {
     `;
   });
 
+  // Silver Purity & Hallmarks Melt Reference
+  const silverGramSpot = silverSpot / 31.1034768;
+  html += `
+    <div class="purity-section silver-purity">
+      <div class="purity-header">
+        <span class="purity-title silver-text">🥈 Silver Purity, Stamps & Melt Rates</span>
+        <span class="purity-subtitle">Live Melt By Fineness</span>
+      </div>
+      <div class="purity-table-head">
+        <span>Grade & Hallmarks</span>
+        <span style="text-align:center;">Purity</span>
+        <span style="text-align:right;">Melt / Gram</span>
+        <span style="text-align:right;">Melt / Troy Oz</span>
+      </div>
+  `;
+  SILVER_PURITIES.forEach(p => {
+    const meltGram = silverGramSpot * p.fine;
+    const meltOz = silverSpot * p.fine;
+    const pills = p.stamps.map(s => `<span class="purity-stamp-pill">${s}</span>`).join('');
+    html += `
+      <div class="purity-row">
+        <div class="purity-grade-info">
+          <span class="purity-grade-name">${p.grade}</span>
+          <div class="purity-stamps">Stamped: ${pills}</div>
+        </div>
+        <div class="purity-pct">${p.pct}</div>
+        <div class="purity-val silver-text">${formatMoney(meltGram, 2)}/g</div>
+        <div class="purity-val silver-text">${formatMoney(meltOz, 2)}/oz</div>
+      </div>
+    `;
+  });
+  html += `</div>`;
+
   // Section 2: Gold Coins & Bullion
   html += `<div class="cat-header" style="color: var(--gold-light); border-bottom-color: rgba(212,175,55,0.2); font-size: 14px; margin-top: 40px; padding-bottom: 8px;">🥇 GOLD COINS & BULLION</div>`;
   
@@ -1812,6 +1963,39 @@ function renderList() {
       </div>
     `;
   });
+
+  // Gold Purity & Karat Melt Reference
+  const goldGramSpot = goldSpot / 31.1034768;
+  html += `
+    <div class="purity-section gold-purity">
+      <div class="purity-header">
+        <span class="purity-title gold-text">🥇 Gold Karat, Stamps & Melt Rates</span>
+        <span class="purity-subtitle">Live Melt By Karat</span>
+      </div>
+      <div class="purity-table-head">
+        <span>Karat & Hallmarks</span>
+        <span style="text-align:center;">Purity</span>
+        <span style="text-align:right;">Melt / Gram</span>
+        <span style="text-align:right;">Melt / Troy Oz</span>
+      </div>
+  `;
+  GOLD_PURITIES.forEach(p => {
+    const meltGram = goldGramSpot * p.fine;
+    const meltOz = goldSpot * p.fine;
+    const pills = p.stamps.map(s => `<span class="purity-stamp-pill">${s}</span>`).join('');
+    html += `
+      <div class="purity-row">
+        <div class="purity-grade-info">
+          <span class="purity-grade-name">${p.grade}</span>
+          <div class="purity-stamps">Stamped: ${pills}</div>
+        </div>
+        <div class="purity-pct">${p.pct}</div>
+        <div class="purity-val gold-text">${formatMoney(meltGram, 2)}/g</div>
+        <div class="purity-val gold-text">${formatMoney(meltOz, 2)}/oz</div>
+      </div>
+    `;
+  });
+  html += `</div>`;
   
   listEl.innerHTML = html;
 }
