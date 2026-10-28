@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>Check back soon</title>
+<style type="text/css">
+
+  h2, h3 {
+       font-family: 'Open Sans', sans-serif;
+   }
+
+
+   h2 {
+       font-size: 26px;
+       text-align:left;	
+   }
+
+   h3 {
+       font-size: 24px;
+       text-align:left;	
+   }
+
+
+</style>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
+</head>
+<body style="text-align:center;">
+<div style="display: none;">monitoring synthetic check</div>
+
+<div style="max-width:1200px;margin:50px auto;">
+
+<div style="max-width:640px;margin:auto;">
+<h2>This Collectors Universe website is temporarily unavailable for maintenance</h2>
+<h3>Please check back soon</h3>
+<br/>
+<img src="error-msg.png" />
+
+</div>
+</div>
+</body>
+</html>
