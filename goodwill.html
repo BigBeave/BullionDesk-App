@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Goodwill Deal Sniper — Melt & Brand Arbitrage</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #07080a;
+    --panel: rgba(18, 20, 26, 0.88);
+    --border: rgba(212, 175, 55, 0.22);
+    --gold: #D4AF37;
+    --gold-light: #F3E5AB;
+    --gold-dim: #8A7322;
+    --silver-light: #E2E8F0;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --up: #00E676;
+    --down: #FF5252;
+    --accent: #38BDF8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: radial-gradient(circle at top, #131824 0%, #07080a 70%);
+    color: var(--text);
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    padding: 18px 14px 60px;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 7px 14px;
+    border-radius: 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    transition: all 0.2s;
+  }
+
+  .back-link:hover {
+    background: rgba(212, 175, 55, 0.2);
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 18px;
+  }
+
+  .brand-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+  }
+
+  .brand-sub {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .status-cluster {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.35);
+    color: var(--up);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--up);
+    box-shadow: 0 0 8px var(--up);
+  }
+
+  /* Spot & Melt Bar */
+  .spot-strip {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .spot-mini {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .spot-mini.gold { border-color: rgba(212, 175, 55, 0.3); }
+  .spot-mini.silver { border-color: rgba(226, 232, 240, 0.25); }
+
+  .spot-mini-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  .spot-mini-val {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--text);
+  }
+
+  .spot-mini-sub {
+    font-size: 10.5px;
+    color: var(--gold-light);
+  }
+
+  /* Panels */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  }
+
+  .panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .panel-title {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+
+  .btn {
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-family: inherit;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+  }
+
+  .btn-gold {
+    background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%);
+    color: #050505;
+  }
+
+  .btn-gold:hover { filter: brightness(1.1); }
+
+  .btn-green {
+    background: rgba(0, 230, 118, 0.16);
+    border: 1px solid rgba(0, 230, 118, 0.45);
+    color: var(--up);
+  }
+
+  .btn-green:hover { background: rgba(0, 230, 118, 0.26); }
+
+  .btn-outline {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: var(--text);
+  }
+
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* Controls Grid */
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    align-items: end;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .field label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+  }
+
+  .field input, .field select {
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 8px;
+    padding: 9px 11px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    outline: none;
+  }
+
+  .field input:focus, .field select:focus {
+    border-color: var(--gold);
+  }
+
+  /* Calculator Result Banner */
+  .eval-result {
+    margin-top: 14px;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(0, 230, 118, 0.07);
+    border: 1px solid rgba(0, 230, 118, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .eval-result.over-melt {
+    background: rgba(255, 82, 82, 0.08);
+    border-color: rgba(255, 82, 82, 0.3);
+  }
+
+  /* Rules Table */
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+  }
+
+  .rule-card {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+
+  .rule-card.active-rule {
+    border-color: rgba(212, 175, 55, 0.32);
+  }
+
+  .rule-card.disabled-rule {
+    opacity: 0.5;
+  }
+
+  .rule-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .rule-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .rule-tag {
+    font-size: 9px;
+    font-weight: 800;
+    padding: 2px 7px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .tag-metal { background: rgba(0, 230, 118, 0.16); color: var(--up); border: 1px solid rgba(0,230,118,0.35); }
+  .tag-luxury { background: rgba(212, 175, 55, 0.18); color: var(--gold-light); border: 1px solid rgba(212,175,55,0.4); }
+  .tag-guitar { background: rgba(56, 189, 248, 0.16); color: var(--accent); border: 1px solid rgba(56,189,248,0.4); }
+  .tag-brand { background: rgba(168, 85, 247, 0.18); color: #d8b4fe; border: 1px solid rgba(168,85,247,0.4); }
+  .tag-bulk { background: rgba(251, 146, 60, 0.18); color: #fdba74; border: 1px solid rgba(251,146,60,0.4); }
+
+  .rule-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .rule-mini-field label {
+    display: block;
+    font-size: 9px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+
+  .rule-mini-field input {
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    padding: 5px 8px;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .rule-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  /* Deals Feed */
+  .deals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .deal-card {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    border-radius: 11px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .deal-card.under-melt-card {
+    background: rgba(0, 230, 118, 0.06);
+    border-color: rgba(0, 230, 118, 0.38);
+  }
+
+  .deal-thumb {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .deal-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .deal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--muted);
+    align-items: center;
+  }
+
+  .deal-badge {
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    background: rgba(0, 230, 118, 0.18);
+    color: var(--up);
+  }
+
+  .deal-time {
+    color: #FBBF24;
+    font-weight: 700;
+  }
+
+  .deal-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+  }
+
+  .deal-price {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--gold-light);
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #111827;
+    border: 1px solid var(--up);
+    color: var(--text);
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    z-index: 9999;
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    .deal-card {
+      grid-template-columns: 52px 1fr;
+    }
+    .deal-right {
+      grid-column: 1 / -1;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-nav">
+    <a href="index.html" class="back-link" id="backToBullionLink">← Back to Bullion Desk</a>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <button class="btn btn-green" onclick="sendTestAlertToPhone()">📱 Send Test ntfy Alert to Phone</button>
+      <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Goodwill Deals Now</button>
+    </div>
+  </div>
+
+  <header>
+    <div>
+      <div class="brand-title">🎯 Goodwill Deal Sniper</div>
+      <div class="brand-sub">Automated Melt Arbitrage · Luxury Brands · Vintage Guitars · Bulk Lots</div>
+    </div>
+    <div class="status-cluster">
+      <div class="badge-pill">
+        <span class="dot" id="daemonDot"></span>
+        <span id="daemonStatusText">NTFY MOBILE PUSH READY</span>
+      </div>
+      <div style="font-size:11px; color:var(--muted);" id="lastSyncLabel">Topic: robinhood_agentic_beavers_2026</div>
+    </div>
+  </header>
+
+  <!-- Live Melt Rate Reference Strip -->
+  <div class="spot-strip">
+    <div class="spot-mini silver">
+      <span class="spot-mini-label">.925 Sterling Melt</span>
+      <span class="spot-mini-val" id="melt925Oz">$—— / oz</span>
+      <span class="spot-mini-sub" id="melt925Gram">$—.—— / gram</span>
+    </div>
+    <div class="spot-mini silver">
+      <span class="spot-mini-label">.999 Fine Silver</span>
+      <span class="spot-mini-val" id="spotSilverOz">$—— / oz</span>
+      <span class="spot-mini-sub" id="spotSilverGram">$—.—— / gram</span>
+    </div>
+    <div class="spot-mini gold">
+      <span class="spot-mini-label">24K Gold (.999)</span>
+      <span class="spot-mini-val" id="melt24kOz">$—— / oz</span>
+      <span class="spot-mini-sub" id="melt24kGram">$—— / gram</span>
+    </div>
+    <div class="spot-mini gold">
+      <span class="spot-mini-label">18K Gold (.750)</span>
+      <span class="spot-mini-val" id="melt18kOz">$—— / oz</span>
+      <span class="spot-mini-sub" id="melt18kGram">$—— / gram</span>
+    </div>
+    <div class="spot-mini gold">
+      <span class="spot-mini-label">14K Gold (.583)</span>
+      <span class="spot-mini-val" id="melt14kOz">$—— / oz</span>
+      <span class="spot-mini-sub" id="melt14kGram">$—— / gram</span>
+    </div>
+  </div>
+
+  <!-- 1. Ntfy & Global Automation Settings -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">📲 Cell Phone Alert & Scanner Settings (ntfy.sh)</span>
+      <button class="btn btn-outline" onclick="saveAllSettings()">💾 Save Settings</button>
+    </div>
+    <div class="form-grid">
+      <div class="field">
+        <label>Your ntfy Topic Name</label>
+        <input type="text" id="cfgNtfyTopic" value="robinhood_agentic_beavers_2026">
+      </div>
+      <div class="field">
+        <label>Default Max Time Left (Hours)</label>
+        <input type="number" step="0.5" id="cfgMaxHours" value="3.0">
+      </div>
+      <div class="field">
+        <label>Scan Interval (Minutes)</label>
+        <input type="number" min="1" id="cfgIntervalMin" value="3">
+      </div>
+      <div class="field">
+        <label>Auto-Send Phone Alerts</label>
+        <select id="cfgAutoNtfy">
+          <option value="true" selected>Enabled (Instant Push)</option>
+          <option value="false">Muted (Dashboard Only)</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Instant Melt & Deal Evaluator + Instant Phone Alert Dispatcher -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">⚖️ Instant Goodwill Melt & Deal Evaluator (Test or Push Any Listing)</span>
+      <span style="font-size:11px; color:var(--muted);">Automatically parses weights like "1 oz", "45g", "1lb 8.7oz", "20 dwt"</span>
+    </div>
+    <div class="form-grid">
+      <div class="field" style="grid-column: span 2;">
+        <label>Auction Title / Weight Description</label>
+        <input type="text" id="evalTitle" value="1 oz 925 Sterling Silver Heavy Bracelet Lot" oninput="evaluateCustomDeal()">
+      </div>
+      <div class="field">
+        <label>Metal / Category</label>
+        <select id="evalMetal" onchange="evaluateCustomDeal()">
+          <option value="silver_925" selected>.925 Sterling Silver (92.5%)</option>
+          <option value="silver_999">.999 Fine Silver (99.9%)</option>
+          <option value="gold_24k">24K Gold (99.9%)</option>
+          <option value="gold_18k">18K Gold (75.0%)</option>
+          <option value="gold_14k">14K Gold (58.3%)</option>
+          <option value="gold_10k">10K Gold (41.7%)</option>
+          <option value="brand">Brand / Guitar / Bulk Lot</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Current Bid ($)</label>
+        <input type="number" step="0.5" id="evalPrice" value="20.00" oninput="evaluateCustomDeal()">
+      </div>
+      <div class="field">
+        <label>Time Left (Hours)</label>
+        <input type="number" step="0.25" id="evalHours" value="2.5" oninput="evaluateCustomDeal()">
+      </div>
+      <div class="field">
+        <label>ShopGoodwill Link or Item ID</label>
+        <input type="text" id="evalUrl" value="https://shopgoodwill.com/item/214899301" oninput="evaluateCustomDeal()">
+      </div>
+    </div>
+
+    <div class="eval-result" id="evalBanner">
+      <div>
+        <div style="font-size:15px; font-weight:800;" id="evalHeadline">Calculating live melt...</div>
+        <div style="font-size:12px; color:var(--muted); margin-top:3px;" id="evalSubline">—</div>
+      </div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap;">
+        <button class="btn btn-green" onclick="pushEvaluatedDealToPhone()">📲 Send This Deal Alert to My Phone</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Live Matched Deals Feed -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">🔥 Live Matched Goodwill Deals (<span id="dealCountBadge">0</span>)</span>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <span style="font-size:11px; color:var(--muted);" id="scanStatusLabel">Ready to scan</span>
+        <button class="btn btn-gold" onclick="triggerLiveScan()">↻ Refresh Auctions</button>
+      </div>
+    </div>
+    <div class="deals-list" id="dealsContainer">
+      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
+        Click <strong>"⚡ Scan Goodwill Deals Now"</strong> or start <code>START_GOODWILL_SNIPER.bat</code> to stream live ending-soonest auctions under your limits.
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Watchlist Targets & Price/Time Limits -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-title">🎯 Active Goodwill Watchlist Targets & Limits (19 Categories)</span>
+      <div style="display:flex; gap:8px;">
+        <button class="btn btn-outline" onclick="addCustomRulePrompt()">+ Add New Target</button>
+        <button class="btn btn-gold" onclick="saveAllSettings()">💾 Save Limits</button>
+      </div>
+    </div>
+    <div class="rules-grid" id="rulesContainer"></div>
+  </div>
+</div>
+
+<div class="toast" id="toastBox"></div>
+
+<script>
+const DEFAULT_RULES = [
+  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_hours_left: 3.0, default_assumed_oz: 1.0, enabled: true },
+  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_hours_left: 3.0, default_assumed_oz: 1.0, enabled: true },
+  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_hours_left: 3.0, default_assumed_oz: 0.1, enabled: true },
+  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_hours_left: 3.0, default_assumed_oz: 0.1, enabled: true },
+  { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
+  { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
+  { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_hours_left: 6.0, enabled: true },
+  { id: 'gucci', name: 'Gucci', query: 'gucci', category_type: 'luxury', max_price: 120, max_hours_left: 3.0, enabled: true },
+  { id: 'fender_guitar', name: 'Fender Guitar', query: 'fender guitar', category_type: 'guitar', max_price: 200, max_hours_left: 4.0, enabled: true },
+  { id: 'gibson_guitar', name: 'Gibson Guitar', query: 'gibson guitar', category_type: 'guitar', max_price: 350, max_hours_left: 4.0, enabled: true },
+  { id: 'alvarez_guitar', name: 'Alvarez Guitar', query: 'alvarez guitar', category_type: 'guitar', max_price: 120, max_hours_left: 4.0, enabled: true },
+  { id: 'dangelico_guitar', name: "D'Angelico Guitar", query: "d'angelico guitar", category_type: 'guitar', max_price: 220, max_hours_left: 4.0, enabled: true },
+  { id: 'louis_vuitton', name: 'Louis Vuitton', query: 'louis vuitton', category_type: 'luxury', max_price: 200, max_hours_left: 3.0, enabled: true },
+  { id: 'coach', name: 'Coach Bag / Leather', query: 'coach bag', category_type: 'luxury', max_price: 35, max_hours_left: 3.0, enabled: true },
+  { id: 'prada', name: 'Prada', query: 'prada', category_type: 'luxury', max_price: 120, max_hours_left: 3.0, enabled: true },
+  { id: 'homage', name: 'Homage Apparel', query: 'homage shirt', category_type: 'brand', max_price: 18, max_hours_left: 3.0, enabled: true },
+  { id: 'nike', name: 'Nike / Air Jordan', query: 'nike', category_type: 'brand', max_price: 35, max_hours_left: 3.0, enabled: true },
+  { id: 'sports_cards_bulk', name: 'Trading / Sports Card Bulk Lot', query: 'sports cards lot', category_type: 'bulk', max_price: 45, max_hours_left: 3.0, enabled: true },
+  { id: 'jewelry_bulk_lot', name: 'Jewelry Bulk Lot', query: 'jewelry lot', category_type: 'bulk', max_price: 50, max_hours_left: 3.0, enabled: true }
+];
+
+let goldSpot = 2740.00;
+let silverSpot = 32.50;
+let rules = [];
+let daemonConnected = false;
+
+function showToast(msg) {
+  const box = document.getElementById('toastBox');
+  box.textContent = msg;
+  box.style.display = 'block';
+  setTimeout(() => { box.style.display = 'none'; }, 4000);
+}
+
+function loadLocalConfig() {
+  const saved = localStorage.getItem('goodwill_sniper_config_v1');
+  if (saved) {
+    try {
+      const parsed = JSON.parse(saved);
+      document.getElementById('cfgNtfyTopic').value = parsed.ntfy_topic || 'robinhood_agentic_beavers_2026';
+      document.getElementById('cfgMaxHours').value = parsed.global_max_hours_left || 3.0;
+      document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
+      document.getElementById('cfgAutoNtfy').value = String(parsed.auto_send_ntfy !== false);
+      rules = parsed.rules || DEFAULT_RULES;
+      return;
+    } catch (e) {}
+  }
+  rules = JSON.parse(JSON.stringify(DEFAULT_RULES));
+}
+
+function buildConfigObject() {
+  return {
+    ntfy_topic: document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026',
+    global_max_hours_left: parseFloat(document.getElementById('cfgMaxHours').value) || 3.0,
+    scan_interval_seconds: (parseInt(document.getElementById('cfgIntervalMin').value) || 3) * 60,
+    auto_send_ntfy: document.getElementById('cfgAutoNtfy').value === 'true',
+    rules: rules
+  };
+}
+
+async function saveAllSettings() {
+  // Read updated values from rule cards
+  rules.forEach((r, idx) => {
+    const pEl = document.getElementById(`rule_price_${idx}`);
+    const hEl = document.getElementById(`rule_hours_${idx}`);
+    const qEl = document.getElementById(`rule_query_${idx}`);
+    if (pEl) r.max_price = parseFloat(pEl.value) || r.max_price;
+    if (hEl) r.max_hours_left = parseFloat(hEl.value) || r.max_hours_left;
+    if (qEl) r.query = qEl.value.trim() || r.query;
+  });
+
+  const cfg = buildConfigObject();
+  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+  document.getElementById('lastSyncLabel').textContent = 'Topic: ' + cfg.ntfy_topic;
+
+  try {
+    await fetch('http://127.0.0.1:8765/api/config', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cfg)
+    });
+  } catch (e) {}
+
+  renderRules();
+  showToast('✅ Sniper limits & ntfy settings saved!');
+}
+
+async function fetchLiveSpotPrices() {
+  try {
+    const [gResp, sResp] = await Promise.all([
+      fetch('https://api.gold-api.com/price/XAU'),
+      fetch('https://api.gold-api.com/price/XAG')
+    ]);
+    if (gResp.ok && sResp.ok) {
+      const gData = await gResp.json();
+      const sData = await sResp.json();
+      if (gData.price) goldSpot = gData.price;
+      if (sData.price) silverSpot = sData.price;
+    }
+  } catch (e) {
+    console.warn('Using fallback spot prices:', e);
+  }
+  updateSpotStrip();
+  evaluateCustomDeal();
+}
+
+function updateSpotStrip() {
+  const sGram = silverSpot / 31.1034768;
+  const gGram = goldSpot / 31.1034768;
+
+  document.getElementById('melt925Oz').textContent = '$' + (silverSpot * 0.925).toFixed(2) + ' / oz';
+  document.getElementById('melt925Gram').textContent = '$' + (sGram * 0.925).toFixed(2) + ' / gram';
+
+  document.getElementById('spotSilverOz').textContent = '$' + silverSpot.toFixed(2) + ' / oz';
+  document.getElementById('spotSilverGram').textContent = '$' + sGram.toFixed(2) + ' / gram';
+
+  document.getElementById('melt24kOz').textContent = '$' + (goldSpot * 0.999).toFixed(0) + ' / oz';
+  document.getElementById('melt24kGram').textContent = '$' + (gGram * 0.999).toFixed(2) + ' / gram';
+
+  document.getElementById('melt18kOz').textContent = '$' + (goldSpot * 0.750).toFixed(0) + ' / oz';
+  document.getElementById('melt18kGram').textContent = '$' + (gGram * 0.750).toFixed(2) + ' / gram';
+
+  document.getElementById('melt14kOz').textContent = '$' + (goldSpot * 0.5833).toFixed(0) + ' / oz';
+  document.getElementById('melt14kGram').textContent = '$' + (gGram * 0.5833).toFixed(2) + ' / gram';
+}
+
+function parseWeightFromText(text) {
+  const t = text.toLowerCase();
+  let grams = 0;
+
+  const mLbOz = t.match(/(\d+(?:\.\d+)?)\s*(?:lbs?|pounds?)\s*(\d+(?:\.\d+)?)\s*(?:oz|ounces?)/);
+  if (mLbOz) {
+    grams = (parseFloat(mLbOz[1]) * 453.59237) + (parseFloat(mLbOz[2]) * 28.34952);
+  } else {
+    const mG = t.match(/(\d+(?:\.\d+)?)\s*(?:grams?|grms?|gm|gr|g)\b/);
+    const mTroy = t.match(/(\d+(?:\.\d+)?)\s*troy\s*(?:oz|ounces?)/);
+    const mOz = t.match(/(\d+(?:\.\d+)?)\s*(?:oz|ounces?)\b/);
+    const mDwt = t.match(/(\d+(?:\.\d+)?)\s*dwt\b/);
+    const mLb = t.match(/(\d+(?:\.\d+)?)\s*(?:lbs?|pounds?)\b/);
+
+    if (mG) grams = parseFloat(mG[1]);
+    else if (mTroy) grams = parseFloat(mTroy[1]) * 31.1034768;
+    else if (mOz) grams = parseFloat(mOz[1]) * 31.1034768;
+    else if (mDwt) grams = parseFloat(mDwt[1]) * 1.55517384;
+    else if (mLb) grams = parseFloat(mLb[1]) * 453.59237;
+  }
+
+  if (grams <= 0) grams = 31.1034768; // Default 1 troy oz if not specified
+  return grams;
+}
+
+function evaluateCustomDeal() {
+  const title = document.getElementById('evalTitle').value;
+  const mode = document.getElementById('evalMetal').value;
+  const price = parseFloat(document.getElementById('evalPrice').value) || 0;
+  const hours = parseFloat(document.getElementById('evalHours').value) || 0;
+  const maxHours = parseFloat(document.getElementById('cfgMaxHours').value) || 3.0;
+
+  const banner = document.getElementById('evalBanner');
+  const headEl = document.getElementById('evalHeadline');
+  const subEl = document.getElementById('evalSubline');
+
+  if (mode === 'brand') {
+    const withinTime = hours <= maxHours;
+    banner.className = 'eval-result ' + (withinTime ? '' : 'over-melt');
+    headEl.textContent = `${withinTime ? '✅ DEAL QUALIFIES' : '⏳ OUTSIDE TIME LIMIT'}: ${title} @ $${price.toFixed(2)} (${hours}h left)`;
+    subEl.textContent = `Time Limit: <= ${maxHours}h | Current Time Left: ${hours}h`;
+    return;
+  }
+
+  const grams = parseWeightFromText(title);
+  const troyOz = grams / 31.1034768;
+  let meltVal = 0;
+  let label = '';
+
+  if (mode === 'silver_925') { meltVal = troyOz * 0.925 * silverSpot; label = '.925 Sterling Silver'; }
+  else if (mode === 'silver_999') { meltVal = troyOz * 0.999 * silverSpot; label = '.999 Fine Silver'; }
+  else if (mode === 'gold_24k') { meltVal = troyOz * 0.999 * goldSpot; label = '24K Fine Gold'; }
+  else if (mode === 'gold_18k') { meltVal = troyOz * 0.750 * goldSpot; label = '18K Gold'; }
+  else if (mode === 'gold_14k') { meltVal = troyOz * 0.5833 * goldSpot; label = '14K Gold'; }
+  else if (mode === 'gold_10k') { meltVal = troyOz * 0.4167 * goldSpot; label = '10K Gold'; }
+
+  const diff = meltVal - price;
+  const isUnderMelt = price < meltVal && hours <= maxHours;
+
+  banner.className = 'eval-result ' + (isUnderMelt ? '' : 'over-melt');
+  if (price < meltVal) {
+    headEl.innerHTML = `🔥 <span style="color:var(--up)">UNDER MELT DEAL!</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} (+$${diff.toFixed(2)} Profit Margin)`;
+  } else {
+    headEl.innerHTML = `⚠️ <span style="color:var(--down)">OVER MELT:</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} ($${diff.toFixed(2)})`;
+  }
+  subEl.textContent = `Parsed Weight: ${grams.toFixed(2)}g (${troyOz.toFixed(2)} troy oz) of ${label} · Time Left: ${hours}h (Max Limit: ${maxHours}h)`;
+}
+
+async function sendNtfyNotification(title, message, clickUrl, isUnderMelt = true) {
+  const topic = document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026';
+  const payload = {
+    topic: topic,
+    title: title,
+    message: message,
+    priority: isUnderMelt ? 5 : 4,
+    tags: isUnderMelt ? ['rotating_light', 'coin', 'moneybag'] : ['shopping_bags', 'gem'],
+    click: clickUrl,
+    actions: [
+      { action: 'view', label: 'Open Goodwill Listing', url: clickUrl }
+    ]
+  };
+
+  const resp = await fetch('https://ntfy.sh', {
+    method: 'POST',
+    body: JSON.stringify(payload)
+  });
+  return resp.ok;
+}
+
+async function pushEvaluatedDealToPhone() {
+  const title = document.getElementById('evalTitle').value.trim();
+  const price = parseFloat(document.getElementById('evalPrice').value) || 0;
+  const hours = parseFloat(document.getElementById('evalHours').value) || 0;
+  let url = document.getElementById('evalUrl').value.trim();
+  if (/^\d+$/.test(url)) url = `https://shopgoodwill.com/item/${url}`;
+
+  const headline = document.getElementById('evalHeadline').textContent;
+  const subline = document.getElementById('evalSubline').textContent;
+
+  const alertTitle = `GOODWILL DEAL: $${price.toFixed(2)} (${hours}h left to bid)`;
+  const alertBody = `Item: ${title}\n${headline}\n${subline}\nAuction Link: ${url}`;
+
+  try {
+    const ok = await sendNtfyNotification(alertTitle, alertBody, url, true);
+    if (ok) showToast('📲 Alert sent to your phone via ntfy.sh!');
+    else showToast('⚠️ Could not reach ntfy.sh');
+  } catch (e) {
+    showToast('⚠️ Error sending ntfy alert: ' + e.message);
+  }
+}
+
+async function sendTestAlertToPhone() {
+  const topic = document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026';
+  const melt925 = (silverSpot * 0.925).toFixed(2);
+  const spread = (silverSpot * 0.925 - 20).toFixed(2);
+  const sampleUrl = 'https://shopgoodwill.com/categories/listing?st=925%20silver';
+
+  const title = `UNDER MELT DEAL: 1 oz .925 Silver @ $20.00 (2h 45m left)`;
+  const body = [
+    `Item: 1 oz .925 Sterling Silver Bracelet (Marked 925)`,
+    `Current Bid: $20.00 | Live .925 Melt: $${melt925} (+$${spread} Under Melt!)`,
+    `Time Left to Bid: 2h 45m`,
+    `Link: ${sampleUrl}`
+  ].join('\n');
+
+  try {
+    const ok = await sendNtfyNotification(title, body, sampleUrl, true);
+    if (ok) showToast(`📲 Test alert sent to ntfy.sh/${topic}! Check your phone.`);
+  } catch (e) {
+    showToast('⚠️ Failed to send test alert: ' + e.message);
+  }
+}
+
+function renderRules() {
+  const container = document.getElementById('rulesContainer');
+  let html = '';
+
+  rules.forEach((r, idx) => {
+    const tagClass = 'tag-' + (r.category_type || 'brand');
+    const sgSearchUrl = `https://shopgoodwill.com/categories/listing?st=${encodeURIComponent(r.query)}&sg=&c=&s=&lp=0&hp=${r.max_price}&sbn=&spo=false&snpo=false&socs=false&sd=false&sca=false&caed=1%2F1%2F1&cadb=7&scs=false&sis=false&col=1&p=1&ps=40&desc=false&ss=0&UseBuyerPrefs=true&sus=false&cln=1&catIds=`;
+
+    html += `
+      <div class="rule-card ${r.enabled ? 'active-rule' : 'disabled-rule'}">
+        <div class="rule-top">
+          <span class="rule-name">${r.name}</span>
+          <span class="rule-tag ${tagClass}">${r.category_type || 'brand'}</span>
+        </div>
+        <div class="rule-inputs">
+          <div class="rule-mini-field">
+            <label>Max Price ($)</label>
+            <input type="number" id="rule_price_${idx}" value="${r.max_price}">
+          </div>
+          <div class="rule-mini-field">
+            <label>Max Time Left (Hrs)</label>
+            <input type="number" step="0.5" id="rule_hours_${idx}" value="${r.max_hours_left}">
+          </div>
+          <div class="rule-mini-field" style="grid-column: span 2;">
+            <label>Search Keywords</label>
+            <input type="text" id="rule_query_${idx}" value="${r.query}">
+          </div>
+        </div>
+        <div class="rule-actions">
+          <button class="btn btn-outline" style="padding:5px 9px; font-size:10px;" onclick="toggleRule(${idx})">
+            ${r.enabled ? '✅ Enabled' : '⏸ Paused'}
+          </button>
+          <a href="${sgSearchUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding:5px 10px; font-size:10px;">
+            Open Live Auctions ↗
+          </a>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function toggleRule(idx) {
+  rules[idx].enabled = !rules[idx].enabled;
+  saveAllSettings();
+}
+
+function addCustomRulePrompt() {
+  const name = prompt('Enter Brand or Item Name (e.g. "Tiffany & Co", "Omega Watch", "14K Gold"):');
+  if (!name) return;
+  const query = prompt('Enter Search Keywords for ShopGoodwill:', name.toLowerCase());
+  if (!query) return;
+  const maxPrice = parseFloat(prompt('Enter Max Price Limit ($):', '75')) || 75;
+  const maxHours = parseFloat(prompt('Enter Max Hours Left to Bid:', '3.0')) || 3.0;
+
+  rules.unshift({
+    id: 'custom_' + Date.now(),
+    name: name,
+    query: query,
+    category_type: query.includes('gold') || query.includes('silver') || query.includes('925') ? 'metal' : 'brand',
+    max_price: maxPrice,
+    max_hours_left: maxHours,
+    enabled: true
+  });
+  saveAllSettings();
+}
+
+function renderDeals(deals) {
+  const container = document.getElementById('dealsContainer');
+  document.getElementById('dealCountBadge').textContent = deals.length;
+
+  if (!deals || deals.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
+        No auctions currently ending within your hour/price limits. Click any <strong>"Open Live Auctions ↗"</strong> button below or adjust your Max Hours / Max Price limits.
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  deals.forEach((d, idx) => {
+    const meltBadge = d.melt_value > 0
+      ? `<span class="deal-badge">${d.under_melt ? '🔥 UNDER MELT' : 'Melt'}: $${d.melt_value.toFixed(2)} (${d.grams}g)</span>`
+      : `<span class="deal-badge">${d.deal_reason}</span>`;
+
+    html += `
+      <div class="deal-card ${d.under_melt ? 'under-melt-card' : ''}">
+        <img class="deal-thumb" src="${d.image_url || ''}" alt="Item" onerror="this.style.display='none'">
+        <div>
+          <div class="deal-title">${d.title}</div>
+          <div class="deal-meta">
+            <strong>${d.rule_name}</strong>
+            <span>•</span>
+            ${meltBadge}
+            <span>•</span>
+            <span class="deal-time">⏱ ${d.time_left_label} left</span>
+            <span>•</span>
+            <span>${d.num_bids || 0} bids</span>
+          </div>
+        </div>
+        <div class="deal-right">
+          <div class="deal-price">$${Number(d.current_price).toFixed(2)}</div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-green" style="padding:5px 9px; font-size:10px;" onclick='sendDealAlertFromFeed(${JSON.stringify(d).replace(/'/g, "&#39;")})'>📲 Alert</button>
+            <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding:5px 10px; font-size:10px;">Bid Now ↗</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+async function sendDealAlertFromFeed(deal) {
+  const title = `${deal.under_melt ? 'UNDER MELT' : 'GOODWILL'} DEAL: ${deal.rule_name} @ $${Number(deal.current_price).toFixed(2)} (${deal.time_left_label} left)`;
+  const body = [
+    `Item: ${deal.title}`,
+    `Current Bid: $${Number(deal.current_price).toFixed(2)} (${deal.num_bids || 0} bids)`,
+    deal.melt_value > 0 ? `Live Melt Value: $${deal.melt_value.toFixed(2)} (${deal.grams}g)` : `Rule: ${deal.deal_reason}`,
+    `Time Left: ${deal.time_left_label}`,
+    `Auction Link: ${deal.url}`
+  ].join('\n');
+
+  const ok = await sendNtfyNotification(title, body, deal.url, deal.under_melt);
+  if (ok) showToast('📲 Deal alert sent to your phone!');
+}
+
+async function triggerLiveScan() {
+  const statusEl = document.getElementById('scanStatusLabel');
+  statusEl.textContent = 'Scanning ShopGoodwill auctions...';
+  showToast('⚡ Scanning ShopGoodwill auctions ending soonest...');
+
+  // 1. Try local Python daemon first (full server-side scan + auto ntfy)
+  try {
+    const resp = await fetch('http://127.0.0.1:8765/api/scan', { method: 'POST' });
+    if (resp.ok) {
+      const data = await resp.json();
+      daemonConnected = true;
+      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-SCANNING';
+      renderDeals(data.deals || []);
+      statusEl.textContent = 'Last scan: ' + new Date().toLocaleTimeString();
+      showToast(`✅ Scan complete! Found ${(data.deals || []).length} qualifying deals.`);
+      return;
+    }
+  } catch (e) {}
+
+  // 2. Fallback: Direct browser fetch to ShopGoodwill API
+  const found = [];
+  const activeRules = rules.filter(r => r.enabled);
+  for (const r of activeRules.slice(0, 8)) {
+    try {
+      const resp = await fetch('https://buyerapi.shopgoodwill.com/api/Search/ItemListing', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          isSize: false,
+          isWeddingCatagory: "false",
+          isMultipleCategoryIds: false,
+          isFromHeaderMenuTab: false,
+          layout: "",
+          searchText: r.query,
+          lowPrice: "0",
+          highPrice: String(Math.round(r.max_price)),
+          sortColumn: "1",
+          page: "1",
+          pageSize: "40",
+          sortDescending: "false"
+        })
+      });
+      if (resp.ok) {
+        const data = await resp.json();
+        const items = (data.searchResults && data.searchResults.items) || [];
+        items.forEach(it => {
+          const price = parseFloat(it.currentPrice || it.minimumBid || 0);
+          if (price <= r.max_price) {
+            const grams = r.category_type === 'metal' ? parseWeightFromText(it.title || '') : 0;
+            const troyOz = grams / 31.1034768;
+            const meltVal = r.metal === 'silver' ? troyOz * (r.purity || 0.925) * silverSpot
+                          : (r.metal === 'gold' ? troyOz * (r.purity || 0.75) * goldSpot : 0);
+            found.push({
+              item_id: it.itemId,
+              title: it.title,
+              rule_name: r.name,
+              current_price: price,
+              num_bids: it.numBids || 0,
+              time_left_label: it.remainingTime || 'Ending Soon',
+              image_url: it.imageURL,
+              url: `https://shopgoodwill.com/item/${it.itemId}`,
+              grams: grams.toFixed(1),
+              melt_value: meltVal,
+              under_melt: meltVal > 0 && price < meltVal,
+              deal_reason: `Under $${r.max_price} Limit`
+            });
+          }
+        });
+      }
+    } catch (err) {}
+  }
+
+  renderDeals(found);
+  statusEl.textContent = 'Updated ' + new Date().toLocaleTimeString();
+}
+
+async function checkDaemonStatus() {
+  try {
+    const resp = await fetch('http://127.0.0.1:8765/api/status');
+    if (resp.ok) {
+      const data = await resp.json();
+      daemonConnected = true;
+      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-SCANNING';
+      if (data.state && data.state.deals) {
+        renderDeals(data.state.deals);
+      }
+    }
+  } catch (e) {}
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadLocalConfig();
+  renderRules();
+  fetchLiveSpotPrices();
+  checkDaemonStatus();
+  setInterval(fetchLiveSpotPrices, 120000);
+  setInterval(checkDaemonStatus, 30000);
+});
+</script>
+</body>
+</html>
