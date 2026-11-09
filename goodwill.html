@@ -231,6 +231,23 @@
 
   .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
 
+  .btn-power-on {
+    background: rgba(0, 230, 118, 0.22);
+    border: 2px solid #00E676;
+    color: #00E676;
+    box-shadow: 0 0 14px rgba(0, 230, 118, 0.28);
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+
+  .btn-power-off {
+    background: rgba(255, 82, 82, 0.18);
+    border: 2px solid #FF5252;
+    color: #FF8A80;
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+
   .filter-bar {
     display: flex;
     flex-wrap: wrap;
@@ -535,9 +552,14 @@
 <div class="container">
   <div class="top-nav">
     <a href="index.html" class="back-link">← Back to Bullion Desk</a>
-    <div style="display:flex; gap:8px; flex-wrap:wrap;">
-      <button class="btn btn-green" onclick="sendTestAlertToPhone()">📱 Send Test ntfy Alert to Phone</button>
-      <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Goodwill Deals Now</button>
+    <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+      <button id="masterSearchToggleBtn" class="btn btn-power-off" onclick="toggleAutoSearch()">
+        ⏸️ Auto-Search: OFF (Click to Turn ON)
+      </button>
+      <button id="masterAlertToggleBtn" class="btn btn-power-off" onclick="togglePhoneAlerts()">
+        🔕 Phone Alerts: OFF (Muted)
+      </button>
+      <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Once Now</button>
     </div>
   </div>
 
@@ -684,9 +706,16 @@
       </div>
       <div class="field">
         <label>Auto-Send Phone Alerts</label>
-        <select id="cfgAutoNtfy">
-          <option value="true" selected>Enabled (Instant Push)</option>
-          <option value="false">Muted (Dashboard Only)</option>
+        <select id="cfgAutoNtfy" onchange="syncFromDropdowns()">
+          <option value="false" selected>Muted / OFF (Dashboard Only)</option>
+          <option value="true">Enabled (Send to Phone)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Phone Alert Filter Mode</label>
+        <select id="cfgNtfyMode" onchange="syncFromDropdowns()">
+          <option value="under_melt_only" selected>🔥 Under-Melt Gold &amp; Silver Only</option>
+          <option value="all">🔔 All Categories (&lt; 1.5h left)</option>
         </select>
       </div>
     </div>
@@ -736,12 +765,112 @@ let rules = [];
 let activeDeals = [];
 let currentDealFilter = 'ALL';
 let totalPurgedCount = 0;
+let scannerEnabled = false;
+let autoSendNtfy = false;
+let ntfyMode = 'under_melt_only';
 
 function showToast(msg) {
   const box = document.getElementById('toastBox');
   box.textContent = msg;
   box.style.display = 'block';
   setTimeout(() => { box.style.display = 'none'; }, 4000);
+}
+
+function updateMasterPowerButtons() {
+  const searchBtn = document.getElementById('masterSearchToggleBtn');
+  const alertBtn = document.getElementById('masterAlertToggleBtn');
+  const daemonDot = document.getElementById('daemonDot');
+  const daemonText = document.getElementById('daemonStatusText');
+
+  if (searchBtn) {
+    if (scannerEnabled) {
+      searchBtn.className = 'btn btn-power-on';
+      searchBtn.innerHTML = '🟢 Auto-Search: ON (Click to Turn OFF)';
+    } else {
+      searchBtn.className = 'btn btn-power-off';
+      searchBtn.innerHTML = '⏸️ Auto-Search: OFF (Click to Turn ON)';
+    }
+  }
+
+  if (alertBtn) {
+    if (autoSendNtfy) {
+      alertBtn.className = 'btn btn-power-on';
+      const modeLabel = ntfyMode === 'under_melt_only' ? 'UNDER-MELT ONLY' : 'ALL DEALS';
+      alertBtn.innerHTML = `🔔 Phone Alerts: ON (${modeLabel})`;
+    } else {
+      alertBtn.className = 'btn btn-power-off';
+      alertBtn.innerHTML = '🔕 Phone Alerts: OFF (Muted)';
+    }
+  }
+
+  if (daemonDot && daemonText) {
+    if (scannerEnabled) {
+      daemonDot.style.background = '#00E676';
+      daemonDot.style.boxShadow = '0 0 8px #00E676';
+      daemonText.textContent = 'AUTO-SEARCH ACTIVE · AUTO-PURGE ON';
+    } else {
+      daemonDot.style.background = '#FBBF24';
+      daemonDot.style.boxShadow = '0 0 8px #FBBF24';
+      daemonText.textContent = 'SEARCH PAUSED (OFF) · AUTO-PURGE ON';
+    }
+  }
+
+  const autoSelect = document.getElementById('cfgAutoNtfy');
+  if (autoSelect) autoSelect.value = String(autoSendNtfy);
+  const modeSelect = document.getElementById('cfgNtfyMode');
+  if (modeSelect) modeSelect.value = ntfyMode;
+}
+
+async function toggleAutoSearch() {
+  scannerEnabled = !scannerEnabled;
+  updateMasterPowerButtons();
+
+  const cfg = buildConfigObject();
+  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+
+  try {
+    await fetch('http://127.0.0.1:8765/api/toggle-search', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ scanner_enabled: scannerEnabled })
+    });
+  } catch (e) {}
+
+  if (scannerEnabled) {
+    showToast('🟢 Auto-Search turned ON! Scanning ShopGoodwill...');
+    triggerLiveScan();
+  } else {
+    showToast('⏸️ Auto-Search turned OFF (Paused). Zero background scans or alerts will run.');
+  }
+}
+
+async function togglePhoneAlerts() {
+  autoSendNtfy = !autoSendNtfy;
+  updateMasterPowerButtons();
+
+  const cfg = buildConfigObject();
+  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+
+  try {
+    await fetch('http://127.0.0.1:8765/api/toggle-alerts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ auto_send_ntfy: autoSendNtfy, ntfy_mode: ntfyMode })
+    });
+  } catch (e) {}
+
+  if (autoSendNtfy) {
+    showToast(`🔔 Phone Alerts turned ON (${ntfyMode === 'under_melt_only' ? 'Under-Melt Only' : 'All Categories'})!`);
+  } else {
+    showToast('🔕 Phone Alerts MUTED (OFF). Deals will only show on the dashboard.');
+  }
+}
+
+function syncFromDropdowns() {
+  autoSendNtfy = document.getElementById('cfgAutoNtfy').value === 'true';
+  ntfyMode = document.getElementById('cfgNtfyMode').value || 'under_melt_only';
+  updateMasterPowerButtons();
+  saveAllSettings();
 }
 
 function loadLocalConfig() {
@@ -752,20 +881,26 @@ function loadLocalConfig() {
       document.getElementById('cfgNtfyTopic').value = parsed.ntfy_topic || 'robinhood_agentic_beavers_2026';
       document.getElementById('cfgMaxHours').value = parsed.global_max_hours_left || 3.0;
       document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
-      document.getElementById('cfgAutoNtfy').value = String(parsed.auto_send_ntfy !== false);
+      scannerEnabled = Boolean(parsed.scanner_enabled === true);
+      autoSendNtfy = Boolean(parsed.auto_send_ntfy === true);
+      ntfyMode = parsed.ntfy_mode || 'under_melt_only';
       rules = parsed.rules || DEFAULT_RULES;
+      updateMasterPowerButtons();
       return;
     } catch (e) {}
   }
   rules = JSON.parse(JSON.stringify(DEFAULT_RULES));
+  updateMasterPowerButtons();
 }
 
 function buildConfigObject() {
   return {
+    scanner_enabled: scannerEnabled,
     ntfy_topic: document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026',
     global_max_hours_left: parseFloat(document.getElementById('cfgMaxHours').value) || 3.0,
     scan_interval_seconds: (parseInt(document.getElementById('cfgIntervalMin').value) || 3) * 60,
-    auto_send_ntfy: document.getElementById('cfgAutoNtfy').value === 'true',
+    auto_send_ntfy: autoSendNtfy,
+    ntfy_mode: ntfyMode,
     rules: rules
   };
 }
@@ -1187,7 +1322,12 @@ async function loadDealsFeed() {
     const resp = await fetch('http://127.0.0.1:8765/api/status');
     if (resp.ok) {
       const data = await resp.json();
-      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-PURGE ON';
+      if (data.config) {
+        scannerEnabled = Boolean(data.config.scanner_enabled);
+        autoSendNtfy = Boolean(data.config.auto_send_ntfy);
+        ntfyMode = data.config.ntfy_mode || 'under_melt_only';
+        updateMasterPowerButtons();
+      }
       if (data.state && data.state.deals) {
         activeDeals = data.state.deals;
         totalPurgedCount = data.state.purged_count || totalPurgedCount;
@@ -1246,7 +1386,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Live 1-second countdown timer that automatically deletes any auction the moment it ends
   setInterval(tickLiveCountdownsAndPurge, 1000);
   setInterval(fetchLiveSpotPrices, 120000);
-  setInterval(loadDealsFeed, 30000);
+  setInterval(() => {
+    if (scannerEnabled) loadDealsFeed();
+  }, 30000);
 });
 </script>
 </body>
