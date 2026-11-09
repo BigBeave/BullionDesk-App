@@ -697,8 +697,8 @@
         <input type="text" id="cfgNtfyTopic" value="robinhood_agentic_beavers_2026">
       </div>
       <div class="field">
-        <label>Default Max Time Left (Hours)</label>
-        <input type="number" step="0.5" id="cfgMaxHours" value="3.0">
+        <label>Default Max Time Left (Minutes)</label>
+        <input type="number" step="1" id="cfgMaxMinutes" value="20">
       </div>
       <div class="field">
         <label>Scan Interval (Minutes)</label>
@@ -738,25 +738,25 @@
 
 <script>
 const DEFAULT_RULES = [
-  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_hours_left: 3.0, enabled: true },
-  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_hours_left: 3.0, enabled: true },
-  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_hours_left: 3.0, enabled: true },
-  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_hours_left: 3.0, enabled: true },
-  { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
-  { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
-  { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_hours_left: 6.0, enabled: true },
-  { id: 'gucci', name: 'Gucci', query: 'gucci', category_type: 'luxury', max_price: 120, max_hours_left: 3.0, enabled: true },
-  { id: 'fender_guitar', name: 'Fender Guitar', query: 'fender guitar', category_type: 'guitar', max_price: 200, max_hours_left: 4.0, enabled: true },
-  { id: 'gibson_guitar', name: 'Gibson Guitar', query: 'gibson guitar', category_type: 'guitar', max_price: 350, max_hours_left: 4.0, enabled: true },
-  { id: 'alvarez_guitar', name: 'Alvarez Guitar', query: 'alvarez guitar', category_type: 'guitar', max_price: 120, max_hours_left: 4.0, enabled: true },
-  { id: 'dangelico_guitar', name: "D'Angelico Guitar", query: "d'angelico guitar", category_type: 'guitar', max_price: 220, max_hours_left: 4.0, enabled: true },
-  { id: 'louis_vuitton', name: 'Louis Vuitton', query: 'louis vuitton', category_type: 'luxury', max_price: 200, max_hours_left: 3.0, enabled: true },
-  { id: 'coach', name: 'Coach Bag / Leather', query: 'coach bag', category_type: 'luxury', max_price: 35, max_hours_left: 3.0, enabled: true },
-  { id: 'prada', name: 'Prada', query: 'prada', category_type: 'luxury', max_price: 120, max_hours_left: 3.0, enabled: true },
-  { id: 'homage', name: 'Homage Apparel', query: 'homage shirt', category_type: 'brand', max_price: 18, max_hours_left: 3.0, enabled: true },
-  { id: 'nike', name: 'Nike / Air Jordan', query: 'nike', category_type: 'brand', max_price: 35, max_hours_left: 3.0, enabled: true },
-  { id: 'sports_cards_bulk', name: 'Trading / Sports Card Bulk Lot', query: 'sports cards lot', category_type: 'bulk', max_price: 45, max_hours_left: 3.0, enabled: true },
-  { id: 'jewelry_bulk_lot', name: 'Jewelry Bulk Lot', query: 'jewelry lot', category_type: 'bulk', max_price: 50, max_hours_left: 3.0, enabled: true }
+  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'gucci', name: 'Gucci', query: 'gucci', category_type: 'luxury', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'fender_guitar', name: 'Fender Guitar', query: 'fender guitar', category_type: 'guitar', max_price: 200, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'gibson_guitar', name: 'Gibson Guitar', query: 'gibson guitar', category_type: 'guitar', max_price: 350, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'alvarez_guitar', name: 'Alvarez Guitar', query: 'alvarez guitar', category_type: 'guitar', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'dangelico_guitar', name: "D'Angelico Guitar", query: "d'angelico guitar", category_type: 'guitar', max_price: 220, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'louis_vuitton', name: 'Louis Vuitton', query: 'louis vuitton', category_type: 'luxury', max_price: 200, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'coach', name: 'Coach Bag / Leather', query: 'coach bag', category_type: 'luxury', max_price: 35, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'prada', name: 'Prada', query: 'prada', category_type: 'luxury', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'homage', name: 'Homage Apparel', query: 'homage shirt', category_type: 'brand', max_price: 18, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'nike', name: 'Nike / Air Jordan', query: 'nike', category_type: 'brand', max_price: 35, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'sports_cards_bulk', name: 'Trading / Sports Card Bulk Lot', query: 'sports cards lot', category_type: 'bulk', max_price: 45, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
+  { id: 'jewelry_bulk_lot', name: 'Jewelry Bulk Lot', query: 'jewelry lot', category_type: 'bulk', max_price: 50, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true }
 ];
 
 let goldSpot = 2740.00;
@@ -826,7 +826,7 @@ async function toggleAutoSearch() {
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
 
   try {
     await fetch('http://127.0.0.1:8765/api/toggle-search', {
@@ -849,7 +849,7 @@ async function togglePhoneAlerts() {
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
 
   try {
     await fetch('http://127.0.0.1:8765/api/toggle-alerts', {
@@ -874,12 +874,12 @@ function syncFromDropdowns() {
 }
 
 function loadLocalConfig() {
-  const saved = localStorage.getItem('goodwill_sniper_config_v1');
+  const saved = localStorage.getItem('goodwill_sniper_config_v2');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
       document.getElementById('cfgNtfyTopic').value = parsed.ntfy_topic || 'robinhood_agentic_beavers_2026';
-      document.getElementById('cfgMaxHours').value = parsed.global_max_hours_left || 3.0;
+      document.getElementById('cfgMaxMinutes').value = parsed.global_max_minutes_left || 20;
       document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
       scannerEnabled = Boolean(parsed.scanner_enabled === true);
       autoSendNtfy = Boolean(parsed.auto_send_ntfy === true);
@@ -894,10 +894,12 @@ function loadLocalConfig() {
 }
 
 function buildConfigObject() {
+  const maxMins = parseFloat(document.getElementById('cfgMaxMinutes').value) || 20;
   return {
     scanner_enabled: scannerEnabled,
     ntfy_topic: document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026',
-    global_max_hours_left: parseFloat(document.getElementById('cfgMaxHours').value) || 3.0,
+    global_max_minutes_left: maxMins,
+    global_max_hours_left: Number((maxMins / 60.0).toFixed(4)),
     scan_interval_seconds: (parseInt(document.getElementById('cfgIntervalMin').value) || 3) * 60,
     auto_send_ntfy: autoSendNtfy,
     ntfy_mode: ntfyMode,
@@ -908,15 +910,19 @@ function buildConfigObject() {
 async function saveAllSettings() {
   rules.forEach((r, idx) => {
     const pEl = document.getElementById(`rule_price_${idx}`);
-    const hEl = document.getElementById(`rule_hours_${idx}`);
+    const mEl = document.getElementById(`rule_mins_${idx}`);
     const qEl = document.getElementById(`rule_query_${idx}`);
     if (pEl) r.max_price = parseFloat(pEl.value) || r.max_price;
-    if (hEl) r.max_hours_left = parseFloat(hEl.value) || r.max_hours_left;
+    if (mEl) {
+      const mins = parseFloat(mEl.value) || 20;
+      r.max_minutes_left = mins;
+      r.max_hours_left = Number((mins / 60.0).toFixed(4));
+    }
     if (qEl) r.query = qEl.value.trim() || r.query;
   });
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
   document.getElementById('lastSyncLabel').textContent = 'ntfy Topic: ' + cfg.ntfy_topic;
 
   try {
@@ -1129,7 +1135,8 @@ function evaluateCustomDeal() {
   const mode = document.getElementById('evalMetal').value;
   const price = parseFloat(document.getElementById('evalPrice').value) || 0;
   const hours = parseFloat(document.getElementById('evalHours').value) || 0;
-  const maxHours = parseFloat(document.getElementById('cfgMaxHours').value) || 3.0;
+  const maxMins = parseFloat(document.getElementById('cfgMaxMinutes').value) || 20;
+  const maxHours = Number((maxMins / 60.0).toFixed(2));
 
   const banner = document.getElementById('evalBanner');
   const headEl = document.getElementById('evalHeadline');
@@ -1238,6 +1245,7 @@ function renderRules() {
 
   rules.forEach((r, idx) => {
     const tagClass = 'tag-' + (r.category_type || 'brand');
+    const minsVal = r.max_minutes_left !== undefined ? r.max_minutes_left : Math.round((r.max_hours_left || 0.3333) * 60);
     const sgSearchUrl = `https://shopgoodwill.com/categories/listing?st=${encodeURIComponent(r.query)}&sg=&c=&s=&lp=0&hp=${r.max_price}&sbn=&spo=false&snpo=false&socs=false&sd=false&sca=false&caed=1%2F1%2F1&cadb=7&scs=false&sis=false&col=1&p=1&ps=40&desc=false&ss=0&UseBuyerPrefs=true&sus=false&cln=1&catIds=`;
 
     html += `
@@ -1252,8 +1260,8 @@ function renderRules() {
             <input type="number" id="rule_price_${idx}" value="${r.max_price}">
           </div>
           <div class="rule-mini-field">
-            <label>Max Time Left (Hrs)</label>
-            <input type="number" step="0.5" id="rule_hours_${idx}" value="${r.max_hours_left}">
+            <label>Max Time Left (Mins)</label>
+            <input type="number" step="1" id="rule_mins_${idx}" value="${minsVal}">
           </div>
           <div class="rule-mini-field" style="grid-column: span 2;">
             <label>Search Keywords</label>
@@ -1286,7 +1294,7 @@ function addCustomRulePrompt() {
   const query = prompt('Enter Search Keywords for ShopGoodwill:', name.toLowerCase());
   if (!query) return;
   const maxPrice = parseFloat(prompt('Enter Max Price Limit ($):', '75')) || 75;
-  const maxHours = parseFloat(prompt('Enter Max Hours Left to Bid:', '3.0')) || 3.0;
+  const maxMins = parseFloat(prompt('Enter Max Minutes Left to Bid:', '20')) || 20;
 
   rules.unshift({
     id: 'custom_' + Date.now(),
@@ -1294,7 +1302,8 @@ function addCustomRulePrompt() {
     query: query,
     category_type: query.includes('gold') || query.includes('silver') || query.includes('925') ? 'metal' : 'brand',
     max_price: maxPrice,
-    max_hours_left: maxHours,
+    max_minutes_left: maxMins,
+    max_hours_left: Number((maxMins / 60.0).toFixed(4)),
     enabled: true
   });
   saveAllSettings();
