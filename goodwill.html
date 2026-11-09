@@ -8,7 +8,7 @@
 <style>
   :root {
     --bg: #07080a;
-    --panel: rgba(18, 20, 26, 0.88);
+    --panel: rgba(18, 20, 26, 0.9);
     --border: rgba(212, 175, 55, 0.22);
     --gold: #D4AF37;
     --gold-light: #F3E5AB;
@@ -32,7 +32,7 @@
   }
 
   .container {
-    max-width: 960px;
+    max-width: 980px;
     margin: 0 auto;
   }
 
@@ -231,6 +231,33 @@
 
   .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
 
+  .filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .filter-pill {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: var(--muted);
+    padding: 5px 11px;
+    border-radius: 16px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-pill.active {
+    background: rgba(212, 175, 55, 0.18);
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
   /* Controls Grid */
   .form-grid {
     display: grid;
@@ -391,11 +418,13 @@
     border-radius: 11px;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.25s;
   }
 
   .deal-card.under-melt-card {
-    background: rgba(0, 230, 118, 0.06);
-    border-color: rgba(0, 230, 118, 0.38);
+    background: rgba(0, 230, 118, 0.07);
+    border-color: rgba(0, 230, 118, 0.42);
+    box-shadow: 0 0 18px rgba(0, 230, 118, 0.08);
   }
 
   .deal-thumb {
@@ -429,13 +458,20 @@
     border-radius: 4px;
     font-size: 10px;
     font-weight: 800;
-    background: rgba(0, 230, 118, 0.18);
+    background: rgba(212, 175, 55, 0.16);
+    color: var(--gold-light);
+  }
+
+  .deal-badge.melt-hit {
+    background: rgba(0, 230, 118, 0.22);
     color: var(--up);
+    border: 1px solid rgba(0, 230, 118, 0.4);
   }
 
   .deal-time {
     color: #FBBF24;
     font-weight: 700;
+    font-variant-numeric: tabular-nums;
   }
 
   .deal-right {
@@ -449,6 +485,18 @@
     font-size: 19px;
     font-weight: 800;
     color: var(--gold-light);
+  }
+
+  .purge-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #9ee493;
+    background: rgba(0, 230, 118, 0.08);
+    border: 1px solid rgba(0, 230, 118, 0.25);
+    padding: 4px 10px;
+    border-radius: 16px;
   }
 
   .toast {
@@ -486,7 +534,7 @@
 
 <div class="container">
   <div class="top-nav">
-    <a href="index.html" class="back-link" id="backToBullionLink">← Back to Bullion Desk</a>
+    <a href="index.html" class="back-link">← Back to Bullion Desk</a>
     <div style="display:flex; gap:8px; flex-wrap:wrap;">
       <button class="btn btn-green" onclick="sendTestAlertToPhone()">📱 Send Test ntfy Alert to Phone</button>
       <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Goodwill Deals Now</button>
@@ -501,9 +549,9 @@
     <div class="status-cluster">
       <div class="badge-pill">
         <span class="dot" id="daemonDot"></span>
-        <span id="daemonStatusText">NTFY MOBILE PUSH READY</span>
+        <span id="daemonStatusText">LIVE FEED + AUTO-PURGE ACTIVE</span>
       </div>
-      <div style="font-size:11px; color:var(--muted);" id="lastSyncLabel">Topic: robinhood_agentic_beavers_2026</div>
+      <div style="font-size:11px; color:var(--muted);" id="lastSyncLabel">ntfy Topic: robinhood_agentic_beavers_2026</div>
     </div>
   </header>
 
@@ -536,31 +584,33 @@
     </div>
   </div>
 
-  <!-- 1. Ntfy & Global Automation Settings -->
+  <!-- 1. Live Matched Goodwill Deals Feed (Placed First so Deals Show Immediately!) -->
   <div class="panel">
     <div class="panel-header">
-      <span class="panel-title">📲 Cell Phone Alert & Scanner Settings (ntfy.sh)</span>
-      <button class="btn btn-outline" onclick="saveAllSettings()">💾 Save Settings</button>
+      <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+        <span class="panel-title">🔥 Live Ending-Soonest Goodwill Deals (<span id="dealCountBadge">0</span>)</span>
+        <span class="purge-notice" id="purgeBadge">🧹 Auto-Deletes When Auction Ends (0 Purged)</span>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+        <span style="font-size:11px; color:var(--muted);" id="scanStatusLabel">Syncing live deals...</span>
+        <button class="btn btn-outline" onclick="purgeExpiredDeals(true)" title="Immediately remove any ended auctions">🧹 Purge Ended</button>
+        <button class="btn btn-gold" onclick="triggerLiveScan()">↻ Scan Now</button>
+      </div>
     </div>
-    <div class="form-grid">
-      <div class="field">
-        <label>Your ntfy Topic Name</label>
-        <input type="text" id="cfgNtfyTopic" value="robinhood_agentic_beavers_2026">
-      </div>
-      <div class="field">
-        <label>Default Max Time Left (Hours)</label>
-        <input type="number" step="0.5" id="cfgMaxHours" value="3.0">
-      </div>
-      <div class="field">
-        <label>Scan Interval (Minutes)</label>
-        <input type="number" min="1" id="cfgIntervalMin" value="3">
-      </div>
-      <div class="field">
-        <label>Auto-Send Phone Alerts</label>
-        <select id="cfgAutoNtfy">
-          <option value="true" selected>Enabled (Instant Push)</option>
-          <option value="false">Muted (Dashboard Only)</option>
-        </select>
+
+    <div class="filter-bar" id="dealFilterBar">
+      <button class="filter-pill active" onclick="setDealFilter('ALL', this)">All Deals</button>
+      <button class="filter-pill" onclick="setDealFilter('UNDER_MELT', this)">🔥 Under Melt Only</button>
+      <button class="filter-pill" onclick="setDealFilter('metal', this)">🥈 Silver &amp; Gold</button>
+      <button class="filter-pill" onclick="setDealFilter('guitar', this)">🎸 Guitars</button>
+      <button class="filter-pill" onclick="setDealFilter('luxury', this)">👜 Luxury (LV / Gucci / Coach / Prada / Rolex)</button>
+      <button class="filter-pill" onclick="setDealFilter('brand', this)">👕 Apparel (Lululemon / Alo / Homage / Nike)</button>
+      <button class="filter-pill" onclick="setDealFilter('bulk', this)">📦 Cards &amp; Jewelry Bulk Lots</button>
+    </div>
+
+    <div class="deals-list" id="dealsContainer">
+      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
+        Loading live ShopGoodwill deals...
       </div>
     </div>
   </div>
@@ -568,8 +618,8 @@
   <!-- 2. Instant Melt & Deal Evaluator + Instant Phone Alert Dispatcher -->
   <div class="panel">
     <div class="panel-header">
-      <span class="panel-title">⚖️ Instant Goodwill Melt & Deal Evaluator (Test or Push Any Listing)</span>
-      <span style="font-size:11px; color:var(--muted);">Automatically parses weights like "1 oz", "45g", "1lb 8.7oz", "20 dwt"</span>
+      <span class="panel-title">⚖️ Instant Goodwill Melt &amp; Deal Evaluator (Test or Push Any Listing)</span>
+      <span style="font-size:11px; color:var(--muted);">Parses weights like "1 oz", "45g", "1lb 8.7oz", "20 dwt"</span>
     </div>
     <div class="form-grid">
       <div class="field" style="grid-column: span 2;">
@@ -613,18 +663,31 @@
     </div>
   </div>
 
-  <!-- 3. Live Matched Deals Feed -->
+  <!-- 3. Ntfy & Global Automation Settings -->
   <div class="panel">
     <div class="panel-header">
-      <span class="panel-title">🔥 Live Matched Goodwill Deals (<span id="dealCountBadge">0</span>)</span>
-      <div style="display:flex; gap:8px; align-items:center;">
-        <span style="font-size:11px; color:var(--muted);" id="scanStatusLabel">Ready to scan</span>
-        <button class="btn btn-gold" onclick="triggerLiveScan()">↻ Refresh Auctions</button>
-      </div>
+      <span class="panel-title">📲 Cell Phone Alert &amp; Scanner Settings (ntfy.sh)</span>
+      <button class="btn btn-outline" onclick="saveAllSettings()">💾 Save Settings</button>
     </div>
-    <div class="deals-list" id="dealsContainer">
-      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
-        Click <strong>"⚡ Scan Goodwill Deals Now"</strong> or start <code>START_GOODWILL_SNIPER.bat</code> to stream live ending-soonest auctions under your limits.
+    <div class="form-grid">
+      <div class="field">
+        <label>Your ntfy Topic Name</label>
+        <input type="text" id="cfgNtfyTopic" value="robinhood_agentic_beavers_2026">
+      </div>
+      <div class="field">
+        <label>Default Max Time Left (Hours)</label>
+        <input type="number" step="0.5" id="cfgMaxHours" value="3.0">
+      </div>
+      <div class="field">
+        <label>Scan Interval (Minutes)</label>
+        <input type="number" min="1" id="cfgIntervalMin" value="3">
+      </div>
+      <div class="field">
+        <label>Auto-Send Phone Alerts</label>
+        <select id="cfgAutoNtfy">
+          <option value="true" selected>Enabled (Instant Push)</option>
+          <option value="false">Muted (Dashboard Only)</option>
+        </select>
       </div>
     </div>
   </div>
@@ -632,7 +695,7 @@
   <!-- 4. Watchlist Targets & Price/Time Limits -->
   <div class="panel">
     <div class="panel-header">
-      <span class="panel-title">🎯 Active Goodwill Watchlist Targets & Limits (19 Categories)</span>
+      <span class="panel-title">🎯 Active Goodwill Watchlist Targets &amp; Limits (19 Categories)</span>
       <div style="display:flex; gap:8px;">
         <button class="btn btn-outline" onclick="addCustomRulePrompt()">+ Add New Target</button>
         <button class="btn btn-gold" onclick="saveAllSettings()">💾 Save Limits</button>
@@ -646,10 +709,10 @@
 
 <script>
 const DEFAULT_RULES = [
-  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_hours_left: 3.0, default_assumed_oz: 1.0, enabled: true },
-  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_hours_left: 3.0, default_assumed_oz: 1.0, enabled: true },
-  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_hours_left: 3.0, default_assumed_oz: 0.1, enabled: true },
-  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_hours_left: 3.0, default_assumed_oz: 0.1, enabled: true },
+  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_hours_left: 3.0, enabled: true },
+  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_hours_left: 3.0, enabled: true },
+  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_hours_left: 3.0, enabled: true },
+  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_hours_left: 3.0, enabled: true },
   { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
   { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_hours_left: 3.0, enabled: true },
   { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_hours_left: 6.0, enabled: true },
@@ -670,7 +733,9 @@ const DEFAULT_RULES = [
 let goldSpot = 2740.00;
 let silverSpot = 32.50;
 let rules = [];
-let daemonConnected = false;
+let activeDeals = [];
+let currentDealFilter = 'ALL';
+let totalPurgedCount = 0;
 
 function showToast(msg) {
   const box = document.getElementById('toastBox');
@@ -706,7 +771,6 @@ function buildConfigObject() {
 }
 
 async function saveAllSettings() {
-  // Read updated values from rule cards
   rules.forEach((r, idx) => {
     const pEl = document.getElementById(`rule_price_${idx}`);
     const hEl = document.getElementById(`rule_hours_${idx}`);
@@ -718,7 +782,7 @@ async function saveAllSettings() {
 
   const cfg = buildConfigObject();
   localStorage.setItem('goodwill_sniper_config_v1', JSON.stringify(cfg));
-  document.getElementById('lastSyncLabel').textContent = 'Topic: ' + cfg.ntfy_topic;
+  document.getElementById('lastSyncLabel').textContent = 'ntfy Topic: ' + cfg.ntfy_topic;
 
   try {
     await fetch('http://127.0.0.1:8765/api/config', {
@@ -744,9 +808,7 @@ async function fetchLiveSpotPrices() {
       if (gData.price) goldSpot = gData.price;
       if (sData.price) silverSpot = sData.price;
     }
-  } catch (e) {
-    console.warn('Using fallback spot prices:', e);
-  }
+  } catch (e) {}
   updateSpotStrip();
   evaluateCustomDeal();
 }
@@ -771,6 +833,137 @@ function updateSpotStrip() {
   document.getElementById('melt14kGram').textContent = '$' + (gGram * 0.5833).toFixed(2) + ' / gram';
 }
 
+function formatCountdownMs(msRemaining) {
+  if (msRemaining <= 0) return 'Ended';
+  const totalSec = Math.floor(msRemaining / 1000);
+  const d = Math.floor(totalSec / 86400);
+  const h = Math.floor((totalSec % 86400) / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (d > 0) return `${d}d ${h}h ${m}m`;
+  if (h > 0) return `${h}h ${m}m ${s}s`;
+  return `${m}m ${s}s`;
+}
+
+/**
+ * AUTOMATIC EXPIRED AUCTION DELETION ENGINE
+ * Immediately deletes any auction whose end_timestamp_ms <= Date.now()
+ * so ended auctions never clog up the code, storage, or UI.
+ */
+function purgeExpiredDeals(showNotification = false) {
+  const now = Date.now();
+  const before = activeDeals.length;
+  activeDeals = activeDeals.filter(d => {
+    const endMs = d.end_timestamp_ms || 0;
+    return endMs > now;
+  });
+  const removed = before - activeDeals.length;
+  if (removed > 0) {
+    totalPurgedCount += removed;
+    document.getElementById('purgeBadge').textContent = `🧹 Auto-Deletes When Auction Ends (${totalPurgedCount} Purged)`;
+    renderDeals();
+    if (showNotification) {
+      showToast(`🧹 Purged ${removed} ended auction(s).`);
+    }
+  } else if (showNotification) {
+    showToast('✅ All displayed auctions are currently active (0 ended).');
+  }
+}
+
+function tickLiveCountdownsAndPurge() {
+  const now = Date.now();
+  let anyExpired = false;
+
+  activeDeals.forEach(d => {
+    const remMs = (d.end_timestamp_ms || 0) - now;
+    if (remMs <= 0) {
+      anyExpired = true;
+    } else {
+      d.time_left_label = formatCountdownMs(remMs);
+      const timerEl = document.getElementById(`timer_${d.item_id}`);
+      if (timerEl) {
+        timerEl.textContent = `⏱ ${d.time_left_label} left`;
+      }
+    }
+  });
+
+  if (anyExpired) {
+    purgeExpiredDeals(false);
+  }
+}
+
+function setDealFilter(filterVal, btnEl) {
+  currentDealFilter = filterVal;
+  document.querySelectorAll('#dealFilterBar .filter-pill').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+  renderDeals();
+}
+
+function renderDeals() {
+  const container = document.getElementById('dealsContainer');
+  const now = Date.now();
+
+  // Always filter out any ended auctions first
+  activeDeals = activeDeals.filter(d => (d.end_timestamp_ms || 0) > now);
+
+  let filtered = activeDeals;
+  if (currentDealFilter === 'UNDER_MELT') {
+    filtered = activeDeals.filter(d => d.under_melt);
+  } else if (currentDealFilter !== 'ALL') {
+    filtered = activeDeals.filter(d => d.category_type === currentDealFilter);
+  }
+
+  document.getElementById('dealCountBadge').textContent = filtered.length;
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
+        No active auctions match this filter right now. Click <strong>"↻ Scan Now"</strong> or select <strong>"All Deals"</strong> above.
+      </div>
+    `;
+    return;
+  }
+
+  let html = '';
+  filtered.forEach(d => {
+    const remMs = (d.end_timestamp_ms || 0) - now;
+    const liveLabel = formatCountdownMs(remMs);
+    const isMeltHit = d.under_melt;
+    const badgeHTML = d.melt_value > 0
+      ? `<span class="deal-badge ${isMeltHit ? 'melt-hit' : ''}">${isMeltHit ? '🔥 UNDER MELT' : 'Weighed'}: $${Number(d.melt_value).toFixed(2)} Melt (${d.grams}g)</span>`
+      : `<span class="deal-badge">${d.deal_reason || 'Under Limit'}</span>`;
+
+    const safeJson = JSON.stringify(d).replace(/'/g, "&#39;");
+
+    html += `
+      <div class="deal-card ${isMeltHit ? 'under-melt-card' : ''}" id="deal_card_${d.item_id}">
+        <img class="deal-thumb" src="${d.image_url || ''}" alt="Item" onerror="this.style.display='none'">
+        <div>
+          <div class="deal-title">${d.title}</div>
+          <div class="deal-meta">
+            <strong style="color:var(--gold-light);">${d.rule_name}</strong>
+            <span>•</span>
+            ${badgeHTML}
+            <span>•</span>
+            <span class="deal-time" id="timer_${d.item_id}">⏱ ${liveLabel} left</span>
+            <span>•</span>
+            <span>${d.num_bids || 0} bids</span>
+          </div>
+        </div>
+        <div class="deal-right">
+          <div class="deal-price">$${Number(d.current_price).toFixed(2)}</div>
+          <div style="display:flex; gap:6px;">
+            <button class="btn btn-green" style="padding:5px 9px; font-size:10px;" onclick='sendDealAlertFromFeed(${safeJson})'>📲 Alert</button>
+            <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding:5px 10px; font-size:10px;">Bid Now ↗</a>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
 function parseWeightFromText(text) {
   const t = text.toLowerCase();
   let grams = 0;
@@ -792,7 +985,7 @@ function parseWeightFromText(text) {
     else if (mLb) grams = parseFloat(mLb[1]) * 453.59237;
   }
 
-  if (grams <= 0) grams = 31.1034768; // Default 1 troy oz if not specified
+  if (grams <= 0) grams = 31.1034768;
   return grams;
 }
 
@@ -972,60 +1165,12 @@ function addCustomRulePrompt() {
   saveAllSettings();
 }
 
-function renderDeals(deals) {
-  const container = document.getElementById('dealsContainer');
-  document.getElementById('dealCountBadge').textContent = deals.length;
-
-  if (!deals || deals.length === 0) {
-    container.innerHTML = `
-      <div style="text-align:center; padding:24px; color:var(--muted); font-size:13px;">
-        No auctions currently ending within your hour/price limits. Click any <strong>"Open Live Auctions ↗"</strong> button below or adjust your Max Hours / Max Price limits.
-      </div>
-    `;
-    return;
-  }
-
-  let html = '';
-  deals.forEach((d, idx) => {
-    const meltBadge = d.melt_value > 0
-      ? `<span class="deal-badge">${d.under_melt ? '🔥 UNDER MELT' : 'Melt'}: $${d.melt_value.toFixed(2)} (${d.grams}g)</span>`
-      : `<span class="deal-badge">${d.deal_reason}</span>`;
-
-    html += `
-      <div class="deal-card ${d.under_melt ? 'under-melt-card' : ''}">
-        <img class="deal-thumb" src="${d.image_url || ''}" alt="Item" onerror="this.style.display='none'">
-        <div>
-          <div class="deal-title">${d.title}</div>
-          <div class="deal-meta">
-            <strong>${d.rule_name}</strong>
-            <span>•</span>
-            ${meltBadge}
-            <span>•</span>
-            <span class="deal-time">⏱ ${d.time_left_label} left</span>
-            <span>•</span>
-            <span>${d.num_bids || 0} bids</span>
-          </div>
-        </div>
-        <div class="deal-right">
-          <div class="deal-price">$${Number(d.current_price).toFixed(2)}</div>
-          <div style="display:flex; gap:6px;">
-            <button class="btn btn-green" style="padding:5px 9px; font-size:10px;" onclick='sendDealAlertFromFeed(${JSON.stringify(d).replace(/'/g, "&#39;")})'>📲 Alert</button>
-            <a href="${d.url}" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="padding:5px 10px; font-size:10px;">Bid Now ↗</a>
-          </div>
-        </div>
-      </div>
-    `;
-  });
-
-  container.innerHTML = html;
-}
-
 async function sendDealAlertFromFeed(deal) {
   const title = `${deal.under_melt ? 'UNDER MELT' : 'GOODWILL'} DEAL: ${deal.rule_name} @ $${Number(deal.current_price).toFixed(2)} (${deal.time_left_label} left)`;
   const body = [
     `Item: ${deal.title}`,
     `Current Bid: $${Number(deal.current_price).toFixed(2)} (${deal.num_bids || 0} bids)`,
-    deal.melt_value > 0 ? `Live Melt Value: $${deal.melt_value.toFixed(2)} (${deal.grams}g)` : `Rule: ${deal.deal_reason}`,
+    deal.melt_value > 0 ? `Live Melt Value: $${Number(deal.melt_value).toFixed(2)} (${deal.grams}g)` : `Rule: ${deal.deal_reason}`,
     `Time Left: ${deal.time_left_label}`,
     `Auction Link: ${deal.url}`
   ].join('\n');
@@ -1034,103 +1179,74 @@ async function sendDealAlertFromFeed(deal) {
   if (ok) showToast('📲 Deal alert sent to your phone!');
 }
 
-async function triggerLiveScan() {
+async function loadDealsFeed() {
   const statusEl = document.getElementById('scanStatusLabel');
-  statusEl.textContent = 'Scanning ShopGoodwill auctions...';
-  showToast('⚡ Scanning ShopGoodwill auctions ending soonest...');
 
-  // 1. Try local Python daemon first (full server-side scan + auto ntfy)
-  try {
-    const resp = await fetch('http://127.0.0.1:8765/api/scan', { method: 'POST' });
-    if (resp.ok) {
-      const data = await resp.json();
-      daemonConnected = true;
-      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-SCANNING';
-      renderDeals(data.deals || []);
-      statusEl.textContent = 'Last scan: ' + new Date().toLocaleTimeString();
-      showToast(`✅ Scan complete! Found ${(data.deals || []).length} qualifying deals.`);
-      return;
-    }
-  } catch (e) {}
-
-  // 2. Fallback: Direct browser fetch to ShopGoodwill API
-  const found = [];
-  const activeRules = rules.filter(r => r.enabled);
-  for (const r of activeRules.slice(0, 8)) {
-    try {
-      const resp = await fetch('https://buyerapi.shopgoodwill.com/api/Search/ItemListing', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          isSize: false,
-          isWeddingCatagory: "false",
-          isMultipleCategoryIds: false,
-          isFromHeaderMenuTab: false,
-          layout: "",
-          searchText: r.query,
-          lowPrice: "0",
-          highPrice: String(Math.round(r.max_price)),
-          sortColumn: "1",
-          page: "1",
-          pageSize: "40",
-          sortDescending: "false"
-        })
-      });
-      if (resp.ok) {
-        const data = await resp.json();
-        const items = (data.searchResults && data.searchResults.items) || [];
-        items.forEach(it => {
-          const price = parseFloat(it.currentPrice || it.minimumBid || 0);
-          if (price <= r.max_price) {
-            const grams = r.category_type === 'metal' ? parseWeightFromText(it.title || '') : 0;
-            const troyOz = grams / 31.1034768;
-            const meltVal = r.metal === 'silver' ? troyOz * (r.purity || 0.925) * silverSpot
-                          : (r.metal === 'gold' ? troyOz * (r.purity || 0.75) * goldSpot : 0);
-            found.push({
-              item_id: it.itemId,
-              title: it.title,
-              rule_name: r.name,
-              current_price: price,
-              num_bids: it.numBids || 0,
-              time_left_label: it.remainingTime || 'Ending Soon',
-              image_url: it.imageURL,
-              url: `https://shopgoodwill.com/item/${it.itemId}`,
-              grams: grams.toFixed(1),
-              melt_value: meltVal,
-              under_melt: meltVal > 0 && price < meltVal,
-              deal_reason: `Under $${r.max_price} Limit`
-            });
-          }
-        });
-      }
-    } catch (err) {}
-  }
-
-  renderDeals(found);
-  statusEl.textContent = 'Updated ' + new Date().toLocaleTimeString();
-}
-
-async function checkDaemonStatus() {
+  // 1. Try local Python daemon first (http://127.0.0.1:8765/api/status)
   try {
     const resp = await fetch('http://127.0.0.1:8765/api/status');
     if (resp.ok) {
       const data = await resp.json();
-      daemonConnected = true;
-      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-SCANNING';
+      document.getElementById('daemonStatusText').textContent = 'DAEMON LIVE · AUTO-PURGE ON';
       if (data.state && data.state.deals) {
-        renderDeals(data.state.deals);
+        activeDeals = data.state.deals;
+        totalPurgedCount = data.state.purged_count || totalPurgedCount;
+        document.getElementById('purgeBadge').textContent = `🧹 Auto-Deletes When Auction Ends (${totalPurgedCount} Purged)`;
+        purgeExpiredDeals(false);
+        renderDeals();
+        statusEl.textContent = 'Synced ' + (data.state.last_scan_time || 'just now');
+        return;
       }
     }
   } catch (e) {}
+
+  // 2. Fallback: Load latest_deals.json from same directory (works on GitHub Pages & local file)
+  try {
+    const resp = await fetch('latest_deals.json?cb=' + Date.now());
+    if (resp.ok) {
+      const data = await resp.json();
+      if (data.state && data.state.deals) {
+        activeDeals = data.state.deals;
+        purgeExpiredDeals(false);
+        renderDeals();
+        statusEl.textContent = 'Feed synced: ' + (data.state.last_scan_time || 'Live');
+        return;
+      }
+    }
+  } catch (e) {}
+}
+
+async function triggerLiveScan() {
+  const statusEl = document.getElementById('scanStatusLabel');
+  statusEl.textContent = 'Scanning ShopGoodwill auctions...';
+  showToast('⚡ Scanning ShopGoodwill & purging ended auctions...');
+
+  try {
+    const resp = await fetch('http://127.0.0.1:8765/api/scan', { method: 'POST' });
+    if (resp.ok) {
+      const data = await resp.json();
+      activeDeals = data.deals || [];
+      purgeExpiredDeals(false);
+      renderDeals();
+      statusEl.textContent = 'Scanned ' + new Date().toLocaleTimeString();
+      showToast(`✅ Scan complete! ${activeDeals.length} active deals (expired auto-deleted).`);
+      return;
+    }
+  } catch (e) {}
+
+  await loadDealsFeed();
+  showToast(`✅ Refreshed feed & purged ended auctions (${activeDeals.length} active deals).`);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   loadLocalConfig();
   renderRules();
   fetchLiveSpotPrices();
-  checkDaemonStatus();
+  loadDealsFeed();
+  // Live 1-second countdown timer that automatically deletes any auction the moment it ends
+  setInterval(tickLiveCountdownsAndPurge, 1000);
   setInterval(fetchLiveSpotPrices, 120000);
-  setInterval(checkDaemonStatus, 30000);
+  setInterval(loadDealsFeed, 30000);
 });
 </script>
 </body>
