@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3879.699951,
-    "silver_spot": 48.810001,
-    "last_spot_sync": "2026-11-13 15:20:19",
-    "last_scan_time": "2026-11-13 15:20:33",
-    "scan_count": 35,
+    "gold_spot": 3879.25,
+    "silver_spot": 48.825001,
+    "last_spot_sync": "2026-11-13 15:23:35",
+    "last_scan_time": "2026-11-13 15:23:50",
+    "scan_count": 36,
     "purged_count": 567,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 9.99,
         "max_price": 300.0,
         "num_bids": 0,
-        "hours_left": 0.1669,
-        "end_timestamp_ms": 1794601821718,
-        "time_left_label": "10m 1s",
+        "hours_left": 0.1122,
+        "end_timestamp_ms": 1794601821368,
+        "time_left_label": "6m 44s",
         "end_time": "2026-11-13T12:30:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-30\\10903afd-336f-4b58-875e-08f351d3656dwaii_1030t1.jpeg",
         "url": "https://shopgoodwill.com/item/283270082",
@@ -30,7 +30,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "UNDER MELT ($9.99 vs $12.82 Melt)",
-        "found_at": "2026-11-13 15:20:20"
+        "found_at": "2026-11-13 15:23:37"
       },
       {
         "item_id": "283264784",
@@ -41,9 +41,9 @@
         "current_price": 15.99,
         "max_price": 35.0,
         "num_bids": 2,
-        "hours_left": 0.0828,
-        "end_timestamp_ms": 1794601527988,
-        "time_left_label": "4m 58s",
+        "hours_left": 0.0281,
+        "end_timestamp_ms": 1794601527966,
+        "time_left_label": "1m 41s",
         "end_time": "2026-11-13T12:25:29",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-06\\4b141dcf-64a4-4f71-bfd8-8291275e4a32waii_1106t1.jpeg",
         "url": "https://shopgoodwill.com/item/283264784",
@@ -55,7 +55,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-13 15:20:29"
+        "found_at": "2026-11-13 15:23:46"
+      },
+      {
+        "item_id": "283677958",
+        "title": "Lululemon Women's Taupe Leggings Sz 12",
+        "rule_id": "lululemon",
+        "rule_name": "Lululemon",
+        "category_type": "brand",
+        "current_price": 13.11,
+        "max_price": 25.0,
+        "num_bids": 0,
+        "hours_left": 0.2806,
+        "end_timestamp_ms": 1794602429813,
+        "time_left_label": "16m 50s",
+        "end_time": "2026-11-13T12:40:30",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-23\\4f85951d-a46d-4e75-bba1-bd74a9f29d46land_1023t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283677958",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $25 Limit",
+        "found_at": "2026-11-13 15:23:39"
       }
     ],
     "alerts_sent": 24
