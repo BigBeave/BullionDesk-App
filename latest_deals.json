@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3883.199951,
+    "gold_spot": 3882.919922,
     "silver_spot": 49.0,
-    "last_spot_sync": "2026-11-13 14:11:02",
-    "last_scan_time": "2026-11-13 14:11:17",
-    "scan_count": 8,
-    "purged_count": 403,
+    "last_spot_sync": "2026-11-13 14:14:19",
+    "last_scan_time": "2026-11-13 14:14:34",
+    "scan_count": 9,
+    "purged_count": 404,
     "deals": [
-      {
-        "item_id": "283261938",
-        "title": "Sterling Silver and CZ Earrings",
-        "rule_id": "sterling_silver",
-        "rule_name": "Sterling Silver (Marked)",
-        "category_type": "metal",
-        "current_price": 9.99,
-        "max_price": 300.0,
-        "num_bids": 0,
-        "hours_left": 0.0114,
-        "end_timestamp_ms": 1794597105344,
-        "time_left_label": "41s",
-        "end_time": "2026-11-13T11:11:46",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-12\\e72016d8-f97d-4786-8671-3291cf46ca44ales_1112t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283261938",
-        "metal": "silver",
-        "purity": 0.925,
-        "grams": 8.15,
-        "troy_oz": 0.262,
-        "melt_value": 11.88,
-        "weight_source": "description",
-        "under_melt": true,
-        "deal_reason": "UNDER MELT ($9.99 vs $11.88 Melt)",
-        "found_at": "2026-11-13 14:11:04"
-      },
       {
         "item_id": "283669810",
         "title": "Nike Men's Blue Graphic Polo Sz XL",
@@ -41,9 +16,9 @@
         "current_price": 13.11,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.1617,
-        "end_timestamp_ms": 1794597658223,
-        "time_left_label": "9m 42s",
+        "hours_left": 0.1072,
+        "end_timestamp_ms": 1794597658559,
+        "time_left_label": "6m 26s",
         "end_time": "2026-11-13T11:20:59",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-23\\f8abb6ee-5821-4432-9403-ae02fd0f9f58land_1023t1.jpeg",
         "url": "https://shopgoodwill.com/item/283669810",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-13 14:11:16"
+        "found_at": "2026-11-13 14:14:32"
       }
     ],
     "alerts_sent": 20
