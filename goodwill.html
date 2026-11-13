@@ -553,8 +553,8 @@
   <div class="top-nav">
     <a href="index.html" class="back-link">← Back to Bullion Desk</a>
     <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
-      <button id="masterSearchToggleBtn" class="btn btn-power-off" onclick="toggleAutoSearch()">
-        ⏸️ Auto-Search: OFF (Click to Turn ON)
+      <button id="masterSearchToggleBtn" class="btn btn-power-on" onclick="toggleAutoSearch()">
+        🟢 Auto-Search: ON (Click to Turn OFF)
       </button>
       <button id="masterAlertToggleBtn" class="btn btn-power-off" onclick="togglePhoneAlerts()">
         🔕 Phone Alerts: OFF (Muted)
@@ -765,7 +765,7 @@ let rules = [];
 let activeDeals = [];
 let currentDealFilter = 'ALL';
 let totalPurgedCount = 0;
-let scannerEnabled = false;
+let scannerEnabled = true;
 let autoSendNtfy = false;
 let ntfyMode = 'under_melt_only';
 
@@ -881,7 +881,7 @@ function loadLocalConfig() {
       document.getElementById('cfgNtfyTopic').value = parsed.ntfy_topic || 'robinhood_agentic_beavers_2026';
       document.getElementById('cfgMaxMinutes').value = parsed.global_max_minutes_left || 20;
       document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
-      scannerEnabled = Boolean(parsed.scanner_enabled === true);
+      scannerEnabled = parsed.scanner_enabled !== undefined ? Boolean(parsed.scanner_enabled) : true;
       autoSendNtfy = Boolean(parsed.auto_send_ntfy === true);
       ntfyMode = parsed.ntfy_mode || 'under_melt_only';
       rules = parsed.rules || DEFAULT_RULES;
@@ -1354,6 +1354,12 @@ async function loadDealsFeed() {
     const resp = await fetch('latest_deals.json?cb=' + Date.now());
     if (resp.ok) {
       const data = await resp.json();
+      if (data.config) {
+        scannerEnabled = data.config.scanner_enabled !== undefined ? Boolean(data.config.scanner_enabled) : true;
+        autoSendNtfy = Boolean(data.config.auto_send_ntfy);
+        ntfyMode = data.config.ntfy_mode || 'under_melt_only';
+        updateMasterPowerButtons();
+      }
       if (data.state && data.state.deals) {
         activeDeals = data.state.deals;
         purgeExpiredDeals(false);
@@ -1395,9 +1401,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Live 1-second countdown timer that automatically deletes any auction the moment it ends
   setInterval(tickLiveCountdownsAndPurge, 1000);
   setInterval(fetchLiveSpotPrices, 120000);
-  setInterval(() => {
-    if (scannerEnabled) loadDealsFeed();
-  }, 30000);
+  setInterval(loadDealsFeed, 30000);
 });
 </script>
 </body>
