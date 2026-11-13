@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3882.919922,
-    "silver_spot": 49.0,
-    "last_spot_sync": "2026-11-13 14:14:19",
-    "last_scan_time": "2026-11-13 14:14:34",
-    "scan_count": 9,
+    "gold_spot": 3882.5,
+    "silver_spot": 49.02,
+    "last_spot_sync": "2026-11-13 14:14:55",
+    "last_scan_time": "2026-11-13 14:15:10",
+    "scan_count": 10,
     "purged_count": 404,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 13.11,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.1072,
-        "end_timestamp_ms": 1794597658559,
-        "time_left_label": "6m 26s",
+        "hours_left": 0.0972,
+        "end_timestamp_ms": 1794597658287,
+        "time_left_label": "5m 50s",
         "end_time": "2026-11-13T11:20:59",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-23\\f8abb6ee-5821-4432-9403-ae02fd0f9f58land_1023t1.jpeg",
         "url": "https://shopgoodwill.com/item/283669810",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-13 14:14:32"
+        "found_at": "2026-11-13 14:15:08"
       }
     ],
     "alerts_sent": 20
@@ -41,7 +41,7 @@
     "scan_interval_seconds": 180,
     "global_max_hours_left": 0.3333,
     "global_max_minutes_left": 20,
-    "auto_send_ntfy": false,
+    "auto_send_ntfy": true,
     "ntfy_mode": "under_melt_only",
     "auto_push_github": true,
     "exclude_keywords": [
