@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3877.899902,
-    "silver_spot": 48.810001,
-    "last_spot_sync": "2026-11-13 15:56:25",
-    "last_scan_time": "2026-11-13 15:56:40",
-    "scan_count": 46,
+    "gold_spot": 3881.820068,
+    "silver_spot": 48.814999,
+    "last_spot_sync": "2026-11-13 15:59:43",
+    "last_scan_time": "2026-11-13 15:59:58",
+    "scan_count": 47,
     "purged_count": 571,
     "deals": [
-      {
-        "item_id": "283693919",
-        "title": "lululemon Light Gray Belt Bag Fanny Pack Unisex Preowned",
-        "rule_id": "lululemon",
-        "rule_name": "Lululemon",
-        "category_type": "brand",
-        "current_price": 11.97,
-        "max_price": 25.0,
-        "num_bids": 0,
-        "hours_left": 0.0583,
-        "end_timestamp_ms": 1794603599333,
-        "time_left_label": "3m 30s",
-        "end_time": "2026-11-13T13:00:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/81\\Items\\2026-10-23\\a7ca467c-ddff-4dde-8546-23db9bd6336blist_1023t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283693919",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-13 15:56:29"
-      },
       {
         "item_id": "283272251",
         "title": "Sterling Silver Cat Earrings",
@@ -41,9 +16,9 @@
         "current_price": 8.99,
         "max_price": 300.0,
         "num_bids": 1,
-        "hours_left": 0.0683,
-        "end_timestamp_ms": 1794603632715,
-        "time_left_label": "4m 6s",
+        "hours_left": 0.0133,
+        "end_timestamp_ms": 1794603632596,
+        "time_left_label": "48s",
         "end_time": "2026-11-13T13:00:33",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-02\\086892bc-b012-46ae-ad46-0dbea55cfd86ales_1102t1.jpeg",
         "url": "https://shopgoodwill.com/item/283272251",
@@ -55,7 +30,7 @@
         "weight_source": "description",
         "under_melt": false,
         "deal_reason": "Weighed (4.76g \u00b7 $6.91 Melt)",
-        "found_at": "2026-11-13 15:56:26"
+        "found_at": "2026-11-13 15:59:44"
       },
       {
         "item_id": "283273004",
@@ -66,9 +41,9 @@
         "current_price": 8.99,
         "max_price": 300.0,
         "num_bids": 1,
-        "hours_left": 0.2531,
-        "end_timestamp_ms": 1794604297716,
-        "time_left_label": "15m 11s",
+        "hours_left": 0.1981,
+        "end_timestamp_ms": 1794604297598,
+        "time_left_label": "11m 53s",
         "end_time": "2026-11-13T13:11:38",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-02\\1c2a942d-eab0-4320-8358-e6152d07fb25ales_1102t1.jpeg",
         "url": "https://shopgoodwill.com/item/283273004",
@@ -80,7 +55,7 @@
         "weight_source": "description",
         "under_melt": false,
         "deal_reason": "Weighed (2.73g \u00b7 $3.96 Melt)",
-        "found_at": "2026-11-13 15:56:26"
+        "found_at": "2026-11-13 15:59:44"
       }
     ],
     "alerts_sent": 24
