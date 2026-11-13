@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3882.469971,
-    "silver_spot": 48.814999,
-    "last_spot_sync": "2026-11-13 15:33:27",
-    "last_scan_time": "2026-11-13 15:33:43",
-    "scan_count": 39,
+    "gold_spot": 3882.600098,
+    "silver_spot": 48.830002,
+    "last_spot_sync": "2026-11-13 15:36:44",
+    "last_scan_time": "2026-11-13 15:37:00",
+    "scan_count": 40,
     "purged_count": 568,
     "deals": [
-      {
-        "item_id": "283267918",
-        "title": "Nike Mens Shoes Air Force 1 CW2288-111 White Lace-Up Size 12!",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 9.99,
-        "max_price": 10.0,
-        "num_bids": 0,
-        "hours_left": 0.0581,
-        "end_timestamp_ms": 1794602230588,
-        "time_left_label": "3m 29s",
-        "end_time": "2026-11-13T12:37:11",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-09\\94a99b3d-c883-4cd6-9d53-10de95662aa7eyes_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283267918",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $10 Limit",
-        "found_at": "2026-11-13 15:33:41"
-      },
       {
         "item_id": "283677958",
         "title": "Lululemon Women's Taupe Leggings Sz 12",
@@ -41,9 +16,9 @@
         "current_price": 13.11,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.1161,
-        "end_timestamp_ms": 1794602429733,
-        "time_left_label": "6m 58s",
+        "hours_left": 0.0614,
+        "end_timestamp_ms": 1794602429703,
+        "time_left_label": "3m 41s",
         "end_time": "2026-11-13T12:40:30",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-23\\4f85951d-a46d-4e75-bba1-bd74a9f29d46land_1023t1.jpeg",
         "url": "https://shopgoodwill.com/item/283677958",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-13 15:33:31"
+        "found_at": "2026-11-13 15:36:48"
       },
       {
         "item_id": "283271517",
@@ -66,9 +41,9 @@
         "current_price": 12.0,
         "max_price": 250.0,
         "num_bids": 3,
-        "hours_left": 0.2825,
-        "end_timestamp_ms": 1794603024782,
-        "time_left_label": "16m 57s",
+        "hours_left": 0.2275,
+        "end_timestamp_ms": 1794603024576,
+        "time_left_label": "13m 39s",
         "end_time": "2026-11-13T12:50:25",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-30\\08d388e0-c0c4-42a4-9e92-980d03892017waii_1030t1.jpeg",
         "url": "https://shopgoodwill.com/item/283271517",
@@ -80,7 +55,7 @@
         "weight_source": "title",
         "under_melt": false,
         "deal_reason": "Weighed (1.26g \u00b7 $1.83 Melt)",
-        "found_at": "2026-11-13 15:33:27"
+        "found_at": "2026-11-13 15:36:45"
       }
     ],
     "alerts_sent": 24
