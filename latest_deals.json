@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3880.050049,
-    "silver_spot": 48.689999,
-    "last_spot_sync": "2026-11-13 16:26:10",
-    "last_scan_time": "2026-11-13 16:26:32",
-    "scan_count": 55,
+    "gold_spot": 3880.949951,
+    "silver_spot": 48.702999,
+    "last_spot_sync": "2026-11-13 16:29:35",
+    "last_scan_time": "2026-11-13 16:29:52",
+    "scan_count": 56,
     "purged_count": 576,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.06,
         "max_price": 300.0,
         "num_bids": 5,
-        "hours_left": 0.0869,
-        "end_timestamp_ms": 1794605485389,
-        "time_left_label": "5m 13s",
+        "hours_left": 0.03,
+        "end_timestamp_ms": 1794605484884,
+        "time_left_label": "1m 48s",
         "end_time": "2026-11-13T13:31:26",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-06\\a78040f3-3e9f-44a3-9c7b-6746fe4dbd93ales_1106t1.jpeg",
         "url": "https://shopgoodwill.com/item/283271022",
@@ -30,7 +30,32 @@
         "weight_source": "description",
         "under_melt": false,
         "deal_reason": "Weighed (9.99g \u00b7 $14.47 Melt)",
-        "found_at": "2026-11-13 16:26:12"
+        "found_at": "2026-11-13 16:29:36"
+      },
+      {
+        "item_id": "283274687",
+        "title": "Extra long Sterling Silver Necklace and Cross Pendant",
+        "rule_id": "sterling_silver",
+        "rule_name": "Sterling Silver (Marked)",
+        "category_type": "metal",
+        "current_price": 23.22,
+        "max_price": 300.0,
+        "num_bids": 7,
+        "hours_left": 0.3219,
+        "end_timestamp_ms": 1794606535885,
+        "time_left_label": "19m 19s",
+        "end_time": "2026-11-13T13:48:57",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-12\\1e0513b5-04e6-47f0-b4d0-85a55c933e40ales_1112t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283274687",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 10.28,
+        "troy_oz": 0.3305,
+        "melt_value": 14.89,
+        "weight_source": "description",
+        "under_melt": false,
+        "deal_reason": "Weighed (10.28g \u00b7 $14.89 Melt)",
+        "found_at": "2026-11-13 16:29:37"
       }
     ],
     "alerts_sent": 26
