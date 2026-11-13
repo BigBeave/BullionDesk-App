@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3882.169922,
-    "silver_spot": 48.709999,
-    "last_spot_sync": "2026-11-13 16:03:00",
-    "last_scan_time": "2026-11-13 16:03:19",
-    "scan_count": 48,
+    "gold_spot": 3881.449951,
+    "silver_spot": 48.715,
+    "last_spot_sync": "2026-11-13 16:06:20",
+    "last_scan_time": "2026-11-13 16:06:36",
+    "scan_count": 49,
     "purged_count": 572,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 9.99,
         "max_price": 300.0,
         "num_bids": 0,
-        "hours_left": 0.2883,
-        "end_timestamp_ms": 1794604820095,
-        "time_left_label": "17m 18s",
+        "hours_left": 0.2328,
+        "end_timestamp_ms": 1794604820327,
+        "time_left_label": "13m 58s",
         "end_time": "2026-11-13T13:20:21",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-30\\883ab1cc-a6ae-43f9-9203-67f6776d72a7waii_1030t1.jpeg",
         "url": "https://shopgoodwill.com/item/283273704",
@@ -26,11 +26,11 @@
         "purity": 0.925,
         "grams": 13.74,
         "troy_oz": 0.4418,
-        "melt_value": 19.9,
+        "melt_value": 19.91,
         "weight_source": "description",
         "under_melt": true,
-        "deal_reason": "UNDER MELT ($9.99 vs $19.90 Melt)",
-        "found_at": "2026-11-13 16:03:02"
+        "deal_reason": "UNDER MELT ($9.99 vs $19.91 Melt)",
+        "found_at": "2026-11-13 16:06:22"
       },
       {
         "item_id": "283273717",
@@ -41,9 +41,9 @@
         "current_price": 8.99,
         "max_price": 300.0,
         "num_bids": 0,
-        "hours_left": 0.2889,
-        "end_timestamp_ms": 1794604822523,
-        "time_left_label": "17m 20s",
+        "hours_left": 0.2333,
+        "end_timestamp_ms": 1794604822328,
+        "time_left_label": "14m 0s",
         "end_time": "2026-11-13T13:20:23",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-02\\f9fd068d-d862-4ae5-9414-55e9298547adales_1102t1.jpeg",
         "url": "https://shopgoodwill.com/item/283273717",
@@ -55,7 +55,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "UNDER MELT ($8.99 vs $9.39 Melt)",
-        "found_at": "2026-11-13 16:03:02"
+        "found_at": "2026-11-13 16:06:22"
       },
       {
         "item_id": "283273004",
@@ -66,9 +66,9 @@
         "current_price": 8.99,
         "max_price": 300.0,
         "num_bids": 1,
-        "hours_left": 0.1431,
-        "end_timestamp_ms": 1794604297094,
-        "time_left_label": "8m 35s",
+        "hours_left": 0.0875,
+        "end_timestamp_ms": 1794604297326,
+        "time_left_label": "5m 15s",
         "end_time": "2026-11-13T13:11:38",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/3\\Items\\2026-11-02\\1c2a942d-eab0-4320-8358-e6152d07fb25ales_1102t1.jpeg",
         "url": "https://shopgoodwill.com/item/283273004",
@@ -76,11 +76,11 @@
         "purity": 0.925,
         "grams": 2.73,
         "troy_oz": 0.0878,
-        "melt_value": 3.95,
+        "melt_value": 3.96,
         "weight_source": "description",
         "under_melt": false,
-        "deal_reason": "Weighed (2.73g \u00b7 $3.95 Melt)",
-        "found_at": "2026-11-13 16:03:02"
+        "deal_reason": "Weighed (2.73g \u00b7 $3.96 Melt)",
+        "found_at": "2026-11-13 16:06:22"
       }
     ],
     "alerts_sent": 26
