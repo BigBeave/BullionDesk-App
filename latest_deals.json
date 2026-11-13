@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3878.649902,
-    "silver_spot": 48.424999,
-    "last_spot_sync": "2026-11-13 16:42:44",
-    "last_scan_time": "2026-11-13 16:42:58",
-    "scan_count": 60,
+    "gold_spot": 3876.919922,
+    "silver_spot": 48.564999,
+    "last_spot_sync": "2026-11-13 16:46:00",
+    "last_scan_time": "2026-11-13 16:46:16",
+    "scan_count": 61,
     "purged_count": 577,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 10.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.125,
-        "end_timestamp_ms": 1794606618134,
-        "time_left_label": "7m 30s",
+        "hours_left": 0.0706,
+        "end_timestamp_ms": 1794606618657,
+        "time_left_label": "4m 14s",
         "end_time": "2026-11-13T13:50:19",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-23\\5e7a7db1-3900-46c6-89f0-65f0bf3417e0waii_1023t1.jpeg",
         "url": "https://shopgoodwill.com/item/283275772",
@@ -30,7 +30,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-13 16:42:48"
+        "found_at": "2026-11-13 16:46:04"
+      },
+      {
+        "item_id": "283280272",
+        "title": "Lululemon Women's High-Rise Bike Shorts Size 2 Teal Athletic Wear",
+        "rule_id": "lululemon",
+        "rule_name": "Lululemon",
+        "category_type": "brand",
+        "current_price": 6.5,
+        "max_price": 25.0,
+        "num_bids": 0,
+        "hours_left": 0.2986,
+        "end_timestamp_ms": 1794607439657,
+        "time_left_label": "17m 55s",
+        "end_time": "2026-11-13T14:04:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-06\\ee012aed-8a6f-4111-9ed4-27e1896cee5fsenB_1106t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283280272",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $25 Limit",
+        "found_at": "2026-11-13 16:46:04"
       }
     ],
     "alerts_sent": 26
