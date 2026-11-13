@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3882.600098,
-    "silver_spot": 48.830002,
-    "last_spot_sync": "2026-11-13 15:36:44",
-    "last_scan_time": "2026-11-13 15:37:00",
-    "scan_count": 40,
+    "gold_spot": 3878.850098,
+    "silver_spot": 48.757999,
+    "last_spot_sync": "2026-11-13 15:40:02",
+    "last_scan_time": "2026-11-13 15:40:16",
+    "scan_count": 41,
     "purged_count": 568,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 13.11,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.0614,
-        "end_timestamp_ms": 1794602429703,
-        "time_left_label": "3m 41s",
+        "hours_left": 0.0064,
+        "end_timestamp_ms": 1794602429170,
+        "time_left_label": "23s",
         "end_time": "2026-11-13T12:40:30",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-23\\4f85951d-a46d-4e75-bba1-bd74a9f29d46land_1023t1.jpeg",
         "url": "https://shopgoodwill.com/item/283677958",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-13 15:36:48"
+        "found_at": "2026-11-13 15:40:06"
       },
       {
         "item_id": "283271517",
@@ -41,9 +41,9 @@
         "current_price": 12.0,
         "max_price": 250.0,
         "num_bids": 3,
-        "hours_left": 0.2275,
-        "end_timestamp_ms": 1794603024576,
-        "time_left_label": "13m 39s",
+        "hours_left": 0.1725,
+        "end_timestamp_ms": 1794603024305,
+        "time_left_label": "10m 21s",
         "end_time": "2026-11-13T12:50:25",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-30\\08d388e0-c0c4-42a4-9e92-980d03892017waii_1030t1.jpeg",
         "url": "https://shopgoodwill.com/item/283271517",
@@ -55,7 +55,32 @@
         "weight_source": "title",
         "under_melt": false,
         "deal_reason": "Weighed (1.26g \u00b7 $1.83 Melt)",
-        "found_at": "2026-11-13 15:36:45"
+        "found_at": "2026-11-13 15:40:03"
+      },
+      {
+        "item_id": "283693919",
+        "title": "lululemon Light Gray Belt Bag Fanny Pack Unisex Preowned",
+        "rule_id": "lululemon",
+        "rule_name": "Lululemon",
+        "category_type": "brand",
+        "current_price": 11.97,
+        "max_price": 25.0,
+        "num_bids": 0,
+        "hours_left": 0.3314,
+        "end_timestamp_ms": 1794603599170,
+        "time_left_label": "19m 53s",
+        "end_time": "2026-11-13T13:00:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/81\\Items\\2026-10-23\\a7ca467c-ddff-4dde-8546-23db9bd6336blist_1023t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283693919",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $25 Limit",
+        "found_at": "2026-11-13 15:40:06"
       }
     ],
     "alerts_sent": 24
