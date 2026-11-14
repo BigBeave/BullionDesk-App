@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 10:32:55",
-    "last_scan_time": "2026-11-14 10:33:10",
-    "scan_count": 376,
+    "last_spot_sync": "2026-11-14 10:36:17",
+    "last_scan_time": "2026-11-14 10:36:32",
+    "scan_count": 377,
     "purged_count": 4632,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.0,
         "max_price": 35.0,
         "num_bids": 10,
-        "hours_left": 0.2886,
-        "end_timestamp_ms": 1794671425237,
-        "time_left_label": "17m 19s",
+        "hours_left": 0.2325,
+        "end_timestamp_ms": 1794671425177,
+        "time_left_label": "13m 57s",
         "end_time": "2026-11-14T07:50:26",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\857d9e6d-ea87-4388-aea4-35941e11c00asokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283498811",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 10:33:06"
+        "found_at": "2026-11-14 10:36:28"
       },
       {
         "item_id": "283502985",
@@ -41,9 +41,9 @@
         "current_price": 15.99,
         "max_price": 120.0,
         "num_bids": 0,
-        "hours_left": 0.4375,
-        "end_timestamp_ms": 1794671961854,
-        "time_left_label": "26m 15s",
+        "hours_left": 0.3814,
+        "end_timestamp_ms": 1794671961991,
+        "time_left_label": "22m 53s",
         "end_time": "2026-11-14T07:59:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\c7e7021a-b87a-4fbb-ab59-3d5e2305ddf7sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283502985",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $120 Limit",
-        "found_at": "2026-11-14 10:33:06"
+        "found_at": "2026-11-14 10:36:28"
       }
     ],
     "alerts_sent": 141
