@@ -556,8 +556,8 @@
       <button id="masterSearchToggleBtn" class="btn btn-power-on" onclick="toggleAutoSearch()">
         🟢 Auto-Search: ON (Click to Turn OFF)
       </button>
-      <button id="masterAlertToggleBtn" class="btn btn-power-off" onclick="togglePhoneAlerts()">
-        🔕 Phone Alerts: OFF (Muted)
+      <button id="masterAlertToggleBtn" class="btn btn-power-on" onclick="togglePhoneAlerts()">
+        🔔 Phone Alerts: ON (ALL DEALS · ≤30M · ≤75% MELT)
       </button>
       <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Once Now</button>
     </div>
@@ -698,7 +698,7 @@
       </div>
       <div class="field">
         <label>Default Max Time Left (Minutes)</label>
-        <input type="number" step="1" id="cfgMaxMinutes" value="20">
+        <input type="number" step="1" id="cfgMaxMinutes" value="30">
       </div>
       <div class="field">
         <label>Scan Interval (Minutes)</label>
@@ -707,15 +707,15 @@
       <div class="field">
         <label>Auto-Send Phone Alerts</label>
         <select id="cfgAutoNtfy" onchange="syncFromDropdowns()">
-          <option value="false" selected>Muted / OFF (Dashboard Only)</option>
-          <option value="true">Enabled (Send to Phone)</option>
+          <option value="false">Muted / OFF (Dashboard Only)</option>
+          <option value="true" selected>Enabled (Send to Phone)</option>
         </select>
       </div>
       <div class="field">
         <label>Phone Alert Filter Mode</label>
         <select id="cfgNtfyMode" onchange="syncFromDropdowns()">
-          <option value="under_melt_only" selected>🔥 Under-Melt Gold &amp; Silver Only</option>
-          <option value="all">🔔 All Categories (&lt; 1.5h left)</option>
+          <option value="under_melt_only">🔥 ≤ 75% Melt Gold &amp; Silver Only</option>
+          <option value="all" selected>🔔 All Categories (≤ 30m left · Metals ≤ 75% Melt)</option>
         </select>
       </div>
     </div>
@@ -738,25 +738,25 @@
 
 <script>
 const DEFAULT_RULES = [
-  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'gucci', name: 'Gucci', query: 'gucci', category_type: 'luxury', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'fender_guitar', name: 'Fender Guitar', query: 'fender guitar', category_type: 'guitar', max_price: 200, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'gibson_guitar', name: 'Gibson Guitar', query: 'gibson guitar', category_type: 'guitar', max_price: 350, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'alvarez_guitar', name: 'Alvarez Guitar', query: 'alvarez guitar', category_type: 'guitar', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'dangelico_guitar', name: "D'Angelico Guitar", query: "d'angelico guitar", category_type: 'guitar', max_price: 220, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'louis_vuitton', name: 'Louis Vuitton', query: 'louis vuitton', category_type: 'luxury', max_price: 200, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'coach', name: 'Coach Bag / Leather', query: 'coach bag', category_type: 'luxury', max_price: 35, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'prada', name: 'Prada', query: 'prada', category_type: 'luxury', max_price: 120, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'homage', name: 'Homage Apparel', query: 'homage shirt', category_type: 'brand', max_price: 18, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'nike', name: 'Nike / Air Jordan', query: 'nike', category_type: 'brand', max_price: 35, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'sports_cards_bulk', name: 'Trading / Sports Card Bulk Lot', query: 'sports cards lot', category_type: 'bulk', max_price: 45, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true },
-  { id: 'jewelry_bulk_lot', name: 'Jewelry Bulk Lot', query: 'jewelry lot', category_type: 'bulk', max_price: 50, max_minutes_left: 20, max_hours_left: 0.3333, enabled: true }
+  { id: 'silver_925', name: '925 Sterling Silver', query: '925 silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 250, max_minutes_left: 30, max_hours_left: 0.5, require_under_melt: true, max_melt_ratio: 0.75, enabled: true },
+  { id: 'sterling_silver', name: 'Sterling Silver (Marked)', query: 'sterling silver', category_type: 'metal', metal: 'silver', purity: 0.925, max_price: 300, max_minutes_left: 30, max_hours_left: 0.5, require_under_melt: true, max_melt_ratio: 0.75, enabled: true },
+  { id: 'gold_24k', name: '24K Fine Gold', query: '24k gold', category_type: 'metal', metal: 'gold', purity: 0.999, max_price: 800, max_minutes_left: 30, max_hours_left: 0.5, require_under_melt: true, max_melt_ratio: 0.75, enabled: true },
+  { id: 'gold_18k', name: '18K Solid Gold', query: '18k gold', category_type: 'metal', metal: 'gold', purity: 0.750, max_price: 600, max_minutes_left: 30, max_hours_left: 0.5, require_under_melt: true, max_melt_ratio: 0.75, enabled: true },
+  { id: 'lululemon', name: 'Lululemon', query: 'lululemon', category_type: 'brand', max_price: 25, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'alo_yoga', name: 'Alo Yoga', query: 'alo yoga', category_type: 'brand', max_price: 25, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'rolex', name: 'Rolex Watch', query: 'rolex', category_type: 'luxury', max_price: 1500, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'gucci', name: 'Gucci', query: 'gucci', category_type: 'luxury', max_price: 120, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'fender_guitar', name: 'Fender Guitar', query: 'fender guitar', category_type: 'guitar', max_price: 200, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'gibson_guitar', name: 'Gibson Guitar', query: 'gibson guitar', category_type: 'guitar', max_price: 350, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'alvarez_guitar', name: 'Alvarez Guitar', query: 'alvarez guitar', category_type: 'guitar', max_price: 120, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'dangelico_guitar', name: "D'Angelico Guitar", query: "d'angelico guitar", category_type: 'guitar', max_price: 220, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'louis_vuitton', name: 'Louis Vuitton', query: 'louis vuitton', category_type: 'luxury', max_price: 200, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'coach', name: 'Coach Bag / Leather', query: 'coach bag', category_type: 'luxury', max_price: 35, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'prada', name: 'Prada', query: 'prada', category_type: 'luxury', max_price: 120, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'homage', name: 'Homage Apparel', query: 'homage shirt', category_type: 'brand', max_price: 18, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'nike', name: 'Nike / Air Jordan', query: 'nike', category_type: 'brand', max_price: 35, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'sports_cards_bulk', name: 'Trading / Sports Card Bulk Lot', query: 'sports cards lot', category_type: 'bulk', max_price: 45, max_minutes_left: 30, max_hours_left: 0.5, enabled: true },
+  { id: 'jewelry_bulk_lot', name: 'Jewelry Bulk Lot', query: 'jewelry lot', category_type: 'bulk', max_price: 50, max_minutes_left: 30, max_hours_left: 0.5, enabled: true }
 ];
 
 let goldSpot = 2740.00;
@@ -766,8 +766,8 @@ let activeDeals = [];
 let currentDealFilter = 'ALL';
 let totalPurgedCount = 0;
 let scannerEnabled = true;
-let autoSendNtfy = false;
-let ntfyMode = 'under_melt_only';
+let autoSendNtfy = true;
+let ntfyMode = 'all';
 
 function showToast(msg) {
   const box = document.getElementById('toastBox');
@@ -795,7 +795,7 @@ function updateMasterPowerButtons() {
   if (alertBtn) {
     if (autoSendNtfy) {
       alertBtn.className = 'btn btn-power-on';
-      const modeLabel = ntfyMode === 'under_melt_only' ? 'UNDER-MELT ONLY' : 'ALL DEALS';
+      const modeLabel = ntfyMode === 'under_melt_only' ? '≤75% MELT ONLY' : 'ALL DEALS · ≤30M · ≤75% MELT';
       alertBtn.innerHTML = `🔔 Phone Alerts: ON (${modeLabel})`;
     } else {
       alertBtn.className = 'btn btn-power-off';
@@ -826,7 +826,7 @@ async function toggleAutoSearch() {
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
 
   try {
     await fetch('http://127.0.0.1:8765/api/toggle-search', {
@@ -849,7 +849,7 @@ async function togglePhoneAlerts() {
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
 
   try {
     await fetch('http://127.0.0.1:8765/api/toggle-alerts', {
@@ -874,16 +874,16 @@ function syncFromDropdowns() {
 }
 
 function loadLocalConfig() {
-  const saved = localStorage.getItem('goodwill_sniper_config_v2');
+  const saved = localStorage.getItem('goodwill_sniper_config_v3');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
       document.getElementById('cfgNtfyTopic').value = parsed.ntfy_topic || 'robinhood_agentic_beavers_2026';
-      document.getElementById('cfgMaxMinutes').value = parsed.global_max_minutes_left || 20;
+      document.getElementById('cfgMaxMinutes').value = parsed.global_max_minutes_left || 30;
       document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
       scannerEnabled = parsed.scanner_enabled !== undefined ? Boolean(parsed.scanner_enabled) : true;
-      autoSendNtfy = Boolean(parsed.auto_send_ntfy === true);
-      ntfyMode = parsed.ntfy_mode || 'under_melt_only';
+      autoSendNtfy = parsed.auto_send_ntfy !== undefined ? Boolean(parsed.auto_send_ntfy) : true;
+      ntfyMode = parsed.ntfy_mode || 'all';
       rules = parsed.rules || DEFAULT_RULES;
       updateMasterPowerButtons();
       return;
@@ -894,15 +894,17 @@ function loadLocalConfig() {
 }
 
 function buildConfigObject() {
-  const maxMins = parseFloat(document.getElementById('cfgMaxMinutes').value) || 20;
+  const maxMins = parseFloat(document.getElementById('cfgMaxMinutes').value) || 30;
   return {
     scanner_enabled: scannerEnabled,
     ntfy_topic: document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026',
     global_max_minutes_left: maxMins,
     global_max_hours_left: Number((maxMins / 60.0).toFixed(4)),
+    max_melt_ratio: 0.75,
     scan_interval_seconds: (parseInt(document.getElementById('cfgIntervalMin').value) || 3) * 60,
     auto_send_ntfy: autoSendNtfy,
     ntfy_mode: ntfyMode,
+    auto_push_github: true,
     rules: rules
   };
 }
@@ -922,7 +924,7 @@ async function saveAllSettings() {
   });
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v2', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
   document.getElementById('lastSyncLabel').textContent = 'ntfy Topic: ' + cfg.ntfy_topic;
 
   try {
@@ -1070,9 +1072,14 @@ function renderDeals() {
     const remMs = (d.end_timestamp_ms || 0) - now;
     const liveLabel = formatCountdownMs(remMs);
     const isMeltHit = d.under_melt;
-    const badgeHTML = d.melt_value > 0
-      ? `<span class="deal-badge ${isMeltHit ? 'melt-hit' : ''}">${isMeltHit ? '🔥 UNDER MELT' : 'Weighed'}: $${Number(d.melt_value).toFixed(2)} Melt (${d.grams}g)</span>`
-      : `<span class="deal-badge">${d.deal_reason || 'Under Limit'}</span>`;
+    let badgeHTML = '';
+    if (d.melt_value > 0) {
+      const pctMelt = Math.round((Number(d.current_price) / Number(d.melt_value)) * 100);
+      const offMelt = 100 - pctMelt;
+      badgeHTML = `<span class="deal-badge ${isMeltHit ? 'melt-hit' : ''}"><strong>🔥 ${pctMelt}% OF MELT (${offMelt}% OFF)</strong> · $${Number(d.melt_value).toFixed(2)} Melt (${d.grams}g)</span>`;
+    } else {
+      badgeHTML = `<span class="deal-badge">${d.deal_reason || 'Under Limit'}</span>`;
+    }
 
     const safeJson = JSON.stringify(d).replace(/'/g, "&#39;");
 
@@ -1163,15 +1170,17 @@ function evaluateCustomDeal() {
   else if (mode === 'gold_10k') { meltVal = troyOz * 0.4167 * goldSpot; label = '10K Gold'; }
 
   const diff = meltVal - price;
-  const isUnderMelt = price < meltVal && hours <= maxHours;
+  const pctMelt = meltVal > 0 ? Math.round((price / meltVal) * 100) : 999;
+  const offMelt = 100 - pctMelt;
+  const isUnderMelt = price <= meltVal * 0.75 && hours <= maxHours;
 
   banner.className = 'eval-result ' + (isUnderMelt ? '' : 'over-melt');
-  if (price < meltVal) {
-    headEl.innerHTML = `🔥 <span style="color:var(--up)">UNDER MELT DEAL!</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} (+$${diff.toFixed(2)} Profit Margin)`;
+  if (price <= meltVal * 0.75) {
+    headEl.innerHTML = `🔥 <span style="color:var(--up)"><strong>${pctMelt}% OF MELT (${offMelt}% OFF MELT)</strong> — QUALIFIES (≤75% MELT)!</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} (+$${diff.toFixed(2)} Profit Margin)`;
   } else {
-    headEl.innerHTML = `⚠️ <span style="color:var(--down)">OVER MELT:</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} ($${diff.toFixed(2)})`;
+    headEl.innerHTML = `⚠️ <span style="color:var(--down)"><strong>${pctMelt}% OF MELT</strong> (Needs ≤75% of Melt):</span> Bid: $${price.toFixed(2)} vs Live Melt: $${meltVal.toFixed(2)} ($${diff.toFixed(2)})`;
   }
-  subEl.textContent = `Parsed Weight: ${grams.toFixed(2)}g (${troyOz.toFixed(2)} troy oz) of ${label} · Time Left: ${hours}h (Max Limit: ${maxHours}h)`;
+  subEl.textContent = `Parsed Weight: ${grams.toFixed(2)}g (${troyOz.toFixed(2)} troy oz) of ${label} · Time Left: ${hours}h (Max Limit: ${maxHours}h / 30 mins)`;
 }
 
 async function sendNtfyNotification(title, message, clickUrl, isUnderMelt = true) {
@@ -1180,6 +1189,7 @@ async function sendNtfyNotification(title, message, clickUrl, isUnderMelt = true
     topic: topic,
     title: title,
     message: message,
+    markdown: true,
     priority: isUnderMelt ? 5 : 4,
     tags: isUnderMelt ? ['rotating_light', 'coin', 'moneybag'] : ['shopping_bags', 'gem'],
     click: clickUrl,
@@ -1205,8 +1215,8 @@ async function pushEvaluatedDealToPhone() {
   const headline = document.getElementById('evalHeadline').textContent;
   const subline = document.getElementById('evalSubline').textContent;
 
-  const alertTitle = `GOODWILL DEAL: $${price.toFixed(2)} (${hours}h left to bid)`;
-  const alertBody = `Item: ${title}\n${headline}\n${subline}\nAuction Link: ${url}`;
+  const alertTitle = `🔥 ${headline.split('Bid:')[0].trim()} | $${price.toFixed(2)} (${hours}h left)`;
+  const alertBody = `**${headline}**\nItem: ${title}\n${subline}\nAuction Link: ${url}`;
 
   try {
     const ok = await sendNtfyNotification(alertTitle, alertBody, url, true);
@@ -1219,15 +1229,20 @@ async function pushEvaluatedDealToPhone() {
 
 async function sendTestAlertToPhone() {
   const topic = document.getElementById('cfgNtfyTopic').value.trim() || 'robinhood_agentic_beavers_2026';
-  const melt925 = (silverSpot * 0.925).toFixed(2);
-  const spread = (silverSpot * 0.925 - 20).toFixed(2);
+  const meltVal = silverSpot * 0.925;
+  const melt925 = meltVal.toFixed(2);
+  const spread = (meltVal - 20).toFixed(2);
+  const pctMelt = Math.round((20 / meltVal) * 100);
+  const offMelt = 100 - pctMelt;
   const sampleUrl = 'https://shopgoodwill.com/categories/listing?st=925%20silver';
 
-  const title = `UNDER MELT DEAL: 1 oz .925 Silver @ $20.00 (2h 45m left)`;
+  const title = `🔥 ${pctMelt}% OF MELT (${offMelt}% OFF MELT) | 1 oz .925 Silver @ $20.00 (28m left)`;
   const body = [
+    `**🔥 MELT SPREAD: ${pctMelt}% OF MELT (${offMelt}% BELOW MELT | +$${spread} PROFIT MARGIN)**`,
+    `**Melt Value: $${melt925}** (31.1g / 1.0 oz @ 925 fine)`,
     `Item: 1 oz .925 Sterling Silver Bracelet (Marked 925)`,
-    `Current Bid: $20.00 | Live .925 Melt: $${melt925} (+$${spread} Under Melt!)`,
-    `Time Left to Bid: 2h 45m`,
+    `Current Bid: $20.00`,
+    `Time Left to Bid: 28m`,
     `Link: ${sampleUrl}`
   ].join('\n');
 
@@ -1310,14 +1325,25 @@ function addCustomRulePrompt() {
 }
 
 async function sendDealAlertFromFeed(deal) {
-  const title = `${deal.under_melt ? 'UNDER MELT' : 'GOODWILL'} DEAL: ${deal.rule_name} @ $${Number(deal.current_price).toFixed(2)} (${deal.time_left_label} left)`;
-  const body = [
+  let title = '';
+  let lines = [];
+  if (deal.melt_value > 0) {
+    const pctMelt = Math.round((Number(deal.current_price) / Number(deal.melt_value)) * 100);
+    const offMelt = 100 - pctMelt;
+    const spread = (Number(deal.melt_value) - Number(deal.current_price)).toFixed(2);
+    title = `🔥 ${pctMelt}% OF MELT (${offMelt}% OFF MELT) | ${deal.rule_name} @ $${Number(deal.current_price).toFixed(2)} (${deal.time_left_label} left)`;
+    lines.push(`**🔥 MELT SPREAD: ${pctMelt}% OF MELT (${offMelt}% BELOW MELT | +$${spread} PROFIT MARGIN)**`);
+    lines.push(`**Melt Value: $${Number(deal.melt_value).toFixed(2)}** (${deal.grams}g)`);
+  } else {
+    title = `GOODWILL DEAL: ${deal.rule_name} @ $${Number(deal.current_price).toFixed(2)} (${deal.time_left_label} left)`;
+  }
+  lines.push(
     `Item: ${deal.title}`,
     `Current Bid: $${Number(deal.current_price).toFixed(2)} (${deal.num_bids || 0} bids)`,
-    deal.melt_value > 0 ? `Live Melt Value: $${Number(deal.melt_value).toFixed(2)} (${deal.grams}g)` : `Rule: ${deal.deal_reason}`,
     `Time Left: ${deal.time_left_label}`,
     `Auction Link: ${deal.url}`
-  ].join('\n');
+  );
+  const body = lines.join('\n');
 
   const ok = await sendNtfyNotification(title, body, deal.url, deal.under_melt);
   if (ok) showToast('📲 Deal alert sent to your phone!');
