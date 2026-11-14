@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 15:00:55",
-    "last_scan_time": "2026-11-14 15:01:11",
-    "scan_count": 455,
+    "last_spot_sync": "2026-11-14 15:04:19",
+    "last_scan_time": "2026-11-14 15:04:35",
+    "scan_count": 456,
     "purged_count": 4654,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 34.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.0808,
-        "end_timestamp_ms": 1794686759925,
-        "time_left_label": "4m 51s",
+        "hours_left": 0.0239,
+        "end_timestamp_ms": 1794686759605,
+        "time_left_label": "1m 26s",
         "end_time": "2026-11-14T12:06:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/32\\Items\\2026-07-31\\358dd6a4-8b44-4b0b-ae89-07ff0dda5a2908_0731t2.jpeg",
         "url": "https://shopgoodwill.com/item/284089551",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 15:01:08"
+        "found_at": "2026-11-14 15:04:33"
       },
       {
         "item_id": "283536404",
@@ -41,9 +41,9 @@
         "current_price": 34.33,
         "max_price": 50.0,
         "num_bids": 6,
-        "hours_left": 0.4939,
-        "end_timestamp_ms": 1794688248678,
-        "time_left_label": "29m 38s",
+        "hours_left": 0.4372,
+        "end_timestamp_ms": 1794688248983,
+        "time_left_label": "26m 14s",
         "end_time": "2026-11-14T12:30:49",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\a6653116-2421-448a-8ab9-3144f5a8f543sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283536404",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 15:01:10"
+        "found_at": "2026-11-14 15:04:34"
       }
     ],
     "alerts_sent": 141
