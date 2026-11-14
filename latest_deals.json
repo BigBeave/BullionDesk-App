@@ -2,37 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 05:20:19",
-    "last_scan_time": "2026-11-14 05:20:35",
-    "scan_count": 284,
-    "purged_count": 4527,
-    "deals": [
-      {
-        "item_id": "283488505",
-        "title": "Sterling Silver Assorted Jewelry Lot",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 13.99,
-        "max_price": 50.0,
-        "num_bids": 2,
-        "hours_left": 0.0078,
-        "end_timestamp_ms": 1794651663227,
-        "time_left_label": "28s",
-        "end_time": "2026-11-14T02:21:04",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\ca5ece7b-ef84-4086-9c36-b21678e87a95sokc_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283488505",
-        "metal": "silver",
-        "purity": 0.925,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 05:20:35"
-      }
-    ],
+    "last_spot_sync": "2026-11-14 05:23:43",
+    "last_scan_time": "2026-11-14 05:23:59",
+    "scan_count": 285,
+    "purged_count": 4528,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
