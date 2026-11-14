@@ -3,8 +3,8 @@
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
     "last_spot_sync": "2026-11-14 17:01:43",
-    "last_scan_time": "2026-11-14 17:01:57",
-    "scan_count": 490,
+    "last_scan_time": "2026-11-14 17:05:19",
+    "scan_count": 491,
     "purged_count": 4669,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 13.99,
         "max_price": 300.0,
         "num_bids": 2,
-        "hours_left": 0.43,
-        "end_timestamp_ms": 1794695252746,
-        "time_left_label": "25m 48s",
+        "hours_left": 0.3742,
+        "end_timestamp_ms": 1794695252275,
+        "time_left_label": "22m 27s",
         "end_time": "2026-11-14T14:27:33",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\62114228-a409-46ca-8c0b-11237137c615sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283545277",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 59% OF MELT (41% OFF | $13.99 vs $23.87 Melt)",
-        "found_at": "2026-11-14 17:01:44"
+        "found_at": "2026-11-14 17:05:05"
       },
       {
         "item_id": "283366080",
@@ -41,9 +41,9 @@
         "current_price": 12.99,
         "max_price": 45.0,
         "num_bids": 1,
-        "hours_left": 0.1175,
-        "end_timestamp_ms": 1794694139669,
-        "time_left_label": "7m 3s",
+        "hours_left": 0.0617,
+        "end_timestamp_ms": 1794694139888,
+        "time_left_label": "3m 42s",
         "end_time": "2026-11-14T14:09:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/21\\Item\\2026-11-07\\a2869e93-d17e-4578-948b-a2a135f2fa22rimm_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283366080",
@@ -55,7 +55,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-14 17:01:56"
+        "found_at": "2026-11-14 17:05:17"
+      },
+      {
+        "item_id": "283366314",
+        "title": "Nike Mens Large Red Football T-Shirt 100% Cotton Vintage Sportswear",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 8.5,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.4953,
+        "end_timestamp_ms": 1794695699942,
+        "time_left_label": "29m 43s",
+        "end_time": "2026-11-14T14:35:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\3f9a5cee-b8d3-4d2f-8602-5e5b72d717a1lace_1107t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283366314",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-14 17:05:16"
       }
     ],
     "alerts_sent": 141
