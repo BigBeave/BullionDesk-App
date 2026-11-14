@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 11:20:24",
-    "last_scan_time": "2026-11-14 11:20:39",
-    "scan_count": 390,
-    "purged_count": 4636,
+    "last_spot_sync": "2026-11-14 11:23:47",
+    "last_scan_time": "2026-11-14 11:24:02",
+    "scan_count": 391,
+    "purged_count": 4637,
     "deals": [
-      {
-        "item_id": "283508797",
-        "title": "Coach Black Signature Canvas Leather Wristlet Bag",
-        "rule_id": "coach",
-        "rule_name": "Coach Bag / Leather",
-        "category_type": "luxury",
-        "current_price": 15.0,
-        "max_price": 35.0,
-        "num_bids": 2,
-        "hours_left": 0.0336,
-        "end_timestamp_ms": 1794673356073,
-        "time_left_label": "2m 1s",
-        "end_time": "2026-11-14T08:22:36",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\3a8a3e7e-fc60-4f03-96e1-f83e187113c0sokc_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283508797",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 11:20:35"
-      },
       {
         "item_id": "283509505",
         "title": "Lululemon Women's Black/Gray Hooded T-Shirt Sz 4",
@@ -41,9 +16,9 @@
         "current_price": 17.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.1653,
-        "end_timestamp_ms": 1794673822886,
-        "time_left_label": "9m 55s",
+        "hours_left": 0.1089,
+        "end_timestamp_ms": 1794673822926,
+        "time_left_label": "6m 32s",
         "end_time": "2026-11-14T08:30:23",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-11-04\\809140f1-dad6-4364-ad39-31ec4bbf7ee6yan1_1104t1.jpeg",
         "url": "https://shopgoodwill.com/item/283509505",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 11:20:27"
+        "found_at": "2026-11-14 11:23:50"
       },
       {
         "item_id": "283509641",
@@ -66,9 +41,9 @@
         "current_price": 16.0,
         "max_price": 35.0,
         "num_bids": 2,
-        "hours_left": 0.1858,
-        "end_timestamp_ms": 1794673906680,
-        "time_left_label": "11m 9s",
+        "hours_left": 0.1294,
+        "end_timestamp_ms": 1794673906521,
+        "time_left_label": "7m 46s",
         "end_time": "2026-11-14T08:31:47",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\ce33c0f7-ee61-4cfe-8d9c-3baa45deb701sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283509641",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 11:20:37"
+        "found_at": "2026-11-14 11:24:00"
       }
     ],
     "alerts_sent": 141
