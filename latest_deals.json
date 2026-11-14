@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 07:49:58",
-    "last_scan_time": "2026-11-14 07:50:13",
-    "scan_count": 328,
+    "last_spot_sync": "2026-11-14 07:53:20",
+    "last_scan_time": "2026-11-14 07:53:36",
+    "scan_count": 329,
     "purged_count": 4530,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283482178",
+        "title": "357.1g Beaded Jasper Pearl and Other Beads Jewelry Lot",
+        "rule_id": "jewelry_bulk_lot",
+        "rule_name": "Jewelry Bulk Lot",
+        "category_type": "bulk",
+        "current_price": 9.0,
+        "max_price": 50.0,
+        "num_bids": 2,
+        "hours_left": 0.4919,
+        "end_timestamp_ms": 1794662586846,
+        "time_left_label": "29m 31s",
+        "end_time": "2026-11-14T05:23:07",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/191\\Items\\2026-10-23\\a659b5f7-fe5a-49e4-a604-1fb13f6ae05alins_1023t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283482178",
+        "metal": null,
+        "purity": null,
+        "grams": 357.1,
+        "troy_oz": 11.481,
+        "melt_value": 0.0,
+        "weight_source": "title",
+        "under_melt": false,
+        "deal_reason": "Under $50 Limit",
+        "found_at": "2026-11-14 07:53:35"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
