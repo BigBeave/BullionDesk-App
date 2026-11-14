@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 01:26:05",
-    "last_scan_time": "2026-11-14 01:26:22",
-    "scan_count": 215,
-    "purged_count": 4523,
+    "last_spot_sync": "2026-11-14 01:29:32",
+    "last_scan_time": "2026-11-14 01:29:49",
+    "scan_count": 216,
+    "purged_count": 4524,
     "deals": [
-      {
-        "item_id": "283634996",
-        "title": "11.55LBS MIXED CHRISTMAS/WINTER HOLIDAY NECKLACES BRACELETS & MORE..JEWELRY LOT",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 49.99,
-        "max_price": 50.0,
-        "num_bids": 0,
-        "hours_left": 0.0103,
-        "end_timestamp_ms": 1794637619412,
-        "time_left_label": "37s",
-        "end_time": "2026-11-13T22:27:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-10\\309f1d6c-1c81-4ebd-a161-31a456c0f1d7mmb_1110t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283634996",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 01:26:22"
-      },
       {
         "item_id": "283349039",
         "title": "Nike AR5619-010 Cropped Hooded Windbreaker Jacket Black Medium Nylon",
@@ -41,9 +16,9 @@
         "current_price": 14.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.1608,
-        "end_timestamp_ms": 1794638159707,
-        "time_left_label": "9m 39s",
+        "hours_left": 0.1033,
+        "end_timestamp_ms": 1794638159664,
+        "time_left_label": "6m 12s",
         "end_time": "2026-11-13T22:36:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-07\\6ad76840-5e19-48d0-b1e5-4b4ead7259d8wbou_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283349039",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 01:26:20"
+        "found_at": "2026-11-14 01:29:47"
       },
       {
         "item_id": "283244094",
@@ -66,9 +41,9 @@
         "current_price": 7.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3942,
-        "end_timestamp_ms": 1794638999708,
-        "time_left_label": "23m 39s",
+        "hours_left": 0.3367,
+        "end_timestamp_ms": 1794638999664,
+        "time_left_label": "20m 12s",
         "end_time": "2026-11-13T22:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-06\\cd9c88d8-8df6-4c2d-bbc8-d420f9de0c93ard1_1106t1.jpeg",
         "url": "https://shopgoodwill.com/item/283244094",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 01:26:20"
+        "found_at": "2026-11-14 01:29:47"
       }
     ],
     "alerts_sent": 141
