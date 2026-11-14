@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 16:03:40",
-    "last_scan_time": "2026-11-14 16:03:56",
-    "scan_count": 473,
+    "last_spot_sync": "2026-11-14 16:07:04",
+    "last_scan_time": "2026-11-14 16:07:30",
+    "scan_count": 474,
     "purged_count": 4662,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 12.99,
         "max_price": 300.0,
         "num_bids": 1,
-        "hours_left": 0.2778,
-        "end_timestamp_ms": 1794691221435,
-        "time_left_label": "16m 40s",
+        "hours_left": 0.22,
+        "end_timestamp_ms": 1794691221755,
+        "time_left_label": "13m 12s",
         "end_time": "2026-11-14T13:20:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\c56ad59e-6fd7-4233-9e31-271b0c14714esokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283541578",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 10% OF MELT (90% OFF | $12.99 vs $130.50 Melt)",
-        "found_at": "2026-11-14 16:03:41"
+        "found_at": "2026-11-14 16:07:09"
       },
       {
         "item_id": "283541365",
@@ -38,12 +38,12 @@
         "rule_id": "nike",
         "rule_name": "Nike / Air Jordan",
         "category_type": "brand",
-        "current_price": 25.5,
+        "current_price": 26.5,
         "max_price": 35.0,
-        "num_bids": 3,
-        "hours_left": 0.2244,
-        "end_timestamp_ms": 1794691041767,
-        "time_left_label": "13m 28s",
+        "num_bids": 4,
+        "hours_left": 0.1647,
+        "end_timestamp_ms": 1794691041456,
+        "time_left_label": "9m 53s",
         "end_time": "2026-11-14T13:17:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\c97e5c79-6e42-42f8-8a02-f48a9c4c1804sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283541365",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 16:03:53"
+        "found_at": "2026-11-14 16:07:28"
       },
       {
         "item_id": "283541998",
@@ -66,9 +66,9 @@
         "current_price": 21.11,
         "max_price": 35.0,
         "num_bids": 3,
-        "hours_left": 0.3978,
-        "end_timestamp_ms": 1794691665768,
-        "time_left_label": "23m 52s",
+        "hours_left": 0.3381,
+        "end_timestamp_ms": 1794691665456,
+        "time_left_label": "20m 17s",
         "end_time": "2026-11-14T13:27:46",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\ac5c556f-7164-47bf-b7d7-1d51b199136csokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283541998",
@@ -80,32 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 16:03:53"
-      },
-      {
-        "item_id": "283542200",
-        "title": "14K Y/R Gold Assorted Jewelry Lot 1",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 50.0,
-        "max_price": 50.0,
-        "num_bids": 3,
-        "hours_left": 0.4528,
-        "end_timestamp_ms": 1794691865954,
-        "time_left_label": "27m 10s",
-        "end_time": "2026-11-14T13:31:06",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\73225804-fd13-4076-a933-befa5e9f1d82sokc_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283542200",
-        "metal": "gold",
-        "purity": 0.5833,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 16:03:55"
+        "found_at": "2026-11-14 16:07:28"
       }
     ],
     "alerts_sent": 141
