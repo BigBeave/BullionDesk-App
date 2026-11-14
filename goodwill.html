@@ -556,8 +556,8 @@
       <button id="masterSearchToggleBtn" class="btn btn-power-on" onclick="toggleAutoSearch()">
         🟢 Auto-Search: ON (Click to Turn OFF)
       </button>
-      <button id="masterAlertToggleBtn" class="btn btn-power-on" onclick="togglePhoneAlerts()">
-        🔔 Phone Alerts: ON (ALL DEALS · ≤30M · ≤75% MELT)
+      <button id="masterAlertToggleBtn" class="btn btn-power-off" onclick="togglePhoneAlerts()">
+        🔕 Phone Alerts: OFF (Muted)
       </button>
       <button class="btn btn-gold" onclick="triggerLiveScan()">⚡ Scan Once Now</button>
     </div>
@@ -707,15 +707,15 @@
       <div class="field">
         <label>Auto-Send Phone Alerts</label>
         <select id="cfgAutoNtfy" onchange="syncFromDropdowns()">
-          <option value="false">Muted / OFF (Dashboard Only)</option>
-          <option value="true" selected>Enabled (Send to Phone)</option>
+          <option value="false" selected>Muted / OFF (Dashboard Only)</option>
+          <option value="true">Enabled (Send to Phone)</option>
         </select>
       </div>
       <div class="field">
         <label>Phone Alert Filter Mode</label>
         <select id="cfgNtfyMode" onchange="syncFromDropdowns()">
-          <option value="under_melt_only">🔥 ≤ 75% Melt Gold &amp; Silver Only</option>
-          <option value="all" selected>🔔 All Categories (≤ 30m left · Metals ≤ 75% Melt)</option>
+          <option value="under_melt_only" selected>🔥 ≤ 75% Melt Gold &amp; Silver Only</option>
+          <option value="all">🔔 All Categories (≤ 30m left · Metals ≤ 75% Melt)</option>
         </select>
       </div>
     </div>
@@ -766,8 +766,8 @@ let activeDeals = [];
 let currentDealFilter = 'ALL';
 let totalPurgedCount = 0;
 let scannerEnabled = true;
-let autoSendNtfy = true;
-let ntfyMode = 'all';
+let autoSendNtfy = false;
+let ntfyMode = 'under_melt_only';
 
 function showToast(msg) {
   const box = document.getElementById('toastBox');
@@ -821,20 +821,42 @@ function updateMasterPowerButtons() {
   if (modeSelect) modeSelect.value = ntfyMode;
 }
 
+const CONTROL_TOPIC = 'robinhood_agentic_beavers_2026_ctrl';
+
+async function broadcastRemoteControlState() {
+  try {
+    await fetch('https://ntfy.sh/' + CONTROL_TOPIC, {
+      method: 'POST',
+      body: JSON.stringify({
+        scanner_enabled: scannerEnabled,
+        auto_send_ntfy: autoSendNtfy,
+        ntfy_mode: ntfyMode,
+        ts: Date.now()
+      })
+    });
+  } catch (e) {}
+}
+
 async function toggleAutoSearch() {
   scannerEnabled = !scannerEnabled;
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v4', JSON.stringify(cfg));
 
+  let localOk = false;
   try {
-    await fetch('http://127.0.0.1:8765/api/toggle-search', {
+    const r = await fetch('http://127.0.0.1:8765/api/toggle-search', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ scanner_enabled: scannerEnabled })
     });
+    localOk = r.ok;
   } catch (e) {}
+
+  if (!localOk) {
+    await broadcastRemoteControlState();
+  }
 
   if (scannerEnabled) {
     showToast('🟢 Auto-Search turned ON! Scanning ShopGoodwill...');
@@ -849,20 +871,26 @@ async function togglePhoneAlerts() {
   updateMasterPowerButtons();
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v4', JSON.stringify(cfg));
 
+  let localOk = false;
   try {
-    await fetch('http://127.0.0.1:8765/api/toggle-alerts', {
+    const r = await fetch('http://127.0.0.1:8765/api/toggle-alerts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ auto_send_ntfy: autoSendNtfy, ntfy_mode: ntfyMode })
     });
+    localOk = r.ok;
   } catch (e) {}
 
+  if (!localOk) {
+    await broadcastRemoteControlState();
+  }
+
   if (autoSendNtfy) {
-    showToast(`🔔 Phone Alerts turned ON (${ntfyMode === 'under_melt_only' ? 'Under-Melt Only' : 'All Categories'})!`);
+    showToast(`🔔 Phone Alerts turned ON (${ntfyMode === 'under_melt_only' ? '≤75% Melt Only' : 'All Categories'})!`);
   } else {
-    showToast('🔕 Phone Alerts MUTED (OFF). Deals will only show on the dashboard.');
+    showToast('🔕 Phone Alerts MUTED (OFF). Zero notifications will be sent to your phone.');
   }
 }
 
@@ -871,10 +899,11 @@ function syncFromDropdowns() {
   ntfyMode = document.getElementById('cfgNtfyMode').value || 'under_melt_only';
   updateMasterPowerButtons();
   saveAllSettings();
+  broadcastRemoteControlState();
 }
 
 function loadLocalConfig() {
-  const saved = localStorage.getItem('goodwill_sniper_config_v3');
+  const saved = localStorage.getItem('goodwill_sniper_config_v4');
   if (saved) {
     try {
       const parsed = JSON.parse(saved);
@@ -882,8 +911,8 @@ function loadLocalConfig() {
       document.getElementById('cfgMaxMinutes').value = parsed.global_max_minutes_left || 30;
       document.getElementById('cfgIntervalMin').value = Math.round((parsed.scan_interval_seconds || 180) / 60);
       scannerEnabled = parsed.scanner_enabled !== undefined ? Boolean(parsed.scanner_enabled) : true;
-      autoSendNtfy = parsed.auto_send_ntfy !== undefined ? Boolean(parsed.auto_send_ntfy) : true;
-      ntfyMode = parsed.ntfy_mode || 'all';
+      autoSendNtfy = parsed.auto_send_ntfy !== undefined ? Boolean(parsed.auto_send_ntfy) : false;
+      ntfyMode = parsed.ntfy_mode || 'under_melt_only';
       rules = parsed.rules || DEFAULT_RULES;
       updateMasterPowerButtons();
       return;
@@ -924,7 +953,7 @@ async function saveAllSettings() {
   });
 
   const cfg = buildConfigObject();
-  localStorage.setItem('goodwill_sniper_config_v3', JSON.stringify(cfg));
+  localStorage.setItem('goodwill_sniper_config_v4', JSON.stringify(cfg));
   document.getElementById('lastSyncLabel').textContent = 'ntfy Topic: ' + cfg.ntfy_topic;
 
   try {
