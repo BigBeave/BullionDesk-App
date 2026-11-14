@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 12:18:25",
-    "last_scan_time": "2026-11-14 12:18:42",
-    "scan_count": 407,
-    "purged_count": 4640,
+    "last_spot_sync": "2026-11-14 12:21:50",
+    "last_scan_time": "2026-11-14 12:22:05",
+    "scan_count": 408,
+    "purged_count": 4641,
     "deals": [
-      {
-        "item_id": "283515544",
-        "title": "Lululemon Women's Black Cowl Sweatshirt Sz 10",
-        "rule_id": "lululemon",
-        "rule_name": "Lululemon",
-        "category_type": "brand",
-        "current_price": 17.99,
-        "max_price": 25.0,
-        "num_bids": 0,
-        "hours_left": 0.0328,
-        "end_timestamp_ms": 1794676829296,
-        "time_left_label": "1m 58s",
-        "end_time": "2026-11-14T09:20:30",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-11-04\\9aeae048-d85c-4cdd-b884-72b564a4205cyan1_1104t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283515544",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 12:18:31"
-      },
       {
         "item_id": "283516817",
         "title": "Sterling Silver Assorted Jewelry Lot",
@@ -41,9 +16,9 @@
         "current_price": 26.0,
         "max_price": 50.0,
         "num_bids": 7,
-        "hours_left": 0.1675,
-        "end_timestamp_ms": 1794677325246,
-        "time_left_label": "10m 3s",
+        "hours_left": 0.1111,
+        "end_timestamp_ms": 1794677325202,
+        "time_left_label": "6m 40s",
         "end_time": "2026-11-14T09:28:46",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\ea33c7e2-55ed-4838-9ab9-c10cead7d606sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283516817",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 12:18:42"
+        "found_at": "2026-11-14 12:22:05"
       },
       {
         "item_id": "283519147",
@@ -66,9 +41,9 @@
         "current_price": 31.0,
         "max_price": 50.0,
         "num_bids": 5,
-        "hours_left": 0.4461,
-        "end_timestamp_ms": 1794678328246,
-        "time_left_label": "26m 46s",
+        "hours_left": 0.3897,
+        "end_timestamp_ms": 1794678328202,
+        "time_left_label": "23m 23s",
         "end_time": "2026-11-14T09:45:29",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\48b63d4e-da9b-459d-984a-721e06472f7esokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283519147",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 12:18:42"
+        "found_at": "2026-11-14 12:22:05"
       }
     ],
     "alerts_sent": 141
