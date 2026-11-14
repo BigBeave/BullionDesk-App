@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 03:04:41",
-    "last_scan_time": "2026-11-14 03:04:57",
-    "scan_count": 244,
+    "last_spot_sync": "2026-11-14 03:08:04",
+    "last_scan_time": "2026-11-14 03:08:19",
+    "scan_count": 245,
     "purged_count": 4525,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283479197",
+        "title": "Nike Women's Sneakers Pink/Black Size US 7.5 (316555-101)",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 19.99,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.495,
+        "end_timestamp_ms": 1794645479503,
+        "time_left_label": "29m 42s",
+        "end_time": "2026-11-14T00:38:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\181b6669-7f4c-4e04-aa13-2ad03c4bbf5bcruz_1109t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283479197",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-14 03:08:17"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
