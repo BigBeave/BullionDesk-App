@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 13:15:56",
-    "last_scan_time": "2026-11-14 13:16:11",
-    "scan_count": 424,
+    "last_spot_sync": "2026-11-14 13:19:18",
+    "last_scan_time": "2026-11-14 13:19:33",
+    "scan_count": 425,
     "purged_count": 4643,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 14.57,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.0689,
-        "end_timestamp_ms": 1794680418050,
-        "time_left_label": "4m 8s",
+        "hours_left": 0.0128,
+        "end_timestamp_ms": 1794680418290,
+        "time_left_label": "46s",
         "end_time": "2026-11-14T10:20:19",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-27\\956973dd-4b11-4f57-83cb-9a7bcfa08d77yan1_1027t1.jpeg",
         "url": "https://shopgoodwill.com/item/283663468",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 13:16:10"
+        "found_at": "2026-11-14 13:19:32"
       },
       {
         "item_id": "283523578",
@@ -41,9 +41,9 @@
         "current_price": 27.99,
         "max_price": 50.0,
         "num_bids": 6,
-        "hours_left": 0.3114,
-        "end_timestamp_ms": 1794681292553,
-        "time_left_label": "18m 41s",
+        "hours_left": 0.2553,
+        "end_timestamp_ms": 1794681292558,
+        "time_left_label": "15m 19s",
         "end_time": "2026-11-14T10:34:53",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\6729b7e2-814e-472f-b7ed-e59e44b2cc08sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283523578",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 13:16:11"
+        "found_at": "2026-11-14 13:19:33"
       }
     ],
     "alerts_sent": 141
