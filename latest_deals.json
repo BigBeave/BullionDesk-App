@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 14:20:24",
-    "last_scan_time": "2026-11-14 14:20:39",
-    "scan_count": 443,
-    "purged_count": 4649,
+    "last_spot_sync": "2026-11-14 14:23:46",
+    "last_scan_time": "2026-11-14 14:24:02",
+    "scan_count": 444,
+    "purged_count": 4650,
     "deals": [
-      {
-        "item_id": "283358235",
-        "title": "Sports Card Lot NFL NBA Modern Panini Optic Approx 75 Cards See Photos",
-        "rule_id": "sports_cards_bulk",
-        "rule_name": "Trading / Sports Card Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 12.99,
-        "max_price": 45.0,
-        "num_bids": 1,
-        "hours_left": 0.0164,
-        "end_timestamp_ms": 1794684097159,
-        "time_left_label": "59s",
-        "end_time": "2026-11-14T11:21:38",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-07\\acbaa1a8-8f99-4229-bced-5e283098c086waii_1107t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283358235",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-14 14:20:38"
-      },
       {
         "item_id": "283359920",
         "title": "Lululemon Black Everywhere Belt Bag 1L Nylon Fanny Pack Crossbody Waist Pouch",
@@ -41,9 +16,9 @@
         "current_price": 10.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.1647,
-        "end_timestamp_ms": 1794684621764,
-        "time_left_label": "9m 53s",
+        "hours_left": 0.1089,
+        "end_timestamp_ms": 1794684622158,
+        "time_left_label": "6m 32s",
         "end_time": "2026-11-14T11:30:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-31\\c3f74194-46c9-48d3-8c66-89f540746d71waii_1031t1.jpeg",
         "url": "https://shopgoodwill.com/item/283359920",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 14:20:28"
+        "found_at": "2026-11-14 14:23:50"
       },
       {
         "item_id": "283360108",
@@ -66,9 +41,9 @@
         "current_price": 12.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.33,
-        "end_timestamp_ms": 1794685225561,
-        "time_left_label": "19m 48s",
+        "hours_left": 0.2736,
+        "end_timestamp_ms": 1794685225477,
+        "time_left_label": "16m 25s",
         "end_time": "2026-11-14T11:40:26",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-24\\09931ad7-a5fb-411c-a521-18b231f49f1awaii_1024t1.jpeg",
         "url": "https://shopgoodwill.com/item/283360108",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 14:20:37"
+        "found_at": "2026-11-14 14:24:00"
       }
     ],
     "alerts_sent": 141
