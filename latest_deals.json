@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 09:55:37",
-    "last_scan_time": "2026-11-14 09:59:15",
-    "scan_count": 366,
+    "last_spot_sync": "2026-11-14 10:02:22",
+    "last_scan_time": "2026-11-14 10:02:37",
+    "scan_count": 367,
     "purged_count": 4628,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 47.0,
         "max_price": 300.0,
         "num_bids": 5,
-        "hours_left": 0.2586,
-        "end_timestamp_ms": 1794669272647,
-        "time_left_label": "15m 31s",
+        "hours_left": 0.2025,
+        "end_timestamp_ms": 1794669272769,
+        "time_left_label": "12m 9s",
         "end_time": "2026-11-14T07:14:33",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\3cbfa85f-0d9d-41dc-b779-866be11f7662sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283493922",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 71% OF MELT (29% OFF | $47.00 vs $66.26 Melt)",
-        "found_at": "2026-11-14 09:59:01"
+        "found_at": "2026-11-14 10:02:23"
       },
       {
         "item_id": "283494718",
@@ -41,9 +41,9 @@
         "current_price": 12.99,
         "max_price": 50.0,
         "num_bids": 1,
-        "hours_left": 0.4131,
-        "end_timestamp_ms": 1794669841669,
-        "time_left_label": "24m 47s",
+        "hours_left": 0.3569,
+        "end_timestamp_ms": 1794669841660,
+        "time_left_label": "21m 25s",
         "end_time": "2026-11-14T07:24:02",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\30e320e4-4e7e-408a-863a-e10a070be74dsokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283494718",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 09:59:14"
+        "found_at": "2026-11-14 10:02:36"
       },
       {
         "item_id": "283495220",
@@ -66,9 +66,9 @@
         "current_price": 12.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.4953,
-        "end_timestamp_ms": 1794670135971,
-        "time_left_label": "29m 43s",
+        "hours_left": 0.4392,
+        "end_timestamp_ms": 1794670136058,
+        "time_left_label": "26m 21s",
         "end_time": "2026-11-14T07:28:56",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\533bde2b-2d42-423e-ab54-b393d3b191edsokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283495220",
@@ -80,7 +80,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 09:59:12"
+        "found_at": "2026-11-14 10:02:35"
+      },
+      {
+        "item_id": "283495328",
+        "title": "Lululemon Women's Dance Studio Jogger Pants Black Ruched Seam Ribbed Waist",
+        "rule_id": "lululemon",
+        "rule_name": "Lululemon",
+        "category_type": "brand",
+        "current_price": 10.99,
+        "max_price": 25.0,
+        "num_bids": 0,
+        "hours_left": 0.465,
+        "end_timestamp_ms": 1794670219925,
+        "time_left_label": "27m 54s",
+        "end_time": "2026-11-14T07:30:20",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-26\\bdf43f19-4384-4bfd-96b0-c414d93ce199waii_1026t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283495328",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $25 Limit",
+        "found_at": "2026-11-14 10:02:25"
       }
     ],
     "alerts_sent": 141
