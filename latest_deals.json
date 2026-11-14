@@ -2,37 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 11:27:11",
-    "last_scan_time": "2026-11-14 11:30:50",
-    "scan_count": 393,
-    "purged_count": 4638,
-    "deals": [
-      {
-        "item_id": "283509641",
-        "title": "Nike Men\u2019s High Top Basketball Sneakers Size 13 Gray Purple Volt",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 16.0,
-        "max_price": 35.0,
-        "num_bids": 2,
-        "hours_left": 0.0164,
-        "end_timestamp_ms": 1794673907006,
-        "time_left_label": "59s",
-        "end_time": "2026-11-14T08:31:47",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\ce33c0f7-ee61-4cfe-8d9c-3baa45deb701sokc_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283509641",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 11:30:48"
-      }
-    ],
+    "last_spot_sync": "2026-11-14 11:33:57",
+    "last_scan_time": "2026-11-14 11:34:11",
+    "scan_count": 394,
+    "purged_count": 4639,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
