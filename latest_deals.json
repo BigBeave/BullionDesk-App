@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 03:21:35",
-    "last_scan_time": "2026-11-14 03:21:51",
-    "scan_count": 249,
+    "last_spot_sync": "2026-11-14 03:24:58",
+    "last_scan_time": "2026-11-14 03:25:14",
+    "scan_count": 250,
     "purged_count": 4525,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 19.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.2694,
-        "end_timestamp_ms": 1794645479136,
-        "time_left_label": "16m 10s",
+        "hours_left": 0.2131,
+        "end_timestamp_ms": 1794645479429,
+        "time_left_label": "12m 47s",
         "end_time": "2026-11-14T00:38:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\181b6669-7f4c-4e04-aa13-2ad03c4bbf5bcruz_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283479197",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 03:21:49"
+        "found_at": "2026-11-14 03:25:12"
       },
       {
         "item_id": "283479177",
@@ -41,9 +41,9 @@
         "current_price": 23.0,
         "max_price": 200.0,
         "num_bids": 3,
-        "hours_left": 0.4767,
-        "end_timestamp_ms": 1794646218708,
-        "time_left_label": "28m 36s",
+        "hours_left": 0.4203,
+        "end_timestamp_ms": 1794646218874,
+        "time_left_label": "25m 13s",
         "end_time": "2026-11-14T00:50:19",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-18\\a51fd881-5862-43d3-a967-dd9244622440waii_1018t1.jpeg",
         "url": "https://shopgoodwill.com/item/283479177",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $200 Limit",
-        "found_at": "2026-11-14 03:21:42"
+        "found_at": "2026-11-14 03:25:05"
       }
     ],
     "alerts_sent": 141
