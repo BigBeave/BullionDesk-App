@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 01:29:32",
-    "last_scan_time": "2026-11-14 01:29:49",
-    "scan_count": 216,
+    "last_spot_sync": "2026-11-14 01:32:58",
+    "last_scan_time": "2026-11-14 01:33:13",
+    "scan_count": 217,
     "purged_count": 4524,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 14.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.1033,
-        "end_timestamp_ms": 1794638159664,
-        "time_left_label": "6m 12s",
+        "hours_left": 0.0467,
+        "end_timestamp_ms": 1794638159749,
+        "time_left_label": "2m 48s",
         "end_time": "2026-11-13T22:36:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-07\\6ad76840-5e19-48d0-b1e5-4b4ead7259d8wbou_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283349039",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 01:29:47"
+        "found_at": "2026-11-14 01:33:11"
       },
       {
         "item_id": "283244094",
@@ -41,9 +41,9 @@
         "current_price": 7.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3367,
-        "end_timestamp_ms": 1794638999664,
-        "time_left_label": "20m 12s",
+        "hours_left": 0.28,
+        "end_timestamp_ms": 1794638999749,
+        "time_left_label": "16m 48s",
         "end_time": "2026-11-13T22:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-06\\cd9c88d8-8df6-4c2d-bbc8-d420f9de0c93ard1_1106t1.jpeg",
         "url": "https://shopgoodwill.com/item/283244094",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 01:29:47"
+        "found_at": "2026-11-14 01:33:11"
       }
     ],
     "alerts_sent": 141
