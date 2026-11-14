@@ -2,37 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 03:45:17",
-    "last_scan_time": "2026-11-14 03:48:56",
-    "scan_count": 257,
-    "purged_count": 4526,
-    "deals": [
-      {
-        "item_id": "283479177",
-        "title": "Fender FA-100 Dreadnought Acoustic Guitar 6-String Natural Top with Gig Bag",
-        "rule_id": "fender_guitar",
-        "rule_name": "Fender Guitar",
-        "category_type": "guitar",
-        "current_price": 23.0,
-        "max_price": 200.0,
-        "num_bids": 3,
-        "hours_left": 0.025,
-        "end_timestamp_ms": 1794646217985,
-        "time_left_label": "1m 30s",
-        "end_time": "2026-11-14T00:50:19",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-18\\a51fd881-5862-43d3-a967-dd9244622440waii_1018t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283479177",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $200 Limit",
-        "found_at": "2026-11-14 03:48:47"
-      }
-    ],
+    "last_spot_sync": "2026-11-14 03:52:05",
+    "last_scan_time": "2026-11-14 03:52:43",
+    "scan_count": 258,
+    "purged_count": 4527,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
