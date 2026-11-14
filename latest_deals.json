@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 11:48:00",
-    "last_scan_time": "2026-11-14 11:48:16",
-    "scan_count": 398,
+    "last_spot_sync": "2026-11-14 11:51:24",
+    "last_scan_time": "2026-11-14 11:51:38",
+    "scan_count": 399,
     "purged_count": 4639,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 17.0,
         "max_price": 50.0,
         "num_bids": 3,
-        "hours_left": 0.3069,
-        "end_timestamp_ms": 1794676001339,
-        "time_left_label": "18m 25s",
+        "hours_left": 0.2508,
+        "end_timestamp_ms": 1794676001233,
+        "time_left_label": "15m 3s",
         "end_time": "2026-11-14T09:06:42",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\550f2f1d-ddd6-4407-8326-c2bdf45c13d0sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283513103",
@@ -30,7 +30,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 11:48:16"
+        "found_at": "2026-11-14 11:51:38"
+      },
+      {
+        "item_id": "283515544",
+        "title": "Lululemon Women's Black Cowl Sweatshirt Sz 10",
+        "rule_id": "lululemon",
+        "rule_name": "Lululemon",
+        "category_type": "brand",
+        "current_price": 17.99,
+        "max_price": 25.0,
+        "num_bids": 0,
+        "hours_left": 0.4839,
+        "end_timestamp_ms": 1794676829785,
+        "time_left_label": "29m 2s",
+        "end_time": "2026-11-14T09:20:30",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-11-04\\9aeae048-d85c-4cdd-b884-72b564a4205cyan1_1104t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283515544",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $25 Limit",
+        "found_at": "2026-11-14 11:51:27"
       }
     ],
     "alerts_sent": 141
