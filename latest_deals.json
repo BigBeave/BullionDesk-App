@@ -2,11 +2,36 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 10:39:40",
-    "last_scan_time": "2026-11-14 10:39:56",
-    "scan_count": 378,
+    "last_spot_sync": "2026-11-14 10:43:04",
+    "last_scan_time": "2026-11-14 10:43:21",
+    "scan_count": 379,
     "purged_count": 4632,
     "deals": [
+      {
+        "item_id": "283507319",
+        "title": "Sterling Silver Assorted Jewelry Lot",
+        "rule_id": "sterling_silver",
+        "rule_name": "Sterling Silver (Marked)",
+        "category_type": "metal",
+        "current_price": 26.0,
+        "max_price": 300.0,
+        "num_bids": 6,
+        "hours_left": 0.4811,
+        "end_timestamp_ms": 1794672718175,
+        "time_left_label": "28m 52s",
+        "end_time": "2026-11-14T08:11:59",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\a70c985e-9bde-422a-8fe9-c0c949d29d13sokc_1109t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283507319",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 85.7,
+        "troy_oz": 2.7553,
+        "melt_value": 123.99,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 21% OF MELT (79% OFF | $26.00 vs $123.99 Melt)",
+        "found_at": "2026-11-14 10:43:06"
+      },
       {
         "item_id": "283498811",
         "title": "Coach F25296 Burgundy Leather Satchel Handbag",
@@ -16,9 +41,9 @@
         "current_price": 26.0,
         "max_price": 35.0,
         "num_bids": 10,
-        "hours_left": 0.1758,
-        "end_timestamp_ms": 1794671425150,
-        "time_left_label": "10m 33s",
+        "hours_left": 0.1192,
+        "end_timestamp_ms": 1794671425524,
+        "time_left_label": "7m 9s",
         "end_time": "2026-11-14T07:50:26",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\857d9e6d-ea87-4388-aea4-35941e11c00asokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283498811",
@@ -30,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 10:39:52"
+        "found_at": "2026-11-14 10:43:16"
       },
       {
         "item_id": "283502985",
@@ -41,9 +66,9 @@
         "current_price": 15.99,
         "max_price": 120.0,
         "num_bids": 0,
-        "hours_left": 0.3247,
-        "end_timestamp_ms": 1794671961734,
-        "time_left_label": "19m 29s",
+        "hours_left": 0.2678,
+        "end_timestamp_ms": 1794671961205,
+        "time_left_label": "16m 4s",
         "end_time": "2026-11-14T07:59:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\c7e7021a-b87a-4fbb-ab59-3d5e2305ddf7sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283502985",
@@ -55,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $120 Limit",
-        "found_at": "2026-11-14 10:39:52"
+        "found_at": "2026-11-14 10:43:17"
       }
     ],
     "alerts_sent": 141
