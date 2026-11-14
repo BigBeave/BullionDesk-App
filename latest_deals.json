@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 10:22:45",
-    "last_scan_time": "2026-11-14 10:23:00",
-    "scan_count": 373,
-    "purged_count": 4629,
+    "last_spot_sync": "2026-11-14 10:26:08",
+    "last_scan_time": "2026-11-14 10:26:24",
+    "scan_count": 374,
+    "purged_count": 4630,
     "deals": [
-      {
-        "item_id": "283494718",
-        "title": "Sterling Silver Assorted Jewelry Lot",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 12.99,
-        "max_price": 50.0,
-        "num_bids": 1,
-        "hours_left": 0.0169,
-        "end_timestamp_ms": 1794669841409,
-        "time_left_label": "1m 1s",
-        "end_time": "2026-11-14T07:24:02",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\30e320e4-4e7e-408a-863a-e10a070be74dsokc_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283494718",
-        "metal": "silver",
-        "purity": 0.925,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-14 10:23:00"
-      },
       {
         "item_id": "283495220",
         "title": "Nike Kids' Slip-On Athletic Shoes 11C White Orange Pattern",
@@ -41,9 +16,9 @@
         "current_price": 12.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.0992,
-        "end_timestamp_ms": 1794670135693,
-        "time_left_label": "5m 57s",
+        "hours_left": 0.0425,
+        "end_timestamp_ms": 1794670135600,
+        "time_left_label": "2m 33s",
         "end_time": "2026-11-14T07:28:56",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\533bde2b-2d42-423e-ab54-b393d3b191edsokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283495220",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 10:22:58"
+        "found_at": "2026-11-14 10:26:22"
       },
       {
         "item_id": "283495328",
@@ -66,9 +41,9 @@
         "current_price": 10.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.125,
-        "end_timestamp_ms": 1794670219291,
-        "time_left_label": "7m 30s",
+        "hours_left": 0.0686,
+        "end_timestamp_ms": 1794670219954,
+        "time_left_label": "4m 7s",
         "end_time": "2026-11-14T07:30:20",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-26\\bdf43f19-4384-4bfd-96b0-c414d93ce199waii_1026t1.jpeg",
         "url": "https://shopgoodwill.com/item/283495328",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 10:22:49"
+        "found_at": "2026-11-14 10:26:12"
       },
       {
         "item_id": "283498811",
@@ -91,9 +66,9 @@
         "current_price": 26.0,
         "max_price": 35.0,
         "num_bids": 10,
-        "hours_left": 0.4581,
-        "end_timestamp_ms": 1794671425248,
-        "time_left_label": "27m 29s",
+        "hours_left": 0.4014,
+        "end_timestamp_ms": 1794671425120,
+        "time_left_label": "24m 5s",
         "end_time": "2026-11-14T07:50:26",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\857d9e6d-ea87-4388-aea4-35941e11c00asokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283498811",
@@ -105,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 10:22:56"
+        "found_at": "2026-11-14 10:26:20"
       }
     ],
     "alerts_sent": 141
