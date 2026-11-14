@@ -2,11 +2,36 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 16:51:36",
-    "last_scan_time": "2026-11-14 16:55:12",
-    "scan_count": 488,
+    "last_spot_sync": "2026-11-14 16:58:20",
+    "last_scan_time": "2026-11-14 16:58:35",
+    "scan_count": 489,
     "purged_count": 4668,
     "deals": [
+      {
+        "item_id": "283545277",
+        "title": "Silpada Sterling Silver Peacock Pearl Beaded Bracelet",
+        "rule_id": "sterling_silver",
+        "rule_name": "Sterling Silver (Marked)",
+        "category_type": "metal",
+        "current_price": 13.99,
+        "max_price": 300.0,
+        "num_bids": 2,
+        "hours_left": 0.4864,
+        "end_timestamp_ms": 1794695252927,
+        "time_left_label": "29m 11s",
+        "end_time": "2026-11-14T14:27:33",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\62114228-a409-46ca-8c0b-11237137c615sokc_1109t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283545277",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 16.5,
+        "troy_oz": 0.5305,
+        "melt_value": 23.87,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 59% OF MELT (41% OFF | $13.99 vs $23.87 Melt)",
+        "found_at": "2026-11-14 16:58:22"
+      },
       {
         "item_id": "283366436",
         "title": "Men's Nike Air Force 1 Low Cool Grey Black Leather Sneakers US 10.5 488298-086",
@@ -16,9 +41,9 @@
         "current_price": 7.5,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.0803,
-        "end_timestamp_ms": 1794693599829,
-        "time_left_label": "4m 49s",
+        "hours_left": 0.0239,
+        "end_timestamp_ms": 1794693599157,
+        "time_left_label": "1m 26s",
         "end_time": "2026-11-14T14:00:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\16e07a4b-b666-430a-9f56-eeebb360d155loeB_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283366436",
@@ -30,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 16:55:10"
+        "found_at": "2026-11-14 16:58:33"
       },
       {
         "item_id": "283366080",
@@ -41,9 +66,9 @@
         "current_price": 12.99,
         "max_price": 45.0,
         "num_bids": 1,
-        "hours_left": 0.23,
-        "end_timestamp_ms": 1794694139577,
-        "time_left_label": "13m 48s",
+        "hours_left": 0.1739,
+        "end_timestamp_ms": 1794694139989,
+        "time_left_label": "10m 26s",
         "end_time": "2026-11-14T14:09:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/21\\Item\\2026-11-07\\a2869e93-d17e-4578-948b-a2a135f2fa22rimm_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283366080",
@@ -55,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-14 16:55:11"
+        "found_at": "2026-11-14 16:58:33"
       }
     ],
     "alerts_sent": 141
