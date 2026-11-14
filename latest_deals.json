@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 06:49:03",
-    "last_scan_time": "2026-11-14 06:52:41",
-    "scan_count": 311,
+    "last_spot_sync": "2026-11-14 06:55:48",
+    "last_scan_time": "2026-11-14 06:56:01",
+    "scan_count": 312,
     "purged_count": 4528,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283480102",
+        "title": "925 Silver Blue Stone Rectangle Earrings - 7.5g",
+        "rule_id": "silver_925",
+        "rule_name": "925 Sterling Silver",
+        "category_type": "metal",
+        "current_price": 7.99,
+        "max_price": 250.0,
+        "num_bids": 0,
+        "hours_left": 0.4981,
+        "end_timestamp_ms": 1794659141704,
+        "time_left_label": "29m 53s",
+        "end_time": "2026-11-14T04:25:42",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/68\\Items\\2026-10-27\\ba05e6e2-ae6e-4a1e-8183-45ec47f1259dstaM_1027t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283480102",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 7.5,
+        "troy_oz": 0.2411,
+        "melt_value": 10.85,
+        "weight_source": "title",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 74% OF MELT (26% OFF | $7.99 vs $10.85 Melt)",
+        "found_at": "2026-11-14 06:55:48"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
