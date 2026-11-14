@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 04:16:16",
-    "last_scan_time": "2026-11-14 04:16:32",
-    "scan_count": 265,
+    "last_spot_sync": "2026-11-14 04:19:41",
+    "last_scan_time": "2026-11-14 04:19:56",
+    "scan_count": 266,
     "purged_count": 4527,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283349272",
+        "title": "Nike Air Jordan 4 Retro PSG CZ5624-100 Men's Size 9.5 White Black Bordeaux Shoes",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 31.0,
+        "max_price": 35.0,
+        "num_bids": 6,
+        "hours_left": 0.4844,
+        "end_timestamp_ms": 1794649738898,
+        "time_left_label": "29m 4s",
+        "end_time": "2026-11-14T01:49:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-07\\219cbf0a-aa1a-4abb-8dab-05081832360fwbas_1107t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283349272",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-14 04:19:54"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
