@@ -3,8 +3,8 @@
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
     "last_spot_sync": "2026-11-14 15:45:05",
-    "last_scan_time": "2026-11-14 15:45:21",
-    "scan_count": 468,
+    "last_scan_time": "2026-11-14 15:48:44",
+    "scan_count": 469,
     "purged_count": 4660,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 17.0,
         "max_price": 300.0,
         "num_bids": 2,
-        "hours_left": 0.2275,
-        "end_timestamp_ms": 1794689925346,
-        "time_left_label": "13m 39s",
+        "hours_left": 0.1708,
+        "end_timestamp_ms": 1794689925764,
+        "time_left_label": "10m 15s",
         "end_time": "2026-11-14T12:58:46",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\a8c29a42-a1fd-400f-ab9c-913a9d8c7265sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283539908",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 45% OF MELT (55% OFF | $17.00 vs $37.91 Melt)",
-        "found_at": "2026-11-14 15:45:06"
+        "found_at": "2026-11-14 15:48:30"
       },
       {
         "item_id": "283539508",
@@ -41,9 +41,9 @@
         "current_price": 14.0,
         "max_price": 35.0,
         "num_bids": 5,
-        "hours_left": 0.1561,
-        "end_timestamp_ms": 1794689680892,
-        "time_left_label": "9m 22s",
+        "hours_left": 0.0994,
+        "end_timestamp_ms": 1794689680348,
+        "time_left_label": "5m 58s",
         "end_time": "2026-11-14T12:54:41",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\61dab1c7-c4f5-4294-aeb4-45a447b047a2sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283539508",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 15:45:18"
+        "found_at": "2026-11-14 15:48:42"
       },
       {
         "item_id": "283539488",
@@ -66,9 +66,9 @@
         "current_price": 12.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.1572,
-        "end_timestamp_ms": 1794689675092,
-        "time_left_label": "9m 26s",
+        "hours_left": 0.1006,
+        "end_timestamp_ms": 1794689675095,
+        "time_left_label": "6m 2s",
         "end_time": "2026-11-14T12:54:35",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\b81c8dfb-0191-4a70-bc1c-d733d6a37692sokc_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283539488",
@@ -80,7 +80,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 15:45:09"
+        "found_at": "2026-11-14 15:48:33"
+      },
+      {
+        "item_id": "283541365",
+        "title": "Nike LeBron Men's Low-Top Sneakers US 9 Light Blue Aqua",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 25.5,
+        "max_price": 35.0,
+        "num_bids": 3,
+        "hours_left": 0.4775,
+        "end_timestamp_ms": 1794691041349,
+        "time_left_label": "28m 39s",
+        "end_time": "2026-11-14T13:17:22",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-09\\c97e5c79-6e42-42f8-8a02-f48a9c4c1804sokc_1109t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283541365",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-14 15:48:42"
       }
     ],
     "alerts_sent": 141
