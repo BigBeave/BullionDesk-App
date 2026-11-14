@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 14:10:12",
-    "last_scan_time": "2026-11-14 14:10:26",
-    "scan_count": 440,
+    "last_spot_sync": "2026-11-14 14:13:36",
+    "last_scan_time": "2026-11-14 14:13:52",
+    "scan_count": 441,
     "purged_count": 4649,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 12.99,
         "max_price": 45.0,
         "num_bids": 1,
-        "hours_left": 0.1867,
-        "end_timestamp_ms": 1794684097179,
-        "time_left_label": "11m 12s",
+        "hours_left": 0.1294,
+        "end_timestamp_ms": 1794684097363,
+        "time_left_label": "7m 46s",
         "end_time": "2026-11-14T11:21:38",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-07\\acbaa1a8-8f99-4229-bced-5e283098c086waii_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283358235",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-14 14:10:25"
+        "found_at": "2026-11-14 14:13:51"
       },
       {
         "item_id": "283359920",
@@ -41,9 +41,9 @@
         "current_price": 10.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.335,
-        "end_timestamp_ms": 1794684621695,
-        "time_left_label": "20m 6s",
+        "hours_left": 0.2781,
+        "end_timestamp_ms": 1794684621683,
+        "time_left_label": "16m 41s",
         "end_time": "2026-11-14T11:30:22",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-31\\c3f74194-46c9-48d3-8c66-89f540746d71waii_1031t1.jpeg",
         "url": "https://shopgoodwill.com/item/283359920",
@@ -55,7 +55,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-14 14:10:15"
+        "found_at": "2026-11-14 14:13:40"
+      },
+      {
+        "item_id": "283360108",
+        "title": "Nike Air Force 1 07 Low Triple White Womens Sneakers Size 7.5",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 12.99,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.4431,
+        "end_timestamp_ms": 1794685225465,
+        "time_left_label": "26m 35s",
+        "end_time": "2026-11-14T11:40:26",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-24\\09931ad7-a5fb-411c-a521-18b231f49f1awaii_1024t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283360108",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-14 14:13:50"
       }
     ],
     "alerts_sent": 141
