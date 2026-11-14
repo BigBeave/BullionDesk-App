@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-14 14:37:18",
-    "last_scan_time": "2026-11-14 14:37:33",
-    "scan_count": 448,
-    "purged_count": 4651,
+    "last_spot_sync": "2026-11-14 14:40:41",
+    "last_scan_time": "2026-11-14 14:40:56",
+    "scan_count": 449,
+    "purged_count": 4652,
     "deals": [
-      {
-        "item_id": "283360108",
-        "title": "Nike Air Force 1 07 Low Triple White Womens Sneakers Size 7.5",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 12.99,
-        "max_price": 35.0,
-        "num_bids": 0,
-        "hours_left": 0.0483,
-        "end_timestamp_ms": 1794685225367,
-        "time_left_label": "2m 54s",
-        "end_time": "2026-11-14T11:40:26",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-24\\09931ad7-a5fb-411c-a521-18b231f49f1awaii_1024t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283360108",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 14:37:31"
-      },
       {
         "item_id": "283481363",
         "title": "Nike Air Max Men\u2019s Sneakers Red Black Size 10.5 Preowned",
@@ -41,9 +16,9 @@
         "current_price": 29.98,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3744,
-        "end_timestamp_ms": 1794686399367,
-        "time_left_label": "22m 28s",
+        "hours_left": 0.3181,
+        "end_timestamp_ms": 1794686399609,
+        "time_left_label": "19m 5s",
         "end_time": "2026-11-14T12:00:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/81\\Items\\2026-11-09\\7860fe5b-9ac7-4614-9169-71c8acf38a09list_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283481363",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 14:37:31"
+        "found_at": "2026-11-14 14:40:54"
       },
       {
         "item_id": "283508811",
@@ -66,9 +41,9 @@
         "current_price": 29.98,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3744,
-        "end_timestamp_ms": 1794686399367,
-        "time_left_label": "22m 28s",
+        "hours_left": 0.3181,
+        "end_timestamp_ms": 1794686399609,
+        "time_left_label": "19m 5s",
         "end_time": "2026-11-14T12:00:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/81\\Items\\2026-11-09\\ba2771a0-f209-44fc-bd21-ef19d2fa8401list_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283508811",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 14:37:31"
+        "found_at": "2026-11-14 14:40:54"
       },
       {
         "item_id": "284089551",
@@ -91,9 +66,9 @@
         "current_price": 34.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.4744,
-        "end_timestamp_ms": 1794686759367,
-        "time_left_label": "28m 28s",
+        "hours_left": 0.4181,
+        "end_timestamp_ms": 1794686759609,
+        "time_left_label": "25m 5s",
         "end_time": "2026-11-14T12:06:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/32\\Items\\2026-07-31\\358dd6a4-8b44-4b0b-ae89-07ff0dda5a2908_0731t2.jpeg",
         "url": "https://shopgoodwill.com/item/284089551",
@@ -105,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-14 14:37:31"
+        "found_at": "2026-11-14 14:40:54"
       }
     ],
     "alerts_sent": 141
