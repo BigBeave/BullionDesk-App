@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 02:57:20",
-    "last_scan_time": "2026-11-15 02:57:36",
-    "scan_count": 663,
+    "last_spot_sync": "2026-11-15 03:00:43",
+    "last_scan_time": "2026-11-15 03:00:59",
+    "scan_count": 664,
     "purged_count": 8187,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 12.11,
         "max_price": 50.0,
         "num_bids": 4,
-        "hours_left": 0.3792,
-        "end_timestamp_ms": 1794730820810,
-        "time_left_label": "22m 45s",
+        "hours_left": 0.3225,
+        "end_timestamp_ms": 1794730820566,
+        "time_left_label": "19m 21s",
         "end_time": "2026-11-15T00:20:21",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\2448fabb-2558-428a-9b23-1226db7bae52sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283650075",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 02:57:35"
+        "found_at": "2026-11-15 03:00:59"
       },
       {
         "item_id": "283619282",
@@ -41,9 +41,9 @@
         "current_price": 14.99,
         "max_price": 35.0,
         "num_bids": 1,
-        "hours_left": 0.3906,
-        "end_timestamp_ms": 1794730860050,
-        "time_left_label": "23m 26s",
+        "hours_left": 0.3339,
+        "end_timestamp_ms": 1794730860133,
+        "time_left_label": "20m 2s",
         "end_time": "2026-11-15T00:21:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-10\\01a53c81-5043-4c84-8b97-943d4bd191dcland_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283619282",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 02:57:34"
+        "found_at": "2026-11-15 03:00:58"
       }
     ],
     "alerts_sent": 141
