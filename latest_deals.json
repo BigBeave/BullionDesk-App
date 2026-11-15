@@ -2,10 +2,10 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 17:05:57",
-    "last_scan_time": "2026-11-15 17:06:45",
-    "scan_count": 911,
-    "purged_count": 8381,
+    "last_spot_sync": "2026-11-15 17:09:52",
+    "last_scan_time": "2026-11-15 17:10:11",
+    "scan_count": 912,
+    "purged_count": 8382,
     "deals": [
       {
         "item_id": "283686549",
@@ -16,9 +16,9 @@
         "current_price": 13.99,
         "max_price": 300.0,
         "num_bids": 2,
-        "hours_left": 0.2108,
-        "end_timestamp_ms": 1794781117658,
-        "time_left_label": "12m 39s",
+        "hours_left": 0.1453,
+        "end_timestamp_ms": 1794781117657,
+        "time_left_label": "8m 43s",
         "end_time": "2026-11-15T14:18:38",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\853be0c7-5369-4935-a3b1-dc06e513e9a0sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283686549",
@@ -30,32 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 51% OF MELT (49% OFF | $13.99 vs $27.63 Melt)",
-        "found_at": "2026-11-15 17:05:58"
-      },
-      {
-        "item_id": "283427516",
-        "title": "ALOHA Collection Puakenikeni Buds Ube Reversible Tote Bag Purple Floral",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 27.0,
-        "max_price": 35.0,
-        "num_bids": 5,
-        "hours_left": 0.0233,
-        "end_timestamp_ms": 1794780481987,
-        "time_left_label": "1m 24s",
-        "end_time": "2026-11-15T14:08:02",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-08\\ef04e3fb-b9e4-4d97-89da-c082f1b18096waii_1108t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283427516",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 17:06:37"
+        "found_at": "2026-11-15 17:09:54"
       },
       {
         "item_id": "283431603",
@@ -66,9 +41,9 @@
         "current_price": 9.5,
         "max_price": 25.0,
         "num_bids": 3,
-        "hours_left": 0.2497,
-        "end_timestamp_ms": 1794781260108,
-        "time_left_label": "14m 59s",
+        "hours_left": 0.1839,
+        "end_timestamp_ms": 1794781259476,
+        "time_left_label": "11m 2s",
         "end_time": "2026-11-15T14:21:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-08\\4096d93a-bee2-4e76-aa57-0a978a990aaasenB_1108t1.jpeg",
         "url": "https://shopgoodwill.com/item/283431603",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 17:06:01"
+        "found_at": "2026-11-15 17:09:57"
       },
       {
         "item_id": "283686795",
@@ -88,12 +63,12 @@
         "rule_id": "lululemon",
         "rule_name": "Lululemon",
         "category_type": "brand",
-        "current_price": 13.99,
+        "current_price": 14.99,
         "max_price": 25.0,
-        "num_bids": 2,
-        "hours_left": 0.3028,
-        "end_timestamp_ms": 1794781451108,
-        "time_left_label": "18m 10s",
+        "num_bids": 3,
+        "hours_left": 0.2369,
+        "end_timestamp_ms": 1794781450476,
+        "time_left_label": "14m 13s",
         "end_time": "2026-11-15T14:24:11",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\68e3d508-96d3-43b4-8733-047ffb88816csokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283686795",
@@ -105,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 17:06:01"
+        "found_at": "2026-11-15 17:09:57"
       },
       {
         "item_id": "283427231",
@@ -116,9 +91,9 @@
         "current_price": 31.0,
         "max_price": 35.0,
         "num_bids": 3,
-        "hours_left": 0.3053,
-        "end_timestamp_ms": 1794781466316,
-        "time_left_label": "18m 19s",
+        "hours_left": 0.2392,
+        "end_timestamp_ms": 1794781467064,
+        "time_left_label": "14m 21s",
         "end_time": "2026-11-15T14:24:27",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-08\\e7f99a1c-581d-4ea4-a418-52bac6e285efwaii_1108t1.jpeg",
         "url": "https://shopgoodwill.com/item/283427231",
@@ -130,7 +105,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 17:06:07"
+        "found_at": "2026-11-15 17:10:06"
       },
       {
         "item_id": "283368848",
@@ -141,9 +116,9 @@
         "current_price": 8.5,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3061,
-        "end_timestamp_ms": 1794781499987,
-        "time_left_label": "18m 22s",
+        "hours_left": 0.2472,
+        "end_timestamp_ms": 1794781499435,
+        "time_left_label": "14m 50s",
         "end_time": "2026-11-15T14:25:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\c1d5b668-fefb-4c6b-8f6b-c773da3b41b5MegM_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283368848",
@@ -155,7 +130,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 17:06:37"
+        "found_at": "2026-11-15 17:10:09"
       },
       {
         "item_id": "283686836",
@@ -166,9 +141,9 @@
         "current_price": 12.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.3156,
-        "end_timestamp_ms": 1794781497108,
-        "time_left_label": "18m 56s",
+        "hours_left": 0.2497,
+        "end_timestamp_ms": 1794781496476,
+        "time_left_label": "14m 59s",
         "end_time": "2026-11-15T14:24:57",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\7a452361-b63b-4c9d-a641-ec4d0dd7f067sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283686836",
@@ -180,7 +155,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 17:06:01"
+        "found_at": "2026-11-15 17:09:57"
       },
       {
         "item_id": "283427320",
@@ -191,9 +166,9 @@
         "current_price": 14.99,
         "max_price": 25.0,
         "num_bids": 0,
-        "hours_left": 0.4981,
-        "end_timestamp_ms": 1794782154108,
-        "time_left_label": "29m 53s",
+        "hours_left": 0.4322,
+        "end_timestamp_ms": 1794782153476,
+        "time_left_label": "25m 56s",
         "end_time": "2026-11-15T14:35:54",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-11-08\\ca490331-9a67-48da-8061-ed533438aac5waii_1108t1.jpeg",
         "url": "https://shopgoodwill.com/item/283427320",
@@ -205,7 +180,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 17:06:01"
+        "found_at": "2026-11-15 17:09:57"
       }
     ],
     "alerts_sent": 141
