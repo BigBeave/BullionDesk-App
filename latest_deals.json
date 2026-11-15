@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 06:34:49",
-    "last_scan_time": "2026-11-15 06:35:06",
-    "scan_count": 727,
+    "last_spot_sync": "2026-11-15 06:38:14",
+    "last_scan_time": "2026-11-15 06:38:31",
+    "scan_count": 728,
     "purged_count": 8190,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283619776",
+        "title": "925 Sterling Silver and Clear Rhinestone Heart Shaped Stud Earrings",
+        "rule_id": "silver_925",
+        "rule_name": "925 Sterling Silver",
+        "category_type": "metal",
+        "current_price": 7.99,
+        "max_price": 250.0,
+        "num_bids": 0,
+        "hours_left": 0.4758,
+        "end_timestamp_ms": 1794744408384,
+        "time_left_label": "28m 33s",
+        "end_time": "2026-11-15T04:06:49",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/68\\Items\\2026-11-02\\a1fafa10-684d-439a-ab02-469f327dea9aJenn_1102t3.jpeg",
+        "url": "https://shopgoodwill.com/item/283619776",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 11.9,
+        "troy_oz": 0.3826,
+        "melt_value": 17.22,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 46% OF MELT (54% OFF | $7.99 vs $17.22 Melt)",
+        "found_at": "2026-11-15 06:38:15"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
