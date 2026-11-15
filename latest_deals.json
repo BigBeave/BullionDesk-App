@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 00:30:17",
-    "last_scan_time": "2026-11-15 00:30:33",
-    "scan_count": 620,
-    "purged_count": 8177,
+    "last_spot_sync": "2026-11-15 00:33:41",
+    "last_scan_time": "2026-11-15 00:33:58",
+    "scan_count": 621,
+    "purged_count": 8178,
     "deals": [
-      {
-        "item_id": "283498335",
-        "title": "Sterling Silver 925 & Onyx Station Link Necklace 54.34 Grams",
-        "rule_id": "silver_925",
-        "rule_name": "925 Sterling Silver",
-        "category_type": "metal",
-        "current_price": 23.0,
-        "max_price": 250.0,
-        "num_bids": 6,
-        "hours_left": 0.0114,
-        "end_timestamp_ms": 1794720659633,
-        "time_left_label": "41s",
-        "end_time": "2026-11-14T21:31:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\7ef279fa-8aba-4a0d-92df-43db5f3d6fb7entz_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283498335",
-        "metal": "silver",
-        "purity": 0.925,
-        "grams": 54.34,
-        "troy_oz": 1.7471,
-        "melt_value": 78.62,
-        "weight_source": "title",
-        "under_melt": true,
-        "deal_reason": "\ud83d\udd25 29% OF MELT (71% OFF | $23.00 vs $78.62 Melt)",
-        "found_at": "2026-11-15 00:30:18"
-      },
       {
         "item_id": "283539077",
         "title": "Curated Lot of Gold-Tone/Plated Costume Jewelry & More",
@@ -41,9 +16,9 @@
         "current_price": 25.99,
         "max_price": 50.0,
         "num_bids": 6,
-        "hours_left": 0.1072,
-        "end_timestamp_ms": 1794721019280,
-        "time_left_label": "6m 26s",
+        "hours_left": 0.0503,
+        "end_timestamp_ms": 1794721019200,
+        "time_left_label": "3m 1s",
         "end_time": "2026-11-14T21:37:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\fd5622a5-3485-4ee0-b7ab-accb10aff727t121_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283539077",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 00:30:33"
+        "found_at": "2026-11-15 00:33:58"
       },
       {
         "item_id": "283619274",
@@ -66,9 +41,9 @@
         "current_price": 19.99,
         "max_price": 45.0,
         "num_bids": 1,
-        "hours_left": 0.3742,
-        "end_timestamp_ms": 1794721979576,
-        "time_left_label": "22m 27s",
+        "hours_left": 0.3172,
+        "end_timestamp_ms": 1794721979308,
+        "time_left_label": "19m 2s",
         "end_time": "2026-11-14T21:53:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-10\\7e23bfde-4a25-4a57-aeec-aca985413987into_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283619274",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-15 00:30:32"
+        "found_at": "2026-11-15 00:33:57"
       }
     ],
     "alerts_sent": 141
