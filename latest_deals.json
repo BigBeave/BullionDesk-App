@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 00:54:00",
-    "last_scan_time": "2026-11-15 00:54:16",
-    "scan_count": 627,
+    "last_spot_sync": "2026-11-15 00:57:23",
+    "last_scan_time": "2026-11-15 00:57:39",
+    "scan_count": 628,
     "purged_count": 8180,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 59.0,
         "max_price": 250.0,
         "num_bids": 9,
-        "hours_left": 0.3831,
-        "end_timestamp_ms": 1794723420101,
-        "time_left_label": "22m 59s",
+        "hours_left": 0.3264,
+        "end_timestamp_ms": 1794723419317,
+        "time_left_label": "19m 35s",
         "end_time": "2026-11-14T22:17:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\c83da0c1-d31f-4d18-8647-1c9783adb8b6entz_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283506966",
@@ -30,7 +30,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 66% OF MELT (34% OFF | $59.00 vs $89.70 Melt)",
-        "found_at": "2026-11-15 00:54:01"
+        "found_at": "2026-11-15 00:57:24"
       },
       {
         "item_id": "283417234",
@@ -41,9 +41,9 @@
         "current_price": 5.99,
         "max_price": 25.0,
         "num_bids": 1,
-        "hours_left": 0.3319,
-        "end_timestamp_ms": 1794723239605,
-        "time_left_label": "19m 55s",
+        "hours_left": 0.2756,
+        "end_timestamp_ms": 1794723239625,
+        "time_left_label": "16m 32s",
         "end_time": "2026-11-14T22:14:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\1bc96816-7c7a-4674-aa68-7b57ca37f850MegM_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283417234",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 00:54:04"
+        "found_at": "2026-11-15 00:57:27"
       }
     ],
     "alerts_sent": 141
