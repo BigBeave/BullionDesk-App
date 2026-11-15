@@ -2,9 +2,9 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 01:31:23",
-    "last_scan_time": "2026-11-15 01:31:38",
-    "scan_count": 638,
+    "last_spot_sync": "2026-11-15 01:34:46",
+    "last_scan_time": "2026-11-15 01:35:02",
+    "scan_count": 639,
     "purged_count": 8183,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.0,
         "max_price": 250.0,
         "num_bids": 6,
-        "hours_left": 0.2267,
-        "end_timestamp_ms": 1794725099882,
-        "time_left_label": "13m 36s",
+        "hours_left": 0.17,
+        "end_timestamp_ms": 1794725099430,
+        "time_left_label": "10m 12s",
         "end_time": "2026-11-14T22:45:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\143d8ef0-63bc-4263-9b3f-19af9a81f75fentz_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283510908",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 57% OF MELT (43% OFF | $26.00 vs $45.56 Melt)",
-        "found_at": "2026-11-15 01:31:23"
+        "found_at": "2026-11-15 01:34:47"
       }
     ],
     "alerts_sent": 141
