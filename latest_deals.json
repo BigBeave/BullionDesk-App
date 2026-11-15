@@ -2,10 +2,10 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 09:21:19",
-    "last_scan_time": "2026-11-15 09:21:36",
-    "scan_count": 775,
-    "purged_count": 8252,
+    "last_spot_sync": "2026-11-15 09:24:43",
+    "last_scan_time": "2026-11-15 09:25:02",
+    "scan_count": 776,
+    "purged_count": 8254,
     "deals": [
       {
         "item_id": "283634633",
@@ -16,9 +16,9 @@
         "current_price": 15.41,
         "max_price": 300.0,
         "num_bids": 3,
-        "hours_left": 0.0744,
-        "end_timestamp_ms": 1794752749275,
-        "time_left_label": "4m 28s",
+        "hours_left": 0.0172,
+        "end_timestamp_ms": 1794752749945,
+        "time_left_label": "1m 2s",
         "end_time": "2026-11-15T06:25:50",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\dcdec1eb-af1d-4327-a308-5a6ecc2b56f3sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283634633",
@@ -30,7 +30,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 57% OF MELT (43% OFF | $15.41 vs $27.20 Melt)",
-        "found_at": "2026-11-15 09:21:21"
+        "found_at": "2026-11-15 09:24:47"
       },
       {
         "item_id": "284048851",
@@ -41,9 +41,9 @@
         "current_price": 125.0,
         "max_price": 250.0,
         "num_bids": 12,
-        "hours_left": 0.1275,
-        "end_timestamp_ms": 1794752939238,
-        "time_left_label": "7m 39s",
+        "hours_left": 0.0706,
+        "end_timestamp_ms": 1794752939699,
+        "time_left_label": "4m 14s",
         "end_time": "2026-11-15T06:29:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\8e4bed6b-3e0a-4ae3-a6e4-fcc3f8d6f49asado_1113t1.jpeg",
         "url": "https://shopgoodwill.com/item/284048851",
@@ -55,7 +55,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 70% OF MELT (30% OFF | $125.00 vs $178.89 Melt)",
-        "found_at": "2026-11-15 09:21:20"
+        "found_at": "2026-11-15 09:24:45"
       },
       {
         "item_id": "283635097",
@@ -66,9 +66,9 @@
         "current_price": 12.99,
         "max_price": 300.0,
         "num_bids": 1,
-        "hours_left": 0.1483,
-        "end_timestamp_ms": 1794753015277,
-        "time_left_label": "8m 54s",
+        "hours_left": 0.0911,
+        "end_timestamp_ms": 1794753015948,
+        "time_left_label": "5m 28s",
         "end_time": "2026-11-15T06:30:16",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\3c46c64d-4287-44ae-9624-7d2b428eed83sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283635097",
@@ -80,7 +80,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 7% OF MELT (93% OFF | $12.99 vs $195.76 Melt)",
-        "found_at": "2026-11-15 09:21:21"
+        "found_at": "2026-11-15 09:24:47"
       },
       {
         "item_id": "284042745",
@@ -91,9 +91,9 @@
         "current_price": 38.0,
         "max_price": 250.0,
         "num_bids": 2,
-        "hours_left": 0.1608,
-        "end_timestamp_ms": 1794753059239,
-        "time_left_label": "9m 39s",
+        "hours_left": 0.1039,
+        "end_timestamp_ms": 1794753059699,
+        "time_left_label": "6m 14s",
         "end_time": "2026-11-15T06:31:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\dce8f465-5694-4d78-b232-a2f71b77a5fasado_1113t1.jpeg",
         "url": "https://shopgoodwill.com/item/284042745",
@@ -105,7 +105,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 28% OF MELT (72% OFF | $38.00 vs $134.55 Melt)",
-        "found_at": "2026-11-15 09:21:20"
+        "found_at": "2026-11-15 09:24:45"
       },
       {
         "item_id": "283636178",
@@ -116,9 +116,9 @@
         "current_price": 13.99,
         "max_price": 300.0,
         "num_bids": 2,
-        "hours_left": 0.3414,
-        "end_timestamp_ms": 1794753710280,
-        "time_left_label": "20m 29s",
+        "hours_left": 0.2842,
+        "end_timestamp_ms": 1794753710950,
+        "time_left_label": "17m 3s",
         "end_time": "2026-11-15T06:41:51",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\85c38bfe-dbff-4683-8cf3-d987f5e66044sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283636178",
@@ -130,7 +130,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 34% OF MELT (66% OFF | $13.99 vs $41.38 Melt)",
-        "found_at": "2026-11-15 09:21:21"
+        "found_at": "2026-11-15 09:24:47"
       },
       {
         "item_id": "284046632",
@@ -141,9 +141,9 @@
         "current_price": 35.0,
         "max_price": 250.0,
         "num_bids": 0,
-        "hours_left": 0.3775,
-        "end_timestamp_ms": 1794753839239,
-        "time_left_label": "22m 39s",
+        "hours_left": 0.3206,
+        "end_timestamp_ms": 1794753839699,
+        "time_left_label": "19m 14s",
         "end_time": "2026-11-15T06:44:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\d3373374-9f52-4dbd-a050-4188140cbdddight_1113t1.jpeg",
         "url": "https://shopgoodwill.com/item/284046632",
@@ -155,7 +155,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 70% OF MELT (30% OFF | $35.00 vs $50.35 Melt)",
-        "found_at": "2026-11-15 09:21:20"
+        "found_at": "2026-11-15 09:24:45"
       },
       {
         "item_id": "284051492",
@@ -166,9 +166,9 @@
         "current_price": 176.0,
         "max_price": 600.0,
         "num_bids": 11,
-        "hours_left": 0.4436,
-        "end_timestamp_ms": 1794754080144,
-        "time_left_label": "26m 37s",
+        "hours_left": 0.3861,
+        "end_timestamp_ms": 1794754079775,
+        "time_left_label": "23m 10s",
         "end_time": "2026-11-15T06:48:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\869e7a35-12d0-45a5-bd40-b200de260056sado_1113t1.jpeg",
         "url": "https://shopgoodwill.com/item/284051492",
@@ -180,7 +180,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 72% OF MELT (28% OFF | $176.00 vs $243.73 Melt)",
-        "found_at": "2026-11-15 09:21:23"
+        "found_at": "2026-11-15 09:24:49"
       },
       {
         "item_id": "284042812",
@@ -191,9 +191,9 @@
         "current_price": 150.01,
         "max_price": 250.0,
         "num_bids": 3,
-        "hours_left": 0.4608,
-        "end_timestamp_ms": 1794754139239,
-        "time_left_label": "27m 39s",
+        "hours_left": 0.4039,
+        "end_timestamp_ms": 1794754139699,
+        "time_left_label": "24m 14s",
         "end_time": "2026-11-15T06:49:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\e7421505-ad71-4935-bb74-ce111d15ed43sado_1113t1.jpeg",
         "url": "https://shopgoodwill.com/item/284042812",
@@ -205,57 +205,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 64% OF MELT (36% OFF | $150.01 vs $233.65 Melt)",
-        "found_at": "2026-11-15 09:21:20"
-      },
-      {
-        "item_id": "283671241",
-        "title": "Nike Men's Tennessee Titans #10 Nfl On Field Game Jersey Navy Blue Sz Xxl",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 9.99,
-        "max_price": 35.0,
-        "num_bids": 0,
-        "hours_left": 0.0069,
-        "end_timestamp_ms": 1794752519267,
-        "time_left_label": "25s",
-        "end_time": "2026-11-15T06:22:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/54\\Items\\2026-11-10\\6258e787-9c1e-43a2-9014-3537ffa4842bt099_1110t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283671241",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 09:21:34"
-      },
-      {
-        "item_id": "283645707",
-        "title": "Lot of 10 Pieces of Multi Color Jewelry",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 19.99,
-        "max_price": 50.0,
-        "num_bids": 0,
-        "hours_left": 0.04,
-        "end_timestamp_ms": 1794752640074,
-        "time_left_label": "2m 24s",
-        "end_time": "2026-11-15T06:24:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\ec1b8343-03ac-4e5f-b4e9-2a1964f193bcsick_1110t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283645707",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:24:45"
       },
       {
         "item_id": "283673912",
@@ -266,9 +216,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.0733,
-        "end_timestamp_ms": 1794752760075,
-        "time_left_label": "4m 24s",
+        "hours_left": 0.0158,
+        "end_timestamp_ms": 1794752759376,
+        "time_left_label": "57s",
         "end_time": "2026-11-15T06:26:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\37bc6173-9cbd-4c40-87ed-d48399da6e32sick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283673912",
@@ -280,7 +230,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283658896",
@@ -291,9 +241,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.09,
-        "end_timestamp_ms": 1794752820075,
-        "time_left_label": "5m 24s",
+        "hours_left": 0.0325,
+        "end_timestamp_ms": 1794752819376,
+        "time_left_label": "1m 57s",
         "end_time": "2026-11-15T06:27:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\27451166-241a-48f2-974c-46836fd5d041sick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283658896",
@@ -305,7 +255,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283643604",
@@ -316,9 +266,9 @@
         "current_price": 9.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.1069,
-        "end_timestamp_ms": 1794752879267,
-        "time_left_label": "6m 25s",
+        "hours_left": 0.0497,
+        "end_timestamp_ms": 1794752879851,
+        "time_left_label": "2m 59s",
         "end_time": "2026-11-15T06:28:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/54\\Items\\2026-11-10\\55fd62a9-5d4d-4ce9-8402-182a890f2200t099_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283643604",
@@ -330,7 +280,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 09:21:34"
+        "found_at": "2026-11-15 09:25:00"
       },
       {
         "item_id": "283659912",
@@ -341,9 +291,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.14,
-        "end_timestamp_ms": 1794753000075,
-        "time_left_label": "8m 24s",
+        "hours_left": 0.0825,
+        "end_timestamp_ms": 1794752999376,
+        "time_left_label": "4m 57s",
         "end_time": "2026-11-15T06:30:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\9fe9bd90-13aa-455e-a316-e4ba58376368sick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283659912",
@@ -355,7 +305,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283660761",
@@ -366,9 +316,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.19,
-        "end_timestamp_ms": 1794753180075,
-        "time_left_label": "11m 24s",
+        "hours_left": 0.1325,
+        "end_timestamp_ms": 1794753179377,
+        "time_left_label": "7m 57s",
         "end_time": "2026-11-15T06:33:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\a6285f49-e0b4-4a1f-b0f2-552e5ff5264eell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283660761",
@@ -380,7 +330,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283635817",
@@ -391,9 +341,9 @@
         "current_price": 22.0,
         "max_price": 50.0,
         "num_bids": 5,
-        "hours_left": 0.2814,
-        "end_timestamp_ms": 1794753509076,
-        "time_left_label": "16m 53s",
+        "hours_left": 0.2239,
+        "end_timestamp_ms": 1794753508377,
+        "time_left_label": "13m 26s",
         "end_time": "2026-11-15T06:38:29",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\cda03a1f-0b92-41ad-83b1-a83d7b7672f3sokc_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283635817",
@@ -405,7 +355,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283672070",
@@ -416,9 +366,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.29,
-        "end_timestamp_ms": 1794753540076,
-        "time_left_label": "17m 24s",
+        "hours_left": 0.2325,
+        "end_timestamp_ms": 1794753539377,
+        "time_left_label": "13m 57s",
         "end_time": "2026-11-15T06:39:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\59312568-4ebc-4171-ad1d-d1d19b7c2acesick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283672070",
@@ -430,7 +380,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283662042",
@@ -441,9 +391,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 1,
-        "hours_left": 0.3067,
-        "end_timestamp_ms": 1794753600076,
-        "time_left_label": "18m 24s",
+        "hours_left": 0.2492,
+        "end_timestamp_ms": 1794753599377,
+        "time_left_label": "14m 57s",
         "end_time": "2026-11-15T06:40:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\a3371102-4fda-42d9-9178-d7c61a24dd2aell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283662042",
@@ -455,7 +405,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283911748",
@@ -466,9 +416,9 @@
         "current_price": 11.8,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3558,
-        "end_timestamp_ms": 1794753775267,
-        "time_left_label": "21m 21s",
+        "hours_left": 0.2986,
+        "end_timestamp_ms": 1794753775852,
+        "time_left_label": "17m 55s",
         "end_time": "2026-11-15T06:42:56",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-09\\1a699259-3665-40dd-8a91-98bede6c8afdra26_1009t1.jpeg",
         "url": "https://shopgoodwill.com/item/283911748",
@@ -480,7 +430,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 09:21:34"
+        "found_at": "2026-11-15 09:25:00"
       },
       {
         "item_id": "283627280",
@@ -491,9 +441,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 1,
-        "hours_left": 0.3567,
-        "end_timestamp_ms": 1794753780076,
-        "time_left_label": "21m 24s",
+        "hours_left": 0.2992,
+        "end_timestamp_ms": 1794753779377,
+        "time_left_label": "17m 57s",
         "end_time": "2026-11-15T06:43:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\6dfe91ab-0550-42e2-9590-806c2c131a51ell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283627280",
@@ -505,7 +455,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283655031",
@@ -516,9 +466,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.3733,
-        "end_timestamp_ms": 1794753840076,
-        "time_left_label": "22m 24s",
+        "hours_left": 0.3158,
+        "end_timestamp_ms": 1794753839377,
+        "time_left_label": "18m 57s",
         "end_time": "2026-11-15T06:44:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\8e331ecb-6058-4f96-ac43-deb35d3b35a2sick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283655031",
@@ -530,7 +480,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283630143",
@@ -541,9 +491,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.39,
-        "end_timestamp_ms": 1794753900077,
-        "time_left_label": "23m 24s",
+        "hours_left": 0.3325,
+        "end_timestamp_ms": 1794753899377,
+        "time_left_label": "19m 57s",
         "end_time": "2026-11-15T06:45:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\3a15e5e4-cc71-4efa-9ad7-88d9f1a624dbell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283630143",
@@ -555,7 +505,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283652374",
@@ -566,9 +516,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 1,
-        "hours_left": 0.39,
-        "end_timestamp_ms": 1794753900077,
-        "time_left_label": "23m 24s",
+        "hours_left": 0.3325,
+        "end_timestamp_ms": 1794753899377,
+        "time_left_label": "19m 57s",
         "end_time": "2026-11-15T06:45:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\143bb5bf-60fb-49a1-9eef-44fe4b490f74ell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283652374",
@@ -580,7 +530,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283643399",
@@ -591,9 +541,9 @@
         "current_price": 9.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3903,
-        "end_timestamp_ms": 1794753899267,
-        "time_left_label": "23m 25s",
+        "hours_left": 0.3331,
+        "end_timestamp_ms": 1794753899852,
+        "time_left_label": "19m 59s",
         "end_time": "2026-11-15T06:45:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/54\\Items\\2026-11-10\\4892e1dd-cb59-42b6-b94e-a1b7f4e8a36bt099_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283643399",
@@ -605,7 +555,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 09:21:34"
+        "found_at": "2026-11-15 09:25:00"
       },
       {
         "item_id": "283670893",
@@ -616,9 +566,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.4567,
-        "end_timestamp_ms": 1794754140077,
-        "time_left_label": "27m 24s",
+        "hours_left": 0.3992,
+        "end_timestamp_ms": 1794754139377,
+        "time_left_label": "23m 57s",
         "end_time": "2026-11-15T06:49:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\a7aba6dc-c898-4e18-b6d7-0e43c2513ac5sick_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283670893",
@@ -630,7 +580,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283621132",
@@ -641,9 +591,9 @@
         "current_price": 12.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.49,
-        "end_timestamp_ms": 1794754260077,
-        "time_left_label": "29m 24s",
+        "hours_left": 0.4325,
+        "end_timestamp_ms": 1794754259377,
+        "time_left_label": "25m 57s",
         "end_time": "2026-11-15T06:51:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/54\\Items\\2026-11-10\\ebd73142-3ec0-46b4-a54a-c051901caa1con35_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283621132",
@@ -655,7 +605,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
       },
       {
         "item_id": "283662302",
@@ -666,9 +616,9 @@
         "current_price": 19.99,
         "max_price": 50.0,
         "num_bids": 0,
-        "hours_left": 0.49,
-        "end_timestamp_ms": 1794754260077,
-        "time_left_label": "29m 24s",
+        "hours_left": 0.4325,
+        "end_timestamp_ms": 1794754259377,
+        "time_left_label": "25m 57s",
         "end_time": "2026-11-15T06:51:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-10\\acad4f31-e628-4e0d-90e6-828186543f10ell1_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283662302",
@@ -680,7 +630,57 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 09:21:36"
+        "found_at": "2026-11-15 09:25:02"
+      },
+      {
+        "item_id": "284069834",
+        "title": "Assorted Beaded Jewelry Lot 10 lbs",
+        "rule_id": "jewelry_bulk_lot",
+        "rule_name": "Jewelry Bulk Lot",
+        "category_type": "bulk",
+        "current_price": 39.0,
+        "max_price": 50.0,
+        "num_bids": 2,
+        "hours_left": 0.4658,
+        "end_timestamp_ms": 1794754379378,
+        "time_left_label": "27m 57s",
+        "end_time": "2026-11-15T06:53:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/177\\Items\\2026-11-13\\2bc3c765-594a-485f-86dc-1363f19cf49dell1_1113t1.jpeg",
+        "url": "https://shopgoodwill.com/item/284069834",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $50 Limit",
+        "found_at": "2026-11-15 09:25:02"
+      },
+      {
+        "item_id": "283661217",
+        "title": "Nike Air Vapormax 2019 Night Maroon Burgundy Running Shoes Women's Size 7",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 9.99,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.4997,
+        "end_timestamp_ms": 1794754499852,
+        "time_left_label": "29m 59s",
+        "end_time": "2026-11-15T06:55:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/54\\Items\\2026-11-10\\5e83c1fa-6492-43ae-859b-dd333a936579t099_1110t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283661217",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-15 09:25:00"
       }
     ],
     "alerts_sent": 141
