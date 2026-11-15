@@ -2,10 +2,10 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 00:47:16",
-    "last_scan_time": "2026-11-15 00:50:52",
-    "scan_count": 626,
-    "purged_count": 8179,
+    "last_spot_sync": "2026-11-15 00:54:00",
+    "last_scan_time": "2026-11-15 00:54:16",
+    "scan_count": 627,
+    "purged_count": 8180,
     "deals": [
       {
         "item_id": "283506966",
@@ -16,9 +16,9 @@
         "current_price": 59.0,
         "max_price": 250.0,
         "num_bids": 9,
-        "hours_left": 0.4392,
-        "end_timestamp_ms": 1794723419327,
-        "time_left_label": "26m 21s",
+        "hours_left": 0.3831,
+        "end_timestamp_ms": 1794723420101,
+        "time_left_label": "22m 59s",
         "end_time": "2026-11-14T22:17:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\c83da0c1-d31f-4d18-8647-1c9783adb8b6entz_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283506966",
@@ -30,32 +30,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 66% OF MELT (34% OFF | $59.00 vs $89.70 Melt)",
-        "found_at": "2026-11-15 00:50:38"
-      },
-      {
-        "item_id": "283619274",
-        "title": "Vintage 1980s-1990s Assorted Sports Trading Cards Lot Baseball Hockey Football",
-        "rule_id": "sports_cards_bulk",
-        "rule_name": "Trading / Sports Card Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 19.99,
-        "max_price": 45.0,
-        "num_bids": 1,
-        "hours_left": 0.0356,
-        "end_timestamp_ms": 1794721979824,
-        "time_left_label": "2m 8s",
-        "end_time": "2026-11-14T21:53:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-10\\7e23bfde-4a25-4a57-aeec-aca985413987into_1110t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283619274",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-15 00:50:51"
+        "found_at": "2026-11-15 00:54:01"
       },
       {
         "item_id": "283417234",
@@ -66,9 +41,9 @@
         "current_price": 5.99,
         "max_price": 25.0,
         "num_bids": 1,
-        "hours_left": 0.3881,
-        "end_timestamp_ms": 1794723239382,
-        "time_left_label": "23m 17s",
+        "hours_left": 0.3319,
+        "end_timestamp_ms": 1794723239605,
+        "time_left_label": "19m 55s",
         "end_time": "2026-11-14T22:14:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\1bc96816-7c7a-4674-aa68-7b57ca37f850MegM_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283417234",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 00:50:42"
+        "found_at": "2026-11-15 00:54:04"
       }
     ],
     "alerts_sent": 141
