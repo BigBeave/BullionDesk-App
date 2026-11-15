@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 07:27:03",
-    "last_scan_time": "2026-11-15 07:27:18",
-    "scan_count": 742,
-    "purged_count": 8192,
+    "last_spot_sync": "2026-11-15 07:30:27",
+    "last_scan_time": "2026-11-15 07:31:56",
+    "scan_count": 743,
+    "purged_count": 8193,
     "deals": [
-      {
-        "item_id": "283620225",
-        "title": "Men's Nike Hoodie, Therma Fit, Size Small",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 7.99,
-        "max_price": 35.0,
-        "num_bids": 0,
-        "hours_left": 0.0369,
-        "end_timestamp_ms": 1794745769689,
-        "time_left_label": "2m 13s",
-        "end_time": "2026-11-15T04:29:30",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/68\\Items\\2026-11-04\\02125644-3a2e-44f2-aa7f-6f202ddc3b43omas_1104t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283620225",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 07:27:16"
-      },
       {
         "item_id": "283628164",
         "title": "Nike ACG & Champion Pullovers Womens Size Small",
@@ -41,9 +16,9 @@
         "current_price": 9.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.4286,
-        "end_timestamp_ms": 1794747179689,
-        "time_left_label": "25m 43s",
+        "hours_left": 0.3517,
+        "end_timestamp_ms": 1794747180397,
+        "time_left_label": "21m 6s",
         "end_time": "2026-11-15T04:53:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/5\\Item\\2026-11-10\\acd10ccd-3ab0-41f8-8788-d67c29a7f684rman_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283628164",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 07:27:16"
+        "found_at": "2026-11-15 07:31:54"
       }
     ],
     "alerts_sent": 141
