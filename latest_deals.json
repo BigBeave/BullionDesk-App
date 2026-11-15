@@ -2,11 +2,36 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 13:56:52",
-    "last_scan_time": "2026-11-15 14:04:04",
-    "scan_count": 858,
+    "last_spot_sync": "2026-11-15 14:07:11",
+    "last_scan_time": "2026-11-15 14:07:28",
+    "scan_count": 859,
     "purged_count": 8345,
     "deals": [
+      {
+        "item_id": "283671547",
+        "title": "Sterling Silver Sapphire and Assorted Earrings Lot",
+        "rule_id": "sterling_silver",
+        "rule_name": "Sterling Silver (Marked)",
+        "category_type": "metal",
+        "current_price": 16.0,
+        "max_price": 300.0,
+        "num_bids": 4,
+        "hours_left": 0.5,
+        "end_timestamp_ms": 1794771433148,
+        "time_left_label": "30m 0s",
+        "end_time": "2026-11-15T11:37:13",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-10\\a8f55373-1479-4c7c-9cc5-5e282f4871c6sokc_1110t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283671547",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 16.7,
+        "troy_oz": 0.5369,
+        "melt_value": 24.16,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 66% OF MELT (34% OFF | $16.00 vs $24.16 Melt)",
+        "found_at": "2026-11-15 14:07:13"
+      },
       {
         "item_id": "283944466",
         "title": "Nike Air Max 90 USA Denim White Red Navy Low Top Sneakers Size 9",
@@ -16,9 +41,9 @@
         "current_price": 10.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.2744,
-        "end_timestamp_ms": 1794770430104,
-        "time_left_label": "16m 28s",
+        "hours_left": 0.2178,
+        "end_timestamp_ms": 1794770430137,
+        "time_left_label": "13m 4s",
         "end_time": "2026-11-15T11:20:30",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/115\\Items\\2026-10-22\\6756e5f4-4e11-4d5d-888d-c238ef2f4f51waii_1022t1.jpeg",
         "url": "https://shopgoodwill.com/item/283944466",
@@ -30,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 14:04:02"
+        "found_at": "2026-11-15 14:07:26"
       },
       {
         "item_id": "283669799",
@@ -41,9 +66,9 @@
         "current_price": 10.93,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.2817,
-        "end_timestamp_ms": 1794770456104,
-        "time_left_label": "16m 54s",
+        "hours_left": 0.225,
+        "end_timestamp_ms": 1794770456137,
+        "time_left_label": "13m 30s",
         "end_time": "2026-11-15T11:20:56",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-26\\65bbe3dd-b59a-4214-a89d-5dc14db51f39fer1_1026t1.jpeg",
         "url": "https://shopgoodwill.com/item/283669799",
@@ -55,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 14:04:02"
+        "found_at": "2026-11-15 14:07:26"
       }
     ],
     "alerts_sent": 141
