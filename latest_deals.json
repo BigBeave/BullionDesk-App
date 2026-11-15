@@ -2,10 +2,10 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 01:07:36",
-    "last_scan_time": "2026-11-15 01:11:15",
-    "scan_count": 632,
-    "purged_count": 8180,
+    "last_spot_sync": "2026-11-15 01:14:22",
+    "last_scan_time": "2026-11-15 01:14:38",
+    "scan_count": 633,
+    "purged_count": 8181,
     "deals": [
       {
         "item_id": "283506966",
@@ -16,9 +16,9 @@
         "current_price": 59.0,
         "max_price": 250.0,
         "num_bids": 9,
-        "hours_left": 0.1003,
-        "end_timestamp_ms": 1794723420071,
-        "time_left_label": "6m 1s",
+        "hours_left": 0.0433,
+        "end_timestamp_ms": 1794723419312,
+        "time_left_label": "2m 36s",
         "end_time": "2026-11-14T22:17:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\c83da0c1-d31f-4d18-8647-1c9783adb8b6entz_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283506966",
@@ -30,7 +30,7 @@
         "weight_source": "title",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 66% OF MELT (34% OFF | $59.00 vs $89.70 Melt)",
-        "found_at": "2026-11-15 01:10:59"
+        "found_at": "2026-11-15 01:14:23"
       },
       {
         "item_id": "283793229",
@@ -41,9 +41,9 @@
         "current_price": 25.99,
         "max_price": 250.0,
         "num_bids": 0,
-        "hours_left": 0.2669,
-        "end_timestamp_ms": 1794724020074,
-        "time_left_label": "16m 1s",
+        "hours_left": 0.21,
+        "end_timestamp_ms": 1794724019316,
+        "time_left_label": "12m 36s",
         "end_time": "2026-11-14T22:27:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-11\\4c6944ad-f20c-4c62-b514-b4f5ce5be39ammb_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283793229",
@@ -55,32 +55,7 @@
         "weight_source": "description",
         "under_melt": true,
         "deal_reason": "\ud83d\udd25 69% OF MELT (31% OFF | $25.99 vs $37.43 Melt)",
-        "found_at": "2026-11-15 01:10:59"
-      },
-      {
-        "item_id": "283417234",
-        "title": "Lululemon Women's Black Ruched Athletic Leggings with Pockets Size 4",
-        "rule_id": "lululemon",
-        "rule_name": "Lululemon",
-        "category_type": "brand",
-        "current_price": 5.99,
-        "max_price": 25.0,
-        "num_bids": 1,
-        "hours_left": 0.0492,
-        "end_timestamp_ms": 1794723240124,
-        "time_left_label": "2m 57s",
-        "end_time": "2026-11-14T22:14:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/19\\Item\\2026-11-07\\1bc96816-7c7a-4674-aa68-7b57ca37f850MegM_1107t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283417234",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-15 01:11:03"
+        "found_at": "2026-11-15 01:14:23"
       },
       {
         "item_id": "283520073",
@@ -91,9 +66,9 @@
         "current_price": 23.55,
         "max_price": 50.0,
         "num_bids": 6,
-        "hours_left": 0.2792,
-        "end_timestamp_ms": 1794724079807,
-        "time_left_label": "16m 45s",
+        "hours_left": 0.2225,
+        "end_timestamp_ms": 1794724079602,
+        "time_left_label": "13m 21s",
         "end_time": "2026-11-14T22:28:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\96d6dcec-6f26-44ad-817d-604e7331486ft121_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283520073",
@@ -105,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 01:11:14"
+        "found_at": "2026-11-15 01:14:38"
       }
     ],
     "alerts_sent": 141
