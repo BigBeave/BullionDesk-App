@@ -2,11 +2,37 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 05:02:25",
-    "last_scan_time": "2026-11-15 05:02:40",
-    "scan_count": 700,
+    "last_spot_sync": "2026-11-15 05:05:48",
+    "last_scan_time": "2026-11-15 05:06:20",
+    "scan_count": 701,
     "purged_count": 8189,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283223986",
+        "title": "Nike Dri-FIT ADV FC Barcelona 2023/24 Jersey \u201cJo\u00e3o F\u00e9lix\u201d #14 Mens Large NWT",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 30.07,
+        "max_price": 35.0,
+        "num_bids": 9,
+        "hours_left": 0.4947,
+        "end_timestamp_ms": 1794738959739,
+        "time_left_label": "29m 41s",
+        "end_time": "2026-11-15T02:36:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/339\\Item\\2026-11-06\\cfeaa626-af60-4e76-90a9-d4d4c0aa4ff7anta_1106t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283223986",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-15 05:06:18"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
