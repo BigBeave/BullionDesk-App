@@ -2,37 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 07:51:59",
-    "last_scan_time": "2026-11-15 07:52:14",
-    "scan_count": 749,
-    "purged_count": 8193,
-    "deals": [
-      {
-        "item_id": "283628164",
-        "title": "Nike ACG & Champion Pullovers Womens Size Small",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 9.99,
-        "max_price": 35.0,
-        "num_bids": 0,
-        "hours_left": 0.0133,
-        "end_timestamp_ms": 1794747179883,
-        "time_left_label": "48s",
-        "end_time": "2026-11-15T04:53:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/5\\Item\\2026-11-10\\acd10ccd-3ab0-41f8-8788-d67c29a7f684rman_1110t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283628164",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-15 07:52:11"
-      }
-    ],
+    "last_spot_sync": "2026-11-15 07:55:22",
+    "last_scan_time": "2026-11-15 07:55:39",
+    "scan_count": 750,
+    "purged_count": 8194,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
