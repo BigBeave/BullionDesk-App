@@ -2,36 +2,11 @@
   "state": {
     "gold_spot": 3887.600098,
     "silver_spot": 48.650002,
-    "last_spot_sync": "2026-11-15 00:33:41",
-    "last_scan_time": "2026-11-15 00:33:58",
-    "scan_count": 621,
-    "purged_count": 8178,
+    "last_spot_sync": "2026-11-15 00:37:06",
+    "last_scan_time": "2026-11-15 00:37:22",
+    "scan_count": 622,
+    "purged_count": 8179,
     "deals": [
-      {
-        "item_id": "283539077",
-        "title": "Curated Lot of Gold-Tone/Plated Costume Jewelry & More",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 25.99,
-        "max_price": 50.0,
-        "num_bids": 6,
-        "hours_left": 0.0503,
-        "end_timestamp_ms": 1794721019200,
-        "time_left_label": "3m 1s",
-        "end_time": "2026-11-14T21:37:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-09\\fd5622a5-3485-4ee0-b7ab-accb10aff727t121_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283539077",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-15 00:33:58"
-      },
       {
         "item_id": "283619274",
         "title": "Vintage 1980s-1990s Assorted Sports Trading Cards Lot Baseball Hockey Football",
@@ -41,9 +16,9 @@
         "current_price": 19.99,
         "max_price": 45.0,
         "num_bids": 1,
-        "hours_left": 0.3172,
-        "end_timestamp_ms": 1794721979308,
-        "time_left_label": "19m 2s",
+        "hours_left": 0.2608,
+        "end_timestamp_ms": 1794721979917,
+        "time_left_label": "15m 39s",
         "end_time": "2026-11-14T21:53:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-10\\7e23bfde-4a25-4a57-aeec-aca985413987into_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283619274",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $45 Limit",
-        "found_at": "2026-11-15 00:33:57"
+        "found_at": "2026-11-15 00:37:20"
       }
     ],
     "alerts_sent": 141
