@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3879.219971,
-    "silver_spot": 47.678001,
-    "last_spot_sync": "2026-11-16 00:23:36",
-    "last_scan_time": "2026-11-16 00:23:51",
-    "scan_count": 1038,
+    "gold_spot": 3871.699951,
+    "silver_spot": 47.674999,
+    "last_spot_sync": "2026-11-16 00:26:59",
+    "last_scan_time": "2026-11-16 00:27:14",
+    "scan_count": 1039,
     "purged_count": 11671,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.5,
         "max_price": 250.0,
         "num_bids": 6,
-        "hours_left": 0.4397,
-        "end_timestamp_ms": 1794808199782,
-        "time_left_label": "26m 23s",
+        "hours_left": 0.3833,
+        "end_timestamp_ms": 1794808200031,
+        "time_left_label": "23m 0s",
         "end_time": "2026-11-15T21:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\b727cc2f-34dd-4bb0-832f-7d8135f5b42bentz_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283665927",
@@ -26,11 +26,11 @@
         "purity": 0.925,
         "grams": 27.82,
         "troy_oz": 0.8944,
-        "melt_value": 39.45,
+        "melt_value": 39.44,
         "weight_source": "title",
         "under_melt": true,
-        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.45 Melt)",
-        "found_at": "2026-11-16 00:23:36"
+        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.44 Melt)",
+        "found_at": "2026-11-16 00:27:00"
       },
       {
         "item_id": "283763650",
@@ -41,9 +41,9 @@
         "current_price": 19.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3694,
-        "end_timestamp_ms": 1794807959334,
-        "time_left_label": "22m 10s",
+        "hours_left": 0.3131,
+        "end_timestamp_ms": 1794807959615,
+        "time_left_label": "18m 47s",
         "end_time": "2026-11-15T21:46:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\4c2d1fd5-04e2-44ed-8e14-5dfc1b566d02land_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283763650",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 00:23:49"
+        "found_at": "2026-11-16 00:27:12"
       }
     ],
     "alerts_sent": 141
