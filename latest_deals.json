@@ -1,38 +1,12 @@
 {
   "state": {
-    "gold_spot": 3873.75,
-    "silver_spot": 47.599998,
-    "last_spot_sync": "2026-11-16 07:57:08",
-    "last_scan_time": "2026-11-16 07:57:25",
-    "scan_count": 1168,
+    "gold_spot": 3872.850098,
+    "silver_spot": 47.592999,
+    "last_spot_sync": "2026-11-16 08:00:34",
+    "last_scan_time": "2026-11-16 08:00:53",
+    "scan_count": 1169,
     "purged_count": 11690,
-    "deals": [
-      {
-        "item_id": "284042459",
-        "title": "Nike Women's Black/Gray Full Zip Track Jacket Sz XL",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 11.8,
-        "max_price": 35.0,
-        "num_bids": 0,
-        "hours_left": 0.0539,
-        "end_timestamp_ms": 1794834037683,
-        "time_left_label": "3m 14s",
-        "end_time": "2026-11-16T05:00:38",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-13\\afa0297d-4ee6-48e9-a388-91ad38aee4ealand_1013t1.jpeg",
-        "url": "https://shopgoodwill.com/item/284042459",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 07:57:23"
-      }
-    ],
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
