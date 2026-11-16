@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3871.699951,
-    "silver_spot": 47.509998,
-    "last_spot_sync": "2026-11-16 00:33:46",
-    "last_scan_time": "2026-11-16 00:34:01",
-    "scan_count": 1041,
+    "gold_spot": 3871.800049,
+    "silver_spot": 47.553001,
+    "last_spot_sync": "2026-11-16 00:37:08",
+    "last_scan_time": "2026-11-16 00:37:25",
+    "scan_count": 1042,
     "purged_count": 11671,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.5,
         "max_price": 250.0,
         "num_bids": 6,
-        "hours_left": 0.27,
-        "end_timestamp_ms": 1794808199494,
-        "time_left_label": "16m 12s",
+        "hours_left": 0.2139,
+        "end_timestamp_ms": 1794808199539,
+        "time_left_label": "12m 50s",
         "end_time": "2026-11-15T21:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\b727cc2f-34dd-4bb0-832f-7d8135f5b42bentz_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283665927",
@@ -26,11 +26,11 @@
         "purity": 0.925,
         "grams": 27.82,
         "troy_oz": 0.8944,
-        "melt_value": 39.31,
+        "melt_value": 39.34,
         "weight_source": "title",
         "under_melt": true,
-        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.31 Melt)",
-        "found_at": "2026-11-16 00:33:47"
+        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.34 Melt)",
+        "found_at": "2026-11-16 00:37:09"
       },
       {
         "item_id": "284037966",
@@ -41,9 +41,9 @@
         "current_price": 39.99,
         "max_price": 250.0,
         "num_bids": 0,
-        "hours_left": 0.4367,
-        "end_timestamp_ms": 1794808799497,
-        "time_left_label": "26m 12s",
+        "hours_left": 0.3806,
+        "end_timestamp_ms": 1794808799542,
+        "time_left_label": "22m 50s",
         "end_time": "2026-11-15T22:00:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-09\\9b828e7a-9a0e-48e8-b53d-32c7fe45cbc5mmb_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/284037966",
@@ -51,11 +51,36 @@
         "purity": 0.925,
         "grams": 44.42,
         "troy_oz": 1.4281,
-        "melt_value": 62.76,
+        "melt_value": 62.82,
         "weight_source": "description",
         "under_melt": true,
-        "deal_reason": "\ud83d\udd25 64% OF MELT (36% OFF | $39.99 vs $62.76 Melt)",
-        "found_at": "2026-11-16 00:33:47"
+        "deal_reason": "\ud83d\udd25 64% OF MELT (36% OFF | $39.99 vs $62.82 Melt)",
+        "found_at": "2026-11-16 00:37:09"
+      },
+      {
+        "item_id": "283938362",
+        "title": "925 STERLING SILVER JEWELRY GRAB BAG - NECKLACES, EARRINGS + RINGS",
+        "rule_id": "silver_925",
+        "rule_name": "925 Sterling Silver",
+        "category_type": "metal",
+        "current_price": 51.0,
+        "max_price": 250.0,
+        "num_bids": 9,
+        "hours_left": 0.4972,
+        "end_timestamp_ms": 1794809219973,
+        "time_left_label": "29m 50s",
+        "end_time": "2026-11-15T22:07:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-12\\e578cd70-cdba-4534-b2cf-74d7f1eba644keyb_1112t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283938362",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 52.42,
+        "troy_oz": 1.6853,
+        "melt_value": 74.13,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 69% OF MELT (31% OFF | $51.00 vs $74.13 Melt)",
+        "found_at": "2026-11-16 00:37:10"
       },
       {
         "item_id": "283763650",
@@ -66,9 +91,9 @@
         "current_price": 19.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.2,
-        "end_timestamp_ms": 1794807959297,
-        "time_left_label": "12m 0s",
+        "hours_left": 0.1433,
+        "end_timestamp_ms": 1794807959450,
+        "time_left_label": "8m 36s",
         "end_time": "2026-11-15T21:46:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\4c2d1fd5-04e2-44ed-8e14-5dfc1b566d02land_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283763650",
@@ -80,7 +105,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 00:33:59"
+        "found_at": "2026-11-16 00:37:23"
       },
       {
         "item_id": "283905183",
@@ -91,9 +116,9 @@
         "current_price": 13.99,
         "max_price": 35.0,
         "num_bids": 2,
-        "hours_left": 0.4506,
-        "end_timestamp_ms": 1794808859434,
-        "time_left_label": "27m 2s",
+        "hours_left": 0.3942,
+        "end_timestamp_ms": 1794808859937,
+        "time_left_label": "23m 39s",
         "end_time": "2026-11-15T22:01:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-12\\d2283ba3-7215-4520-bd85-5abae72e2817tgfl_1112t1.jpeg",
         "url": "https://shopgoodwill.com/item/283905183",
@@ -105,7 +130,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 00:33:57"
+        "found_at": "2026-11-16 00:37:20"
       },
       {
         "item_id": "283665016",
@@ -116,9 +141,9 @@
         "current_price": 9.99,
         "max_price": 50.0,
         "num_bids": 2,
-        "hours_left": 0.4831,
-        "end_timestamp_ms": 1794808979740,
-        "time_left_label": "28m 59s",
+        "hours_left": 0.4261,
+        "end_timestamp_ms": 1794808979289,
+        "time_left_label": "25m 34s",
         "end_time": "2026-11-15T22:03:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\03c0d04e-c5e5-49eb-aa7e-1533cb961994t121_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283665016",
@@ -130,7 +155,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-16 00:34:00"
+        "found_at": "2026-11-16 00:37:25"
       }
     ],
     "alerts_sent": 141
