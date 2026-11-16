@@ -1,12 +1,38 @@
 {
   "state": {
-    "gold_spot": 3864.149902,
-    "silver_spot": 47.445,
-    "last_spot_sync": "2026-11-16 02:37:41",
-    "last_scan_time": "2026-11-16 02:41:22",
-    "scan_count": 1078,
+    "gold_spot": 3858.469971,
+    "silver_spot": 47.415001,
+    "last_spot_sync": "2026-11-16 02:44:29",
+    "last_scan_time": "2026-11-16 02:44:45",
+    "scan_count": 1079,
     "purged_count": 11685,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283763677",
+        "title": "Nike Fuel Jug 64 oz Chug Water Bottle - Black/Grey",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 19.99,
+        "max_price": 35.0,
+        "num_bids": 1,
+        "hours_left": 0.4711,
+        "end_timestamp_ms": 1794816779615,
+        "time_left_label": "28m 16s",
+        "end_time": "2026-11-16T00:13:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\f5664073-ff42-4f9b-89c8-ee5c306ca19aon42_1111t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283763677",
+        "metal": null,
+        "purity": null,
+        "grams": 1990.62,
+        "troy_oz": 64.0,
+        "melt_value": 0.0,
+        "weight_source": "title",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-16 02:44:43"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
