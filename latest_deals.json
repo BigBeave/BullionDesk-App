@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3870.5,
-    "silver_spot": 46.59,
-    "last_spot_sync": "2026-11-16 10:34:26",
-    "last_scan_time": "2026-11-16 10:34:46",
-    "scan_count": 1211,
-    "purged_count": 11779,
+    "gold_spot": 3868.850098,
+    "silver_spot": 46.540001,
+    "last_spot_sync": "2026-11-16 10:37:54",
+    "last_scan_time": "2026-11-16 10:38:13",
+    "scan_count": 1212,
+    "purged_count": 11780,
     "deals": [
-      {
-        "item_id": "283781536",
-        "title": "Coach Black Gray Signature Shoulder Bag W/ Drawstrings",
-        "rule_id": "coach",
-        "rule_name": "Coach Bag / Leather",
-        "category_type": "luxury",
-        "current_price": 33.0,
-        "max_price": 35.0,
-        "num_bids": 5,
-        "hours_left": 0.0456,
-        "end_timestamp_ms": 1794843444476,
-        "time_left_label": "2m 44s",
-        "end_time": "2026-11-16T07:37:25",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-11\\afe71dc2-f139-4831-9ff9-0915d3fa3980sokc_1111t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283781536",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 10:34:40"
-      },
       {
         "item_id": "283782609",
         "title": "Lululemon Women's Black Crescent Shoulder Bag",
@@ -41,9 +16,9 @@
         "current_price": 15.0,
         "max_price": 25.0,
         "num_bids": 3,
-        "hours_left": 0.2133,
-        "end_timestamp_ms": 1794844039859,
-        "time_left_label": "12m 48s",
+        "hours_left": 0.1556,
+        "end_timestamp_ms": 1794844039697,
+        "time_left_label": "9m 20s",
         "end_time": "2026-11-16T07:47:20",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-11\\41874d9e-58ff-4a1d-b881-9ff2d5c28ca1sokc_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283782609",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $25 Limit",
-        "found_at": "2026-11-16 10:34:31"
+        "found_at": "2026-11-16 10:37:59"
       },
       {
         "item_id": "283357002",
@@ -66,9 +41,9 @@
         "current_price": 28.0,
         "max_price": 35.0,
         "num_bids": 6,
-        "hours_left": 0.2544,
-        "end_timestamp_ms": 1794844199597,
-        "time_left_label": "15m 16s",
+        "hours_left": 0.1969,
+        "end_timestamp_ms": 1794844200203,
+        "time_left_label": "11m 49s",
         "end_time": "2026-11-16T07:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/365\\Item\\2026-11-07\\3b1025df-0988-4517-8d0c-c85487704d9ebbs8_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283357002",
@@ -80,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 10:34:43"
+        "found_at": "2026-11-16 10:38:11"
       },
       {
         "item_id": "283918455",
@@ -91,9 +66,9 @@
         "current_price": 14.57,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.4369,
-        "end_timestamp_ms": 1794844856597,
-        "time_left_label": "26m 13s",
+        "hours_left": 0.3794,
+        "end_timestamp_ms": 1794844857203,
+        "time_left_label": "22m 46s",
         "end_time": "2026-11-16T08:00:57",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/50\\Items\\2026-10-29\\61f079ff-c861-496e-8819-bb547215ae0fyan1_1029t1.jpeg",
         "url": "https://shopgoodwill.com/item/283918455",
@@ -105,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 10:34:43"
+        "found_at": "2026-11-16 10:38:11"
       }
     ],
     "alerts_sent": 141
