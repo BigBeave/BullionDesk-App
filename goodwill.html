@@ -1404,7 +1404,39 @@ async function loadDealsFeed() {
     }
   } catch (e) {}
 
-  // 2. Fallback: Load latest_deals.json from same directory (works on GitHub Pages & local file)
+  // 2. Cloud Live Feed Bridge (instant sync on GitHub Pages / mobile with zero GitHub Actions builds!)
+  try {
+    const resp = await fetch('https://ntfy.sh/robinhood_agentic_beavers_2026_feed/json?poll=1&since=30m');
+    if (resp.ok) {
+      const text = await resp.text();
+      const lines = text.trim().split('\n').filter(Boolean);
+      for (let i = lines.length - 1; i >= 0; i--) {
+        try {
+          const msg = JSON.parse(lines[i]);
+          if (msg.event === 'message' && msg.message) {
+            const data = JSON.parse(msg.message);
+            if (data.config) {
+              scannerEnabled = data.config.scanner_enabled !== undefined ? Boolean(data.config.scanner_enabled) : true;
+              autoSendNtfy = Boolean(data.config.auto_send_ntfy);
+              ntfyMode = data.config.ntfy_mode || 'under_melt_only';
+              updateMasterPowerButtons();
+            }
+            if (data.state && data.state.deals) {
+              activeDeals = data.state.deals;
+              totalPurgedCount = data.state.purged_count || totalPurgedCount;
+              document.getElementById('purgeBadge').textContent = `🧹 Auto-Deletes When Auction Ends (${totalPurgedCount} Purged)`;
+              purgeExpiredDeals(false);
+              renderDeals();
+              statusEl.textContent = 'Live Cloud Feed synced: ' + (data.state.last_scan_time || 'just now');
+              return;
+            }
+          }
+        } catch (innerErr) {}
+      }
+    }
+  } catch (e) {}
+
+  // 3. Static Fallback: Load latest_deals.json from same directory
   try {
     const resp = await fetch('latest_deals.json?cb=' + Date.now());
     if (resp.ok) {
