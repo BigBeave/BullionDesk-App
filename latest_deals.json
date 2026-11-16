@@ -1,12 +1,38 @@
 {
   "state": {
-    "gold_spot": 3869.350098,
-    "silver_spot": 47.365002,
-    "last_spot_sync": "2026-11-16 00:10:05",
-    "last_scan_time": "2026-11-16 00:10:20",
-    "scan_count": 1034,
+    "gold_spot": 3871.600098,
+    "silver_spot": 47.404999,
+    "last_spot_sync": "2026-11-16 00:13:28",
+    "last_scan_time": "2026-11-16 00:13:45",
+    "scan_count": 1035,
     "purged_count": 11671,
-    "deals": [],
+    "deals": [
+      {
+        "item_id": "283671973",
+        "title": "Curated Lot of Silver-Tone with a Touch of Sparkles Costume Jewelry & More",
+        "rule_id": "jewelry_bulk_lot",
+        "rule_name": "Jewelry Bulk Lot",
+        "category_type": "bulk",
+        "current_price": 14.99,
+        "max_price": 50.0,
+        "num_bids": 5,
+        "hours_left": 0.4542,
+        "end_timestamp_ms": 1794807660182,
+        "time_left_label": "27m 15s",
+        "end_time": "2026-11-15T21:41:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\6dbe2d05-e602-4ce3-8bd6-f8280fe1e815t121_1110t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283671973",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $50 Limit",
+        "found_at": "2026-11-16 00:13:45"
+      }
+    ],
     "alerts_sent": 141
   },
   "config": {
