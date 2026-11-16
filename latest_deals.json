@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3849.449951,
-    "silver_spot": 47.248001,
-    "last_spot_sync": "2026-11-16 01:39:20",
-    "last_scan_time": "2026-11-16 01:39:36",
-    "scan_count": 1060,
-    "purged_count": 11683,
+    "gold_spot": 3853.350098,
+    "silver_spot": 47.243,
+    "last_spot_sync": "2026-11-16 01:42:44",
+    "last_scan_time": "2026-11-16 01:43:02",
+    "scan_count": 1061,
+    "purged_count": 11684,
     "deals": [
-      {
-        "item_id": "283618938",
-        "title": "Nike Air Jordan 1 Low 553558-611 Red White Men's Size 9 Sneakers",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 28.0,
-        "max_price": 35.0,
-        "num_bids": 8,
-        "hours_left": 0.0072,
-        "end_timestamp_ms": 1794811199994,
-        "time_left_label": "26s",
-        "end_time": "2026-11-15T22:40:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/2\\Item\\2026-11-09\\6bbdc6ab-f1f3-4aab-8e42-cb13cfe24b73lede_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283618938",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 01:39:33"
-      },
       {
         "item_id": "283348987",
         "title": "Women's Nike Air Jordan 1 Low OG DH7820-700 SE 'Twine' Shoes Size 8",
@@ -41,9 +16,9 @@
         "current_price": 17.0,
         "max_price": 35.0,
         "num_bids": 5,
-        "hours_left": 0.4239,
-        "end_timestamp_ms": 1794812699994,
-        "time_left_label": "25m 26s",
+        "hours_left": 0.3664,
+        "end_timestamp_ms": 1794812699344,
+        "time_left_label": "21m 59s",
         "end_time": "2026-11-15T23:05:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/2\\Item\\2026-11-07\\d29aec60-8996-4b57-a85e-5490c5d2efd4iusb_1107t1.jpeg",
         "url": "https://shopgoodwill.com/item/283348987",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 01:39:33"
+        "found_at": "2026-11-16 01:43:00"
       }
     ],
     "alerts_sent": 141
