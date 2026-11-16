@@ -3,10 +3,35 @@
     "gold_spot": 3870.800049,
     "silver_spot": 47.330002,
     "last_spot_sync": "2026-11-16 00:16:52",
-    "last_scan_time": "2026-11-16 00:17:06",
-    "scan_count": 1036,
+    "last_scan_time": "2026-11-16 00:20:27",
+    "scan_count": 1037,
     "purged_count": 11671,
     "deals": [
+      {
+        "item_id": "283665927",
+        "title": "BARSE Sterling Silver 925 & Turquoise Necklace 27.82 Grams",
+        "rule_id": "silver_925",
+        "rule_name": "925 Sterling Silver",
+        "category_type": "metal",
+        "current_price": 26.5,
+        "max_price": 250.0,
+        "num_bids": 6,
+        "hours_left": 0.4961,
+        "end_timestamp_ms": 1794808200086,
+        "time_left_label": "29m 46s",
+        "end_time": "2026-11-15T21:50:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\b727cc2f-34dd-4bb0-832f-7d8135f5b42bentz_1110t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283665927",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 27.82,
+        "troy_oz": 0.8944,
+        "melt_value": 39.16,
+        "weight_source": "title",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 68% OF MELT (32% OFF | $26.50 vs $39.16 Melt)",
+        "found_at": "2026-11-16 00:20:14"
+      },
       {
         "item_id": "283671973",
         "title": "Curated Lot of Silver-Tone with a Touch of Sparkles Costume Jewelry & More",
@@ -16,9 +41,9 @@
         "current_price": 14.99,
         "max_price": 50.0,
         "num_bids": 5,
-        "hours_left": 0.3981,
-        "end_timestamp_ms": 1794807659608,
-        "time_left_label": "23m 53s",
+        "hours_left": 0.3422,
+        "end_timestamp_ms": 1794807659553,
+        "time_left_label": "20m 32s",
         "end_time": "2026-11-15T21:41:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\6dbe2d05-e602-4ce3-8bd6-f8280fe1e815t121_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283671973",
@@ -30,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-16 00:17:06"
+        "found_at": "2026-11-16 00:20:27"
       },
       {
         "item_id": "283763650",
@@ -41,9 +66,9 @@
         "current_price": 19.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.4819,
-        "end_timestamp_ms": 1794807959965,
-        "time_left_label": "28m 55s",
+        "hours_left": 0.4261,
+        "end_timestamp_ms": 1794807960038,
+        "time_left_label": "25m 34s",
         "end_time": "2026-11-15T21:46:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\4c2d1fd5-04e2-44ed-8e14-5dfc1b566d02land_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283763650",
@@ -55,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 00:17:04"
+        "found_at": "2026-11-16 00:20:26"
       }
     ],
     "alerts_sent": 141
