@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3858.649902,
-    "silver_spot": 47.287998,
-    "last_spot_sync": "2026-11-16 04:47:34",
-    "last_scan_time": "2026-11-16 04:51:39",
-    "scan_count": 1115,
+    "gold_spot": 3855.370117,
+    "silver_spot": 47.279999,
+    "last_spot_sync": "2026-11-16 04:54:48",
+    "last_scan_time": "2026-11-16 04:55:10",
+    "scan_count": 1116,
     "purged_count": 11686,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 23.0,
         "max_price": 35.0,
         "num_bids": 3,
-        "hours_left": 0.1067,
-        "end_timestamp_ms": 1794823079785,
-        "time_left_label": "6m 24s",
+        "hours_left": 0.0486,
+        "end_timestamp_ms": 1794823079696,
+        "time_left_label": "2m 55s",
         "end_time": "2026-11-16T01:58:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\87eeb15d-964d-4826-b009-1422f73ce080lez2_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283479432",
@@ -30,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 04:51:35"
+        "found_at": "2026-11-16 04:55:04"
       },
       {
         "item_id": "283479621",
@@ -41,9 +41,9 @@
         "current_price": 21.0,
         "max_price": 35.0,
         "num_bids": 4,
-        "hours_left": 0.49,
-        "end_timestamp_ms": 1794824459785,
-        "time_left_label": "29m 24s",
+        "hours_left": 0.4319,
+        "end_timestamp_ms": 1794824459696,
+        "time_left_label": "25m 55s",
         "end_time": "2026-11-16T02:21:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\735f826a-3622-436a-a978-e95d5a2933a1wpor_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283479621",
@@ -55,7 +55,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 04:51:35"
+        "found_at": "2026-11-16 04:55:04"
       }
     ],
     "alerts_sent": 141
