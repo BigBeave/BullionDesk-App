@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3854.52002,
-    "silver_spot": 47.412998,
-    "last_spot_sync": "2026-11-16 02:07:02",
-    "last_scan_time": "2026-11-16 02:07:19",
-    "scan_count": 1068,
+    "gold_spot": 3855.370117,
+    "silver_spot": 47.490002,
+    "last_spot_sync": "2026-11-16 02:10:28",
+    "last_scan_time": "2026-11-16 02:10:45",
+    "scan_count": 1069,
     "purged_count": 11685,
     "deals": [],
     "alerts_sent": 141
