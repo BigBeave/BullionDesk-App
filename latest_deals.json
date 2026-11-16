@@ -1,37 +1,12 @@
 {
   "state": {
-    "gold_spot": 3866.469971,
-    "silver_spot": 47.438,
-    "last_spot_sync": "2026-11-16 05:19:24",
-    "last_scan_time": "2026-11-16 05:19:58",
-    "scan_count": 1123,
-    "purged_count": 11687,
+    "gold_spot": 3868.300049,
+    "silver_spot": 47.525002,
+    "last_spot_sync": "2026-11-16 05:23:08",
+    "last_scan_time": "2026-11-16 05:23:26",
+    "scan_count": 1124,
+    "purged_count": 11688,
     "deals": [
-      {
-        "item_id": "283479621",
-        "title": "Nike Air Jordan 4 Retro Cool Grey Sneakers Size US 7 Pre-Owned Shoes",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 21.0,
-        "max_price": 35.0,
-        "num_bids": 4,
-        "hours_left": 0.0178,
-        "end_timestamp_ms": 1794824459823,
-        "time_left_label": "1m 4s",
-        "end_time": "2026-11-16T02:21:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\735f826a-3622-436a-a978-e95d5a2933a1wpor_1109t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283479621",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 05:19:55"
-      },
       {
         "item_id": "283764115",
         "title": "Nike Dunk Low DM9467-500 Purple Pulse Sneakers Size US 9.5",
@@ -41,9 +16,9 @@
         "current_price": 8.19,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.2344,
-        "end_timestamp_ms": 1794825239823,
-        "time_left_label": "14m 4s",
+        "hours_left": 0.1767,
+        "end_timestamp_ms": 1794825239915,
+        "time_left_label": "10m 36s",
         "end_time": "2026-11-16T02:34:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/176\\Item\\2026-11-11\\5e7ed52c-53f2-4dea-bf00-28a339c01da0riah_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283764115",
@@ -55,7 +30,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 05:19:55"
+        "found_at": "2026-11-16 05:23:23"
       }
     ],
     "alerts_sent": 141
