@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3871.699951,
-    "silver_spot": 47.674999,
-    "last_spot_sync": "2026-11-16 00:26:59",
-    "last_scan_time": "2026-11-16 00:27:14",
-    "scan_count": 1039,
+    "gold_spot": 3878.300049,
+    "silver_spot": 47.685001,
+    "last_spot_sync": "2026-11-16 00:30:21",
+    "last_scan_time": "2026-11-16 00:30:38",
+    "scan_count": 1040,
     "purged_count": 11671,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 26.5,
         "max_price": 250.0,
         "num_bids": 6,
-        "hours_left": 0.3833,
-        "end_timestamp_ms": 1794808200031,
-        "time_left_label": "23m 0s",
+        "hours_left": 0.3272,
+        "end_timestamp_ms": 1794808199887,
+        "time_left_label": "19m 38s",
         "end_time": "2026-11-15T21:50:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\b727cc2f-34dd-4bb0-832f-7d8135f5b42bentz_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283665927",
@@ -26,11 +26,36 @@
         "purity": 0.925,
         "grams": 27.82,
         "troy_oz": 0.8944,
-        "melt_value": 39.44,
+        "melt_value": 39.45,
         "weight_source": "title",
         "under_melt": true,
-        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.44 Melt)",
-        "found_at": "2026-11-16 00:27:00"
+        "deal_reason": "\ud83d\udd25 67% OF MELT (33% OFF | $26.50 vs $39.45 Melt)",
+        "found_at": "2026-11-16 00:30:21"
+      },
+      {
+        "item_id": "284037966",
+        "title": "925 SILVER NECKLACE & RING W GEMSTONE (SEE TEST PHOTO)",
+        "rule_id": "silver_925",
+        "rule_name": "925 Sterling Silver",
+        "category_type": "metal",
+        "current_price": 39.99,
+        "max_price": 250.0,
+        "num_bids": 0,
+        "hours_left": 0.4939,
+        "end_timestamp_ms": 1794808801060,
+        "time_left_label": "29m 38s",
+        "end_time": "2026-11-15T22:00:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/17\\Items\\2026-11-09\\9b828e7a-9a0e-48e8-b53d-32c7fe45cbc5mmb_1109t1.jpeg",
+        "url": "https://shopgoodwill.com/item/284037966",
+        "metal": "silver",
+        "purity": 0.925,
+        "grams": 44.42,
+        "troy_oz": 1.4281,
+        "melt_value": 62.99,
+        "weight_source": "description",
+        "under_melt": true,
+        "deal_reason": "\ud83d\udd25 63% OF MELT (37% OFF | $39.99 vs $62.99 Melt)",
+        "found_at": "2026-11-16 00:30:23"
       },
       {
         "item_id": "283763650",
@@ -41,9 +66,9 @@
         "current_price": 19.99,
         "max_price": 35.0,
         "num_bids": 0,
-        "hours_left": 0.3131,
-        "end_timestamp_ms": 1794807959615,
-        "time_left_label": "18m 47s",
+        "hours_left": 0.2564,
+        "end_timestamp_ms": 1794807959934,
+        "time_left_label": "15m 23s",
         "end_time": "2026-11-15T21:46:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\4c2d1fd5-04e2-44ed-8e14-5dfc1b566d02land_1111t1.jpeg",
         "url": "https://shopgoodwill.com/item/283763650",
@@ -55,7 +80,7 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 00:27:12"
+        "found_at": "2026-11-16 00:30:36"
       }
     ],
     "alerts_sent": 141
