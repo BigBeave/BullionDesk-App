@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3871.600098,
-    "silver_spot": 47.404999,
-    "last_spot_sync": "2026-11-16 00:13:28",
-    "last_scan_time": "2026-11-16 00:13:45",
-    "scan_count": 1035,
+    "gold_spot": 3870.800049,
+    "silver_spot": 47.330002,
+    "last_spot_sync": "2026-11-16 00:16:52",
+    "last_scan_time": "2026-11-16 00:17:06",
+    "scan_count": 1036,
     "purged_count": 11671,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 14.99,
         "max_price": 50.0,
         "num_bids": 5,
-        "hours_left": 0.4542,
-        "end_timestamp_ms": 1794807660182,
-        "time_left_label": "27m 15s",
+        "hours_left": 0.3981,
+        "end_timestamp_ms": 1794807659608,
+        "time_left_label": "23m 53s",
         "end_time": "2026-11-15T21:41:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/98\\Items\\2026-11-10\\6dbe2d05-e602-4ce3-8bd6-f8280fe1e815t121_1110t1.jpeg",
         "url": "https://shopgoodwill.com/item/283671973",
@@ -30,7 +30,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-16 00:13:45"
+        "found_at": "2026-11-16 00:17:06"
+      },
+      {
+        "item_id": "283763650",
+        "title": "Nike Pro Combat Padded Compression Shirt & Shorts Set Size S 584395-100",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 19.99,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.4819,
+        "end_timestamp_ms": 1794807959965,
+        "time_left_label": "28m 55s",
+        "end_time": "2026-11-15T21:46:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-11\\4c2d1fd5-04e2-44ed-8e14-5dfc1b566d02land_1111t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283763650",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-16 00:17:04"
       }
     ],
     "alerts_sent": 141
