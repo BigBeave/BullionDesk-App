@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3854.600098,
-    "silver_spot": 47.465,
-    "last_spot_sync": "2026-11-16 01:28:05",
-    "last_scan_time": "2026-11-16 01:32:49",
-    "scan_count": 1058,
+    "gold_spot": 3849.02002,
+    "silver_spot": 47.264999,
+    "last_spot_sync": "2026-11-16 01:35:56",
+    "last_scan_time": "2026-11-16 01:36:13",
+    "scan_count": 1059,
     "purged_count": 11683,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 28.0,
         "max_price": 35.0,
         "num_bids": 8,
-        "hours_left": 0.12,
-        "end_timestamp_ms": 1794811199433,
-        "time_left_label": "7m 12s",
+        "hours_left": 0.0633,
+        "end_timestamp_ms": 1794811199749,
+        "time_left_label": "3m 48s",
         "end_time": "2026-11-15T22:40:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/2\\Item\\2026-11-09\\6bbdc6ab-f1f3-4aab-8e42-cb13cfe24b73lede_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283618938",
@@ -30,7 +30,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 01:32:47"
+        "found_at": "2026-11-16 01:36:11"
+      },
+      {
+        "item_id": "283348987",
+        "title": "Women's Nike Air Jordan 1 Low OG DH7820-700 SE 'Twine' Shoes Size 8",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 17.0,
+        "max_price": 35.0,
+        "num_bids": 5,
+        "hours_left": 0.48,
+        "end_timestamp_ms": 1794812699749,
+        "time_left_label": "28m 48s",
+        "end_time": "2026-11-15T23:05:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/2\\Item\\2026-11-07\\d29aec60-8996-4b57-a85e-5490c5d2efd4iusb_1107t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283348987",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-16 01:36:11"
       }
     ],
     "alerts_sent": 141
