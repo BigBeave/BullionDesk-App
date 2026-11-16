@@ -1,38 +1,12 @@
 {
   "state": {
-    "gold_spot": 3852.850098,
-    "silver_spot": 47.445,
-    "last_spot_sync": "2026-11-16 02:03:33",
-    "last_scan_time": "2026-11-16 02:03:52",
-    "scan_count": 1067,
-    "purged_count": 11684,
-    "deals": [
-      {
-        "item_id": "283348987",
-        "title": "Women's Nike Air Jordan 1 Low OG DH7820-700 SE 'Twine' Shoes Size 8",
-        "rule_id": "nike",
-        "rule_name": "Nike / Air Jordan",
-        "category_type": "brand",
-        "current_price": 17.0,
-        "max_price": 35.0,
-        "num_bids": 5,
-        "hours_left": 0.0194,
-        "end_timestamp_ms": 1794812699262,
-        "time_left_label": "1m 10s",
-        "end_time": "2026-11-15T23:05:00",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/2\\Item\\2026-11-07\\d29aec60-8996-4b57-a85e-5490c5d2efd4iusb_1107t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283348987",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 02:03:49"
-      }
-    ],
+    "gold_spot": 3854.52002,
+    "silver_spot": 47.412998,
+    "last_spot_sync": "2026-11-16 02:07:02",
+    "last_scan_time": "2026-11-16 02:07:19",
+    "scan_count": 1068,
+    "purged_count": 11685,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
