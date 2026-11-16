@@ -1,38 +1,12 @@
 {
   "state": {
-    "gold_spot": 3873.850098,
-    "silver_spot": 47.535,
-    "last_spot_sync": "2026-11-16 07:15:36",
-    "last_scan_time": "2026-11-16 07:19:32",
-    "scan_count": 1157,
-    "purged_count": 11689,
-    "deals": [
-      {
-        "item_id": "283773658",
-        "title": "Kendra Scott Designer Jewelry Lot",
-        "rule_id": "jewelry_bulk_lot",
-        "rule_name": "Jewelry Bulk Lot",
-        "category_type": "bulk",
-        "current_price": 12.99,
-        "max_price": 50.0,
-        "num_bids": 1,
-        "hours_left": 0.015,
-        "end_timestamp_ms": 1794831626092,
-        "time_left_label": "54s",
-        "end_time": "2026-11-16T04:20:26",
-        "image_url": "https://shopgoodwillimages.azureedge.net/production/363\\Items\\2026-11-11\\fe369c5b-ed07-4b52-9d78-f54a7aead1b9sokc_1111t1.jpeg",
-        "url": "https://shopgoodwill.com/item/283773658",
-        "metal": null,
-        "purity": null,
-        "grams": 0.0,
-        "troy_oz": 0.0,
-        "melt_value": 0.0,
-        "weight_source": "none",
-        "under_melt": false,
-        "deal_reason": "Under $50 Limit",
-        "found_at": "2026-11-16 07:19:32"
-      }
-    ],
+    "gold_spot": 3873.350098,
+    "silver_spot": 47.563,
+    "last_spot_sync": "2026-11-16 07:22:41",
+    "last_scan_time": "2026-11-16 07:23:06",
+    "scan_count": 1158,
+    "purged_count": 11690,
+    "deals": [],
     "alerts_sent": 141
   },
   "config": {
