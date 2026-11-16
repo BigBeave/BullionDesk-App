@@ -1,10 +1,10 @@
 {
   "state": {
-    "gold_spot": 3856.949951,
-    "silver_spot": 47.259998,
-    "last_spot_sync": "2026-11-16 05:01:54",
-    "last_scan_time": "2026-11-16 05:02:09",
-    "scan_count": 1118,
+    "gold_spot": 3858.25,
+    "silver_spot": 47.287998,
+    "last_spot_sync": "2026-11-16 05:05:29",
+    "last_scan_time": "2026-11-16 05:05:51",
+    "scan_count": 1119,
     "purged_count": 11687,
     "deals": [
       {
@@ -16,9 +16,9 @@
         "current_price": 21.0,
         "max_price": 35.0,
         "num_bids": 4,
-        "hours_left": 0.3144,
-        "end_timestamp_ms": 1794824459895,
-        "time_left_label": "18m 52s",
+        "hours_left": 0.2528,
+        "end_timestamp_ms": 1794824459446,
+        "time_left_label": "15m 10s",
         "end_time": "2026-11-16T02:21:00",
         "image_url": "https://shopgoodwillimages.azureedge.net/production/8\\Item\\2026-11-09\\735f826a-3622-436a-a978-e95d5a2933a1wpor_1109t1.jpeg",
         "url": "https://shopgoodwill.com/item/283479621",
@@ -30,7 +30,32 @@
         "weight_source": "none",
         "under_melt": false,
         "deal_reason": "Under $35 Limit",
-        "found_at": "2026-11-16 05:02:07"
+        "found_at": "2026-11-16 05:05:49"
+      },
+      {
+        "item_id": "283764115",
+        "title": "Nike Dunk Low DM9467-500 Purple Pulse Sneakers Size US 9.5",
+        "rule_id": "nike",
+        "rule_name": "Nike / Air Jordan",
+        "category_type": "brand",
+        "current_price": 8.19,
+        "max_price": 35.0,
+        "num_bids": 0,
+        "hours_left": 0.4694,
+        "end_timestamp_ms": 1794825239446,
+        "time_left_label": "28m 10s",
+        "end_time": "2026-11-16T02:34:00",
+        "image_url": "https://shopgoodwillimages.azureedge.net/production/176\\Item\\2026-11-11\\5e7ed52c-53f2-4dea-bf00-28a339c01da0riah_1111t1.jpeg",
+        "url": "https://shopgoodwill.com/item/283764115",
+        "metal": null,
+        "purity": null,
+        "grams": 0.0,
+        "troy_oz": 0.0,
+        "melt_value": 0.0,
+        "weight_source": "none",
+        "under_melt": false,
+        "deal_reason": "Under $35 Limit",
+        "found_at": "2026-11-16 05:05:49"
       }
     ],
     "alerts_sent": 141
